@@ -1,0 +1,2013 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Siap OSN Ekonomi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: dotted ground, sticky pill tabs, one 760px column. Cute = sticker cards (thick border + hard shadow), rounded type, coin mascot. Each chapter owns a colour (--tc). */
+:root {
+  --bg: #EEF8F4; --surface: #FFFFFF; --surface-2: #F4FBF8; --fg: #1B2B28; --muted: #587068; --line: #CDE4DB; --shadow: #BCD9CE;
+  --accent: #0B7D69; --accent-dark: #075C4D; --accent-ink: #FFFFFF; --accent-soft: #D6F3EA; --on-soft: #075C4D;
+  --coin: #FFD34E; --coin-edge: #E3A400; --blush: #FF9E9E;
+  --warn: #9C4A00; --warn-soft: #FFEBCC; --good: #168A45; --good-soft: #D9F4E3; --bad: #C23636; --bad-soft: #FDE0E0;
+  --t-mikro: #0B7D69; --t-mikro-soft: #D6F3EA; --t-makro: #C9421E; --t-makro-soft: #FFE2D8;
+  --t-intl: #2569C9; --t-intl-soft: #DAE9FF; --t-akun: #8D6300; --t-akun-soft: #FFEFB8;
+  --t-stat: #7752D4; --t-stat-soft: #E7DEFF; --dot: rgba(11, 125, 105, 0.13);
+  --f-display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --f-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1B1E; --surface: #16272B; --surface-2: #1B3036; --fg: #E7F2EF; --muted: #9DB6B0; --line: #2B454B; --shadow: #0A1315;
+    --accent: #4FDDC2; --accent-dark: #2BAE96; --accent-ink: #04241E; --accent-soft: #14403A; --on-soft: #7CF0DA;
+    --warn: #FFB45E; --warn-soft: #3B2A12; --good: #62D68C; --good-soft: #143222; --bad: #FF8F8F; --bad-soft: #3D1A1A;
+    --t-mikro: #4FDDC2; --t-mikro-soft: #14403A; --t-makro: #FF9B7C; --t-makro-soft: #41231B;
+    --t-intl: #8DBBFF; --t-intl-soft: #162C4D; --t-akun: #FFD76A; --t-akun-soft: #3D3210;
+    --t-stat: #BCA8FF; --t-stat-soft: #2B2355; --dot: rgba(79, 221, 194, 0.1); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1B1E; --surface: #16272B; --surface-2: #1B3036; --fg: #E7F2EF; --muted: #9DB6B0; --line: #2B454B; --shadow: #0A1315;
+  --accent: #4FDDC2; --accent-dark: #2BAE96; --accent-ink: #04241E; --accent-soft: #14403A; --on-soft: #7CF0DA;
+  --warn: #FFB45E; --warn-soft: #3B2A12; --good: #62D68C; --good-soft: #143222; --bad: #FF8F8F; --bad-soft: #3D1A1A;
+  --t-mikro: #4FDDC2; --t-mikro-soft: #14403A; --t-makro: #FF9B7C; --t-makro-soft: #41231B;
+  --t-intl: #8DBBFF; --t-intl-soft: #162C4D; --t-akun: #FFD76A; --t-akun-soft: #3D3210;
+  --t-stat: #BCA8FF; --t-stat-soft: #2B2355; --dot: rgba(79, 221, 194, 0.1); color-scheme: dark;
+}
+.t-mikro { --tc: var(--t-mikro); --tc-soft: var(--t-mikro-soft); }
+.t-makro { --tc: var(--t-makro); --tc-soft: var(--t-makro-soft); }
+.t-intl { --tc: var(--t-intl); --tc-soft: var(--t-intl-soft); }
+.t-akun { --tc: var(--t-akun); --tc-soft: var(--t-akun-soft); }
+.t-stat { --tc: var(--t-stat); --tc-soft: var(--t-stat-soft); }
+* { box-sizing: border-box; }
+body {
+  background-color: var(--bg); background-image: radial-gradient(var(--dot) 1.5px, transparent 1.5px); background-size: 22px 22px;
+  color: var(--fg); font-family: var(--f-body); font-size: 16px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 56px;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 760px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; line-height: 1.2; margin: 0; }
+p { margin: 0 0 12px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--bg); border-bottom: 2px solid var(--line); margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 10px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px)); }
+.top .wrap { display: flex; flex-direction: column; gap: 8px; }
+.brand { font-family: var(--f-display); font-weight: 600; font-size: 20px; display: flex; align-items: center; gap: 8px; }
+.brand small { font-family: var(--f-body); font-weight: 700; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { background: none; border: 2px solid transparent; border-radius: 999px; padding: 5px 14px; font-weight: 700; font-size: 15px; color: var(--muted); white-space: nowrap; }
+.tab[aria-selected="true"] { background: var(--accent-soft); color: var(--on-soft); border-color: var(--accent); }
+
+.mascot { display: inline-flex; flex: none; }
+.mascot svg { display: block; animation: bob 3.2s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+.bubble { display: flex; gap: 14px; align-items: flex-start; }
+.bubble-t { position: relative; flex: 1; min-width: 0; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 12px 14px; box-shadow: 0 3px 0 var(--shadow); }
+.bubble-t::before { content: ""; position: absolute; left: -9px; top: 20px; width: 14px; height: 14px; background: var(--surface); border-left: 2px solid var(--line); border-bottom: 2px solid var(--line); transform: rotate(45deg); }
+
+.view { padding-top: 24px; display: flex; flex-direction: column; gap: 20px; }
+.card { background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 18px; min-width: 0; box-shadow: 0 4px 0 var(--shadow); }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.muted { color: var(--muted); }
+.btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 999px; padding: 10px 18px; font-weight: 800; box-shadow: 0 4px 0 var(--accent-dark); }
+.btn:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-dark); }
+.btn.ghost { background: var(--surface); color: var(--on-soft); border: 2px solid var(--accent); box-shadow: 0 3px 0 var(--shadow); }
+.btn.small { padding: 6px 14px; font-size: 14px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.chip { background: var(--surface); border: 2px solid var(--line); border-radius: 999px; padding: 5px 14px; font-size: 14px; font-weight: 700; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.pill { display: inline-block; font-size: 12px; font-weight: 800; padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--on-soft); }
+.pill.mikro { background: var(--t-mikro-soft); color: var(--t-mikro); }
+.pill.makro { background: var(--t-makro-soft); color: var(--t-makro); }
+.pill.intl { background: var(--t-intl-soft); color: var(--t-intl); }
+.pill.akun { background: var(--t-akun-soft); color: var(--t-akun); }
+.pill.stat { background: var(--t-stat-soft); color: var(--t-stat); }
+.pill.d { background: var(--surface-2); border: 1.5px solid var(--line); color: var(--fg); }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); white-space: nowrap; }
+pre.formula { font-family: var(--f-mono); font-size: 14px; background: var(--accent-soft); color: var(--fg); border-radius: 12px; padding: 12px 14px; margin: 8px 0; overflow-x: auto; white-space: pre; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 14px; min-width: 0; box-shadow: 0 4px 0 var(--shadow); }
+.tile .n { font-family: var(--f-display); font-size: 30px; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .l { font-size: 13px; color: var(--muted); }
+.belt { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 600; font-size: 20px; }
+.belt i { width: 28px; height: 10px; border-radius: 4px; border: 2px solid var(--fg); display: inline-block; }
+.mb { display: grid; grid-template-columns: 150px minmax(0, 1fr) 110px; gap: 10px; align-items: center; font-size: 14px; }
+@media (max-width: 520px) { .mb { grid-template-columns: minmax(0, 1fr) 90px; } .mb .bar { grid-column: 1 / -1; order: 3; } }
+.chart { width: 100%; height: auto; display: block; }
+.plan { border-top: 2px solid var(--line); padding: 10px 0; }
+.plan summary { cursor: pointer; font-weight: 700; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.plan.now summary { color: var(--accent); }
+.task { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: 15px; }
+.task input { margin-top: 5px; width: 18px; height: 18px; accent-color: var(--accent); flex: none; }
+.task.done span { color: var(--muted); text-decoration: line-through; }
+
+.bar { height: 10px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 99px; width: 0; transition: width 0.25s ease; }
+.qtext { font-size: 18px; font-weight: 700; margin: 12px 0 16px; }
+.opts { display: grid; gap: 10px; }
+.opt { text-align: left; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 12px 14px; display: flex; gap: 12px; align-items: baseline; min-width: 0; box-shadow: 0 3px 0 var(--shadow); }
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt b { font-family: var(--f-mono); color: var(--accent); flex: none; }
+.opt span { min-width: 0; overflow-wrap: anywhere; }
+.opt.right { background: var(--good-soft); border-color: var(--good); }
+.opt.wrong { background: var(--bad-soft); border-color: var(--bad); }
+.opt.sel { background: var(--accent-soft); border-color: var(--accent); }
+.opt:disabled { cursor: default; }
+.fb { margin-top: 16px; border-radius: 14px; padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start; }
+.fb.ok { background: var(--good-soft); }
+.fb.no { background: var(--bad-soft); }
+.fb strong { display: block; margin-bottom: 4px; }
+.score { font-family: var(--f-display); font-size: 64px; font-weight: 600; line-height: 1; color: var(--accent); }
+.tb { display: grid; grid-template-columns: 150px minmax(0, 1fr) 48px; gap: 10px; align-items: center; font-size: 14px; }
+@media (max-width: 520px) { .tb { grid-template-columns: 110px minmax(0, 1fr) 44px; } }
+.review { border-top: 2px solid var(--line); padding: 12px 0; }
+.review summary { cursor: pointer; font-weight: 700; }
+.timer { font-family: var(--f-mono); font-size: 22px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.timer.low { color: var(--bad); }
+.navgrid { display: flex; flex-wrap: wrap; gap: 6px; }
+.nv { width: 38px; height: 38px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); font-family: var(--f-mono); font-size: 14px; padding: 0; }
+.nv.ans { background: var(--accent-soft); border-color: var(--accent); }
+.nv.flag { border-color: var(--warn); box-shadow: inset 0 -5px 0 var(--warn); }
+.nv.cur { outline: 2px solid var(--fg); outline-offset: 1px; }
+
+input[type="search"], input[type="number"], input[type="date"] { font: inherit; color: var(--fg); background: var(--surface); border: 2px solid var(--line); border-radius: 12px; padding: 9px 12px; width: 100%; min-width: 0; }
+.terms { display: grid; gap: 0; margin: 0; }
+.term { padding: 12px 0; border-bottom: 2px solid var(--line); }
+.term dt { font-weight: 800; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.term dd { margin: 4px 0 0; color: var(--muted); }
+.flash { width: 100%; min-height: 190px; background: var(--surface); border: 3px solid var(--accent); border-radius: 22px; padding: 24px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; box-shadow: 0 5px 0 var(--shadow); }
+.flash .t { font-family: var(--f-display); font-size: 26px; font-weight: 600; text-wrap: balance; }
+.flash .m { font-size: 17px; }
+.calc { display: grid; gap: 14px; }
+.calc h2 { font-size: 19px; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+label.f { display: grid; gap: 4px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.out { background: var(--accent-soft); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; font-size: 15px; }
+.out b { font-family: var(--f-mono); }
+.res { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.res li { padding: 12px 0; border-bottom: 2px solid var(--line); }
+.res li:last-child { border-bottom: 0; }
+.res a { font-weight: 800; color: var(--accent); }
+.res span { display: block; color: var(--muted); font-size: 14px; }
+
+/* materi */
+.chgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.chcard { text-align: left; background: var(--tc-soft); border: 3px solid var(--tc); border-radius: 20px; padding: 16px; display: grid; gap: 8px; min-width: 0; box-shadow: 0 4px 0 var(--tc); }
+.chcard h3 { color: var(--tc); font-size: 21px; }
+.chcard p { margin: 0; font-size: 14px; }
+.chcard .bar { background: var(--surface); }
+.chcard .bar > i { background: var(--tc); }
+.lrow { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 12px 14px; box-shadow: 0 3px 0 var(--shadow); }
+.lrow:hover { border-color: var(--tc); }
+.ck { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--tc); color: var(--tc); display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.lrow.done .ck { background: var(--good); border-color: var(--good); color: var(--surface); }
+.sec { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 600; font-size: 19px; margin-top: 6px; }
+.sec::before { content: ""; width: 10px; height: 24px; border-radius: 6px; background: var(--tc, var(--accent)); }
+.story { background: var(--tc-soft); border-radius: 16px; padding: 12px 14px; }
+.pts { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.pts li::marker { color: var(--tc, var(--accent)); font-weight: 800; }
+.fcard { border: 2px dashed var(--tc); border-radius: 16px; padding: 12px 14px; background: var(--surface-2); display: grid; gap: 4px; }
+.fcard .fname { font-weight: 800; }
+.fcard .how { color: var(--muted); font-size: 15px; margin: 0; }
+.fcard pre.formula { margin: 4px 0; }
+.dg { margin: 0; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 10px; box-shadow: 0 3px 0 var(--shadow); }
+.dgsvg { width: 100%; max-width: 440px; height: auto; display: block; margin: 0 auto; }
+.dgsvg text { font-family: var(--f-body); }
+.dg figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 6px; }
+.step { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
+.sn { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--tc); color: var(--surface); display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.ansbox { background: var(--good-soft); border: 2px solid var(--good); border-radius: 14px; padding: 10px 14px; font-weight: 800; margin-top: 8px; }
+.trapbox { background: var(--warn-soft); border: 2px solid var(--warn); border-radius: 16px; padding: 12px 14px; }
+.trapbox ul { margin: 6px 0 0; padding-left: 20px; }
+.dojo-hint { font-size: 14px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } .mascot svg { animation: none; } }
+</style>
+
+<div class="top">
+  <div class="wrap">
+    <div class="brand"><span id="brand-m"></span>Siap OSN Ekonomi <small>Dojo belajar</small></div>
+    <div class="tabs" role="tablist" id="tabs">
+      <button class="tab" role="tab" data-view="dojo">Dojo</button>
+      <button class="tab" role="tab" data-view="materi">Materi</button>
+      <button class="tab" role="tab" data-view="latihan">Latihan</button>
+      <button class="tab" role="tab" data-view="simulasi">Simulasi</button>
+      <button class="tab" role="tab" data-view="kamus">Kartu &amp; Kamus</button>
+      <button class="tab" role="tab" data-view="kalkulator">Kalkulator</button>
+      <button class="tab" role="tab" data-view="sumber">Sumber</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- DOJO -->
+<section class="view" id="view-dojo"><div id="dojo"></div></section>
+
+<!-- MATERI -->
+<section class="view" id="view-materi" hidden><div id="materi"></div></section>
+
+<!-- LATIHAN -->
+<section class="view" id="view-latihan" hidden><div id="quiz"></div></section>
+
+<!-- SIMULASI -->
+<section class="view" id="view-simulasi" hidden><div id="mock"></div></section>
+
+<!-- KARTU & KAMUS -->
+<section class="view" id="view-kamus" hidden>
+  <div class="card" style="display:grid;gap:12px">
+    <input type="search" id="q-term" placeholder="Cari istilah, misalnya elastisitas atau jurnal" aria-label="Cari istilah">
+    <div class="row" id="term-topics" role="group" aria-label="Topik"></div>
+    <div class="row" id="term-modes" role="group" aria-label="Mode">
+      <button class="chip" data-mode="list" aria-pressed="true">Daftar</button>
+      <button class="chip" data-mode="flash" aria-pressed="false">Flashcard</button>
+      <span class="muted" id="term-count" style="margin-left:auto;font-size:14px"></span>
+    </div>
+  </div>
+  <div id="terms"></div>
+</section>
+
+<!-- KALKULATOR -->
+<section class="view" id="view-kalkulator" hidden>
+  <p class="muted" style="margin:0">Nilai awal diambil dari contoh soal. Ubah angkanya untuk mencoba soal lain.</p>
+
+  <div class="card calc">
+    <h2>Elastisitas harga permintaan</h2>
+    <div class="fields">
+      <label class="f">Harga awal<input type="number" inputmode="decimal" id="e-p1" value="10000"></label>
+      <label class="f">Harga baru<input type="number" inputmode="decimal" id="e-p2" value="12000"></label>
+      <label class="f">Jumlah awal<input type="number" inputmode="decimal" id="e-q1" value="100"></label>
+      <label class="f">Jumlah baru<input type="number" inputmode="decimal" id="e-q2" value="80"></label>
+    </div>
+    <div class="out" id="e-out"></div>
+  </div>
+
+  <div class="card calc">
+    <h2>Angka pengganda</h2>
+    <div class="fields">
+      <label class="f">MPC<input type="number" inputmode="decimal" step="0.01" id="m-mpc" value="0.8"></label>
+      <label class="f">Perubahan investasi atau belanja<input type="number" inputmode="decimal" id="m-di" value="50"></label>
+      <label class="f">Perubahan pajak<input type="number" inputmode="decimal" id="m-dt" value="40"></label>
+    </div>
+    <div class="out" id="m-out"></div>
+  </div>
+
+  <div class="card calc">
+    <h2>Inflasi dan pengangguran</h2>
+    <div class="fields">
+      <label class="f">IHK tahun lalu<input type="number" inputmode="decimal" id="i-a" value="120"></label>
+      <label class="f">IHK tahun ini<input type="number" inputmode="decimal" id="i-b" value="126"></label>
+      <label class="f">Angkatan kerja<input type="number" inputmode="decimal" id="i-ak" value="140"></label>
+      <label class="f">Yang bekerja<input type="number" inputmode="decimal" id="i-bk" value="126"></label>
+    </div>
+    <div class="out" id="i-out"></div>
+  </div>
+
+  <div class="card calc">
+    <h2>Penyusutan garis lurus</h2>
+    <div class="fields">
+      <label class="f">Harga perolehan (Rp)<input type="number" inputmode="decimal" id="d-h" value="60000000"></label>
+      <label class="f">Nilai residu (Rp)<input type="number" inputmode="decimal" id="d-r" value="6000000"></label>
+      <label class="f">Umur (tahun)<input type="number" inputmode="decimal" id="d-u" value="9"></label>
+      <label class="f">Bulan terpakai<input type="number" inputmode="decimal" id="d-b" value="3"></label>
+    </div>
+    <div class="out" id="d-out"></div>
+  </div>
+
+  <div class="card calc">
+    <h2>Titik impas (BEP)</h2>
+    <div class="fields">
+      <label class="f">Biaya tetap (Rp)<input type="number" inputmode="decimal" id="b-f" value="6000000"></label>
+      <label class="f">Harga per unit (Rp)<input type="number" inputmode="decimal" id="b-p" value="5000"></label>
+      <label class="f">Biaya variabel per unit (Rp)<input type="number" inputmode="decimal" id="b-v" value="2000"></label>
+    </div>
+    <div class="out" id="b-out"></div>
+  </div>
+
+  <div class="card calc">
+    <h2>Rata-rata, median, simpangan baku</h2>
+    <label class="f">Data, pisahkan dengan koma<input type="search" id="s-d" value="2, 4, 4, 4, 5, 5, 7, 9"></label>
+    <div class="out" id="s-out"></div>
+  </div>
+</section>
+
+<!-- SUMBER -->
+<section class="view" id="view-sumber" hidden>
+  <div class="card">
+    <div class="eyebrow">Lembar rumus</div>
+    <div class="scroll"><table>
+      <tr><th>Topik</th><th>Rumus</th></tr>
+      <tr><td>Elastisitas</td><td>Ed = %ΔQ / %ΔP</td></tr>
+      <tr><td>Keseimbangan konsumen</td><td>MUx/Px = MUy/Py</td></tr>
+      <tr><td>Biaya</td><td>MC = ΔTC/ΔQ; AC = TC/Q</td></tr>
+      <tr><td>Laba maksimum</td><td>MR = MC; di monopoli MR = a − 2bQ</td></tr>
+      <tr><td>Surplus konsumen</td><td>½ × (harga tertinggi − harga pasar) × Q</td></tr>
+      <tr><td>PDB pengeluaran</td><td>Y = C + I + G + (X − M)</td></tr>
+      <tr><td>Deflator</td><td>PDB nominal / PDB riil × 100</td></tr>
+      <tr><td>Pengganda</td><td>1/(1 − MPC); pajak −MPC/(1 − MPC)</td></tr>
+      <tr><td>Inflasi</td><td>(IHK_t − IHK_t−1)/IHK_t−1 × 100%</td></tr>
+      <tr><td>TPT</td><td>penganggur / angkatan kerja × 100%</td></tr>
+      <tr><td>Pengganda uang</td><td>1/r</td></tr>
+      <tr><td>Fisher</td><td>M × V = P × T</td></tr>
+      <tr><td>Terms of trade</td><td>indeks ekspor / indeks impor × 100</td></tr>
+      <tr><td>Modal akhir</td><td>modal awal + laba bersih − prive</td></tr>
+      <tr><td>HPP</td><td>persediaan awal + pembelian bersih − persediaan akhir</td></tr>
+      <tr><td>Penyusutan</td><td>(harga perolehan − residu) / umur</td></tr>
+      <tr><td>BEP</td><td>FC / (P − VC)</td></tr>
+      <tr><td>Rasio lancar</td><td>aset lancar / utang lancar</td></tr>
+      <tr><td>Laspeyres</td><td>Σ(P1·Q0) / Σ(P0·Q0) × 100</td></tr>
+      <tr><td>Tren</td><td>Y = a + bt</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Sumber resmi dan bahan belajar</div>
+    <ul class="res">
+      <li><a href="https://pusatprestasinasional.kemdikbud.go.id/uploads/lampiran/Panduan%20OSN%20SMA%20Tahun%202025..pdf" target="_blank" rel="noopener">Panduan OSN SMA 2025 (Pusat Prestasi Nasional)</a><span>Aturan, tahapan, dan jenis bidang lomba. Pakai sebagai patokan, lalu cocokkan dengan kisi-kisi dari sekolahmu.</span></li>
+      <li><a href="https://mamikos.com/info/materi-osn-ekonomi-sma-pljr/" target="_blank" rel="noopener">Materi OSN Ekonomi SMA (Mamikos)</a><span>Daftar 6 materi: dasar ekonomi, mikro, makro, ekonomi internasional, akuntansi dan manajemen, statistika ekonomi.</span></li>
+      <li><a href="https://mamikos.com/info/contoh-soal-osn-ekonomi-sma-pljr/" target="_blank" rel="noopener">Contoh soal OSN Ekonomi SMA (Mamikos)</a><span>Kumpulan contoh soal dengan jawaban. Cocokkan jawabannya dengan hitunganmu sendiri.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Belajar gratis (bahasa Inggris)</div>
+    <ul class="res">
+      <li><a href="https://en.khanacademy.org/science/microeconomics" target="_blank" rel="noopener">Khan Academy: Microeconomics</a><span>Video dan latihan permintaan-penawaran, elastisitas, biaya, struktur pasar.</span></li>
+      <li><a href="https://www.khanacademy.org/economics-finance-domain/macroeconomics" target="_blank" rel="noopener">Khan Academy: Macroeconomics</a><span>PDB, inflasi, pengangguran, kebijakan fiskal dan moneter, AS-AD.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Buku persiapan OSN</div>
+    <ul class="res">
+      <li><a href="https://www.gramedia.com/products/super-master-osn-ekonomi-sma" target="_blank" rel="noopener">Super Master OSN Ekonomi SMA</a><span>Buku persiapan OSN Ekonomi SMA di Gramedia.</span></li>
+      <li><a href="https://www.gramedia.com/products/insight-ksn-ekonomi-sma" target="_blank" rel="noopener">Insight KSN Ekonomi SMA</a><span>Buku latihan KSN Ekonomi SMA di Gramedia.</span></li>
+      <li><a href="https://www.gramedia.com/products/buku-paten-osn-ekonomi-sma-sederajat" target="_blank" rel="noopener">Buku Paten OSN Ekonomi SMA</a><span>Buku persiapan OSN untuk SMA dan sederajat di Gramedia.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Strategi mengerjakan soal</div>
+    <ul style="margin:0;padding-left:20px">
+      <li>Kerjakan soal hitungan yang rumusnya kamu hafal lebih dulu, lalu kembali ke soal sulit.</li>
+      <li>Tulis rumus dan angka di kertas, jangan menghitung di kepala.</li>
+      <li>Coret dua pilihan yang jelas salah sebelum menebak.</li>
+      <li>Cek satuan dan tanda: pengganda pajak negatif, penyusutan sering hanya sebagian tahun.</li>
+      <li>Setelah latihan, buka buku kesalahan dan ulangi soal yang salah dua hari kemudian.</li>
+      <li>Tidur cukup di malam sebelum seleksi, jangan belajar materi baru di hari terakhir.</li>
+    </ul>
+    <p class="muted" style="margin:12px 0 0;font-size:14px">Soal di halaman ini dibuat sendiri untuk latihan, bukan soal OSN asli. Kisi-kisi resmi tetap mengikuti panduan dari sekolah dan penyelenggara.</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- helpers ---------- */
+  function h(tag, props) {
+    var el = document.createElement(tag);
+    props = props || {};
+    Object.keys(props).forEach(function (k) {
+      var v = props[k];
+      if (k === "class") el.className = v;
+      else if (k.slice(0, 2) === "on") el.addEventListener(k.slice(2), v);
+      else if (v !== false && v != null) el.setAttribute(k, v === true ? "" : v);
+    });
+    for (var i = 2; i < arguments.length; i++) {
+      [].concat(arguments[i]).forEach(function (c) {
+        if (c == null || c === false) return;
+        el.append(c && c.nodeType ? c : document.createTextNode(String(c)));
+      });
+    }
+    return el;
+  }
+  function $(s, r) { return (r || document).querySelector(s); }
+  function store(key, val) {
+    try {
+      if (val === undefined) return JSON.parse(localStorage.getItem("osn-eko:" + key));
+      localStorage.setItem("osn-eko:" + key, JSON.stringify(val));
+    } catch (e) { return null; }
+  }
+  var DB = {
+    get: function (k, d) { var v = store(k); return v == null ? d : v; },
+    set: function (k, v) { store(k, v); }
+  };
+  function wipe() {
+    ["qs", "days", "cards", "plan", "mocks", "cr", "exam", "les"].forEach(function (k) {
+      try { localStorage.removeItem("osn-eko:" + k); } catch (e) { /* ignore */ }
+    });
+  }
+  function shuffle(a) {
+    a = a.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function dkey(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function today() { return dkey(new Date()); }
+  var nf = new Intl.NumberFormat("id-ID", { maximumFractionDigits: 2 });
+  var TOPICS = ["mikro", "makro", "intl", "akun", "stat"];
+  var TOPIC = { mikro: "Mikroekonomi", makro: "Makroekonomi", intl: "Ekonomi Internasional", akun: "Akuntansi & Manajemen", stat: "Statistika Ekonomi" };
+  var DIFF = { 1: "Mudah", 2: "Sedang", 3: "Sulit" };
+  var L = "ABCD";
+
+  /* ---------- data: soal ---------- */
+  var Q = [
+    { t: "mikro", d: 1, q: "Fungsi permintaan Qd = 100 − 2P dan penawaran Qs = −20 + 4P. Harga keseimbangan pasar adalah ...", o: ["15", "20", "25", "30"], a: 1, e: "Samakan Qd = Qs: 100 − 2P = −20 + 4P, maka 120 = 6P dan P = 20." },
+    { t: "mikro", d: 1, q: "Harga naik dari Rp10.000 menjadi Rp12.000 sehingga jumlah diminta turun dari 100 unit menjadi 80 unit. Permintaan barang itu bersifat ...", o: ["Elastis", "Inelastis", "Elastis uniter", "Inelastis sempurna"], a: 2, e: "%ΔQ = −20% dan %ΔP = +20%, sehingga E = −1. Nilai mutlak 1 berarti elastis uniter." },
+    { t: "mikro", d: 1, q: "Harga kopi naik 10% dan permintaan teh naik 5%. Elastisitas silang dan hubungan kedua barang adalah ...", o: ["0,5; komplementer", "0,5; substitusi", "2; substitusi", "2; komplementer"], a: 1, e: "Exy = 5% / 10% = 0,5. Tandanya positif, jadi kedua barang bersifat substitusi." },
+    { t: "mikro", d: 2, q: "Pasar dengan Qd = 100 − 2P dan Qs = −20 + 4P. Pemerintah mengenakan pajak Rp3 per unit kepada penjual. Harga yang dibayar konsumen setelah pajak adalah ...", o: ["20", "21", "22", "23"], a: 2, e: "Penawaran baru: Qs = −20 + 4(P − 3) = −32 + 4P. Samakan dengan Qd: 132 = 6P, jadi P = 22." },
+    { t: "mikro", d: 1, q: "Total biaya TC = 100 + 10Q + Q². Biaya marginal pada produksi Q = 5 adalah ...", o: ["15", "20", "35", "175"], a: 1, e: "MC = dTC/dQ = 10 + 2Q. Pada Q = 5, MC = 20. Angka 35 adalah AC dan 175 adalah TC." },
+    { t: "mikro", d: 2, q: "Perusahaan persaingan sempurna dengan TC = 100 + 10Q + Q² menghadapi harga pasar Rp50. Laba maksimumnya adalah ...", o: ["200", "300", "400", "1.000"], a: 1, e: "P = MC: 50 = 10 + 2Q, maka Q = 20. TR = 1.000 dan TC = 100 + 200 + 400 = 700, sehingga laba = 300." },
+    { t: "mikro", d: 2, q: "Seorang monopolis menghadapi permintaan P = 80 − 2Q dengan biaya marginal konstan Rp20. Harga yang memaksimumkan laba adalah ...", o: ["20", "40", "50", "80"], a: 2, e: "MR = 80 − 4Q = MC = 20, maka Q = 15. Harga dari kurva permintaan: P = 80 − 30 = 50." },
+    { t: "mikro", d: 1, q: "Jika biaya marginal (MC) lebih kecil daripada biaya rata-rata (AC), maka kurva biaya rata-rata ...", o: ["Naik", "Turun", "Tetap", "Berada di titik minimum"], a: 1, e: "Tambahan unit yang lebih murah dari rata-rata menarik rata-rata turun. AC minimum baru tercapai saat MC = AC." },
+    { t: "mikro", d: 2, q: "Dengan Qd = 100 − 2P dan harga pasar Rp20 (Q = 60), surplus konsumen adalah ...", o: ["600", "900", "1.200", "1.800"], a: 1, e: "Harga tertinggi (Q = 0) adalah P = 50. Surplus = ½ × (50 − 20) × 60 = 900." },
+    { t: "mikro", d: 1, q: "Pendapatan konsumen naik 10% dan permintaan barang X turun 4%. Barang X termasuk ...", o: ["Barang mewah", "Barang normal kebutuhan pokok", "Barang inferior", "Barang netral"], a: 2, e: "Ey = −4% / 10% = −0,4. Elastisitas pendapatan negatif berarti barang inferior." },
+
+    { t: "makro", d: 1, q: "Konsumsi Rp500 miliar, investasi Rp150 miliar, belanja pemerintah Rp200 miliar, ekspor Rp100 miliar, impor Rp120 miliar. PDB menurut pendekatan pengeluaran adalah ...", o: ["Rp810 miliar", "Rp830 miliar", "Rp850 miliar", "Rp930 miliar"], a: 1, e: "Y = C + I + G + (X − M) = 500 + 150 + 200 + (100 − 120) = 830." },
+    { t: "makro", d: 1, q: "PDB nominal Rp1.260 triliun dan PDB riil Rp1.200 triliun. Deflator PDB adalah ...", o: ["95", "100", "105", "110"], a: 2, e: "Deflator = 1.260 / 1.200 × 100 = 105." },
+    { t: "makro", d: 1, q: "Jika MPC = 0,8 dan investasi naik Rp50 miliar, pendapatan nasional naik sebesar ...", o: ["Rp40 miliar", "Rp62,5 miliar", "Rp200 miliar", "Rp250 miliar"], a: 3, e: "Pengganda = 1 / (1 − 0,8) = 5, maka ΔY = 5 × 50 = 250." },
+    { t: "makro", d: 2, q: "MPC = 0,75. Jika pajak naik Rp40 miliar, perubahan pendapatan nasional adalah ...", o: ["−Rp30 miliar", "−Rp40 miliar", "−Rp120 miliar", "−Rp160 miliar"], a: 2, e: "Pengganda pajak = −0,75 / 0,25 = −3, maka ΔY = −3 × 40 = −120." },
+    { t: "makro", d: 1, q: "IHK 2025 sebesar 120 dan 2026 sebesar 126. Laju inflasi 2026 adalah ...", o: ["4,8%", "5%", "6%", "5,5%"], a: 1, e: "(126 − 120) / 120 × 100% = 5%." },
+    { t: "makro", d: 1, q: "Penduduk usia kerja 200 juta, angkatan kerja 140 juta, yang bekerja 126 juta. Tingkat pengangguran terbuka adalah ...", o: ["7%", "10%", "11%", "30%"], a: 1, e: "Penganggur = 140 − 126 = 14 juta. TPT = 14 / 140 = 10%. Angka 7% muncul kalau salah membagi dengan penduduk usia kerja." },
+    { t: "makro", d: 2, q: "Bank menerima setoran Rp10 juta dan seluruh bank menerapkan GWM 20%. Total uang giral maksimum yang tercipta adalah ...", o: ["Rp20 juta", "Rp40 juta", "Rp50 juta", "Rp80 juta"], a: 2, e: "Pengganda = 1 / 0,2 = 5, maka 5 × 10 juta = 50 juta." },
+    { t: "makro", d: 1, q: "Untuk mengatasi inflasi tarikan permintaan, Bank Indonesia dapat menempuh kebijakan ...", o: ["Menurunkan suku bunga acuan", "Menaikkan suku bunga acuan", "Menurunkan GWM", "Membeli surat berharga di pasar terbuka"], a: 1, e: "Suku bunga acuan naik menekan konsumsi dan investasi sehingga permintaan agregat turun. Pilihan lain justru menambah uang beredar." },
+    { t: "makro", d: 1, q: "Jika rupiah mengalami depresiasi terhadap dolar AS, dampak yang paling mungkin adalah ...", o: ["Ekspor turun dan impor naik", "Ekspor naik dan impor turun", "Ekspor dan impor sama-sama naik", "Tidak ada pengaruh pada perdagangan"], a: 1, e: "Barang Indonesia jadi lebih murah bagi pembeli luar negeri, sedangkan barang impor jadi lebih mahal." },
+    { t: "makro", d: 1, q: "PDB suatu negara Rp1.000 triliun, pendapatan faktor produksi dari luar negeri Rp120 triliun, dan yang dibayarkan ke luar negeri Rp170 triliun. PNB adalah ...", o: ["Rp950 triliun", "Rp1.050 triliun", "Rp1.120 triliun", "Rp1.170 triliun"], a: 0, e: "PNB = PDB + pendapatan faktor neto = 1.000 + 120 − 170 = 950." },
+
+    { t: "akun", d: 1, q: "Dito mendirikan usaha dengan kas Rp50 juta dan peralatan Rp20 juta, lalu membeli perlengkapan secara kredit Rp5 juta. Posisi persamaan dasar akuntansinya adalah ...", o: ["Aset 70 juta; kewajiban 0; modal 70 juta", "Aset 75 juta; kewajiban 5 juta; modal 70 juta", "Aset 75 juta; kewajiban 0; modal 75 juta", "Aset 70 juta; kewajiban 5 juta; modal 65 juta"], a: 1, e: "Aset = 50 + 20 + 5 = 75. Pembelian kredit menambah kewajiban 5 juta, modal tetap 70 juta." },
+    { t: "akun", d: 1, q: "Perusahaan membeli peralatan secara tunai Rp8.000.000. Jurnalnya adalah ...", o: ["Debit Peralatan; Kredit Kas", "Debit Kas; Kredit Peralatan", "Debit Peralatan; Kredit Utang usaha", "Debit Beban peralatan; Kredit Kas"], a: 0, e: "Peralatan (aset) bertambah di debit. Kas (aset) berkurang di kredit." },
+    { t: "akun", d: 2, q: "Perlengkapan awal periode Rp4.000.000 dan sisa akhir periode Rp1.500.000. Jurnal penyesuaiannya ...", o: ["Debit Beban perlengkapan 1.500.000; Kredit Perlengkapan 1.500.000", "Debit Beban perlengkapan 2.500.000; Kredit Perlengkapan 2.500.000", "Debit Perlengkapan 2.500.000; Kredit Beban perlengkapan 2.500.000", "Debit Beban perlengkapan 4.000.000; Kredit Perlengkapan 4.000.000"], a: 1, e: "Perlengkapan terpakai = 4.000.000 − 1.500.000 = 2.500.000, itulah yang dibebankan." },
+    { t: "akun", d: 2, q: "Mesin dibeli 1 Oktober seharga Rp60.000.000, residu Rp6.000.000, umur 9 tahun (garis lurus). Beban penyusutan sampai 31 Desember tahun itu adalah ...", o: ["Rp1.500.000", "Rp2.000.000", "Rp4.500.000", "Rp6.000.000"], a: 0, e: "(60 juta − 6 juta) / 9 = 6 juta per tahun. Terpakai 3 bulan: 3/12 × 6 juta = 1,5 juta." },
+    { t: "akun", d: 1, q: "Modal awal Rp100 juta, laba bersih Rp30 juta, prive Rp10 juta. Modal akhir adalah ...", o: ["Rp100 juta", "Rp110 juta", "Rp120 juta", "Rp140 juta"], a: 2, e: "Modal akhir = 100 + 30 − 10 = 120 juta." },
+    { t: "akun", d: 2, q: "Persediaan awal Rp20 juta, pembelian Rp90 juta, retur pembelian Rp5 juta, beban angkut pembelian Rp3 juta, persediaan akhir Rp18 juta. HPP adalah ...", o: ["Rp87 juta", "Rp90 juta", "Rp93 juta", "Rp95 juta"], a: 1, e: "Pembelian bersih = 90 − 5 + 3 = 88. HPP = 20 + 88 − 18 = 90." },
+    { t: "akun", d: 1, q: "Penjualan Rp200 juta, retur penjualan Rp10 juta, potongan penjualan Rp5 juta, HPP Rp120 juta. Laba kotor adalah ...", o: ["Rp65 juta", "Rp70 juta", "Rp75 juta", "Rp80 juta"], a: 0, e: "Penjualan bersih = 200 − 10 − 5 = 185. Laba kotor = 185 − 120 = 65." },
+    { t: "akun", d: 1, q: "Faktur penjualan Rp10.000.000 dengan syarat 2/10, n/30 dilunasi pada hari ke-8. Kas yang diterima adalah ...", o: ["Rp9.000.000", "Rp9.800.000", "Rp9.980.000", "Rp10.000.000"], a: 1, e: "Dilunasi dalam 10 hari, diskon 2%: 10.000.000 × 98% = 9.800.000." },
+    { t: "akun", d: 1, q: "Akun yang TIDAK ditutup pada jurnal penutup akhir periode adalah ...", o: ["Pendapatan jasa", "Beban gaji", "Prive", "Utang usaha"], a: 3, e: "Utang usaha adalah akun riil (neraca) dan saldonya dibawa ke periode berikutnya. Akun nominal dan prive ditutup." },
+    { t: "akun", d: 1, q: "Pendapatan jasa Rp80 juta, beban gaji Rp30 juta, beban sewa Rp12 juta, beban penyusutan Rp8 juta. Laba bersih adalah ...", o: ["Rp30 juta", "Rp38 juta", "Rp50 juta", "Rp80 juta"], a: 0, e: "Total beban = 30 + 12 + 8 = 50 juta. Laba bersih = 80 − 50 = 30 juta." },
+
+    /* tambahan: mikro */
+    { t: "mikro", d: 1, q: "Mengalihkan sumber daya dari beras ke baja: produksi baja naik 20 ton dan produksi beras turun 40 ton. Biaya peluang 1 ton baja adalah ...", o: ["0,5 ton beras", "2 ton beras", "20 ton beras", "40 ton beras"], a: 1, e: "Biaya peluang = 40 / 20 = 2 ton beras untuk setiap ton baja." },
+    { t: "mikro", d: 1, q: "Utilitas total konsumsi unit pertama sampai keempat berturut-turut 10, 18, 24, 28. Utilitas marginal unit ketiga adalah ...", o: ["4", "6", "8", "24"], a: 1, e: "MU ke-3 = TU3 − TU2 = 24 − 18 = 6." },
+    { t: "mikro", d: 2, q: "Pendapatan Rp120.000, harga X Rp10.000, harga Y Rp20.000. Kombinasi yang menghabiskan anggaran tepat adalah ...", o: ["4X dan 4Y", "6X dan 4Y", "8X dan 3Y", "2X dan 3Y"], a: 0, e: "4 × 10.000 + 4 × 20.000 = 120.000. Opsi B dan C menghabiskan 140.000, opsi D hanya 80.000." },
+    { t: "mikro", d: 2, q: "MUx = 30 dan Px = 5, sedangkan MUy = 36 dan Py = 9. Agar kepuasan meningkat, konsumen sebaiknya ...", o: ["Menambah X, mengurangi Y", "Menambah Y, mengurangi X", "Tetap, sudah seimbang", "Menambah X dan Y"], a: 0, e: "MUx/Px = 6 lebih besar dari MUy/Py = 4. Satu rupiah di X memberi kepuasan lebih besar, jadi tambah X dan kurangi Y." },
+    { t: "mikro", d: 3, q: "Permintaan P = 80 − 2Q dan MC = 20. Monopolis berproduksi di MR = MC, sedangkan pasar bersaing sempurna di P = MC. Deadweight loss akibat monopoli adalah ...", o: ["150", "225", "450", "900"], a: 1, e: "Monopoli: Q = 15, P = 50. Kompetitif: P = MC = 20 sehingga Q = 30. DWL = ½ × (50 − 20) × (30 − 15) = 225." },
+    { t: "mikro", d: 2, q: "Pajak per unit dikenakan pada barang dengan permintaan sangat inelastis dan penawaran elastis. Beban pajak terutama ditanggung oleh ...", o: ["Produsen", "Konsumen", "Pemerintah", "Dibagi sama rata"], a: 1, e: "Pihak dengan kurva yang lebih inelastis sulit mengubah perilaku, sehingga menanggung porsi pajak lebih besar. Di sini konsumen." },
+
+    /* tambahan: makro */
+    { t: "makro", d: 2, q: "Harga minyak dunia naik tajam sehingga biaya produksi naik. Dalam model AS-AD, dampak yang paling mungkin adalah ...", o: ["AD bergeser kanan; harga dan output naik", "AS bergeser kiri; harga naik dan output turun", "AS bergeser kanan; harga turun dan output naik", "AD bergeser kiri; harga dan output turun"], a: 1, e: "Kenaikan biaya menggeser AS ke kiri: harga naik dan output turun. Kondisi ini disebut stagflasi." },
+    { t: "makro", d: 2, q: "Jumlah uang beredar Rp200 triliun, kecepatan perputaran 5 kali, volume transaksi 500 satuan. Tingkat harga menurut persamaan Fisher adalah ...", o: ["0,5", "2", "5", "8"], a: 1, e: "MV = PT sehingga P = (200 × 5) / 500 = 2." },
+    { t: "makro", d: 1, q: "PDB riil 2025 sebesar Rp2.000 triliun dan 2026 sebesar Rp2.100 triliun. Pertumbuhan ekonomi 2026 adalah ...", o: ["4%", "5%", "5,5%", "10%"], a: 1, e: "(2.100 − 2.000) / 2.000 × 100% = 5%." },
+    { t: "makro", d: 3, q: "Y = C + I + G, dengan C = 100 + 0,8(Y − T), pajak lump sum T = 50, I = 80, dan G = 70. Pendapatan keseimbangan adalah ...", o: ["950", "1.000", "1.050", "1.250"], a: 2, e: "Y = 100 + 0,8Y − 40 + 80 + 70, maka 0,2Y = 210 dan Y = 1.050. Cek: C = 100 + 0,8 × 1.000 = 900, I + G = 150, total 1.050." },
+    { t: "makro", d: 2, q: "Fungsi tabungan S = −50 + 0,25Y. Pendapatan pada titik impas (konsumsi sama dengan pendapatan) adalah ...", o: ["50", "100", "200", "400"], a: 2, e: "Titik impas saat S = 0: −50 + 0,25Y = 0, maka Y = 200." },
+    { t: "makro", d: 2, q: "Menurut kurva Phillips jangka pendek, penurunan tingkat pengangguran cenderung diikuti ...", o: ["Penurunan inflasi", "Kenaikan inflasi", "Inflasi tetap", "Deflasi"], a: 1, e: "Kurva Phillips menggambarkan hubungan negatif antara pengangguran dan inflasi dalam jangka pendek." },
+
+    /* tambahan: ekonomi internasional */
+    { t: "intl", d: 2, q: "Per jam kerja, Negara A menghasilkan 6 kain atau 3 beras. Negara B menghasilkan 4 kain atau 1 beras. Keunggulan komparatif dalam kain dimiliki ...", o: ["Negara A, karena menghasilkan lebih banyak kain", "Negara B, karena biaya peluang kain lebih rendah", "Negara A, karena unggul absolut di keduanya", "Tidak ada yang punya keunggulan komparatif"], a: 1, e: "Biaya peluang 1 kain: A = 3/6 = 0,5 beras, B = 1/4 = 0,25 beras. B lebih rendah, jadi B unggul komparatif di kain. A unggul di beras (2 kain, B 4 kain)." },
+    { t: "intl", d: 1, q: "Kurs berubah dari Rp15.000 menjadi Rp16.000 per dolar AS. Artinya ...", o: ["Rupiah apresiasi", "Rupiah depresiasi", "Dolar AS depresiasi", "Nilai tukar tidak berubah"], a: 1, e: "Dibutuhkan lebih banyak rupiah untuk membeli satu dolar, sehingga rupiah melemah (depresiasi)." },
+    { t: "intl", d: 2, q: "Barang impor seharga US$200, kurs Rp16.000 per dolar, dikenai bea masuk 10% dari harganya. Harga yang dibayar importir dalam rupiah adalah ...", o: ["Rp3.200.000", "Rp3.320.000", "Rp3.520.000", "Rp4.200.000"], a: 2, e: "Harga = 200 × 16.000 = 3.200.000. Bea masuk 10% = 320.000. Total = 3.520.000." },
+    { t: "intl", d: 1, q: "Yang termasuk transaksi berjalan dalam neraca pembayaran adalah ...", o: ["Investasi portofolio", "Ekspor barang", "Penanaman modal asing langsung", "Pinjaman luar negeri"], a: 1, e: "Transaksi berjalan mencakup barang, jasa, pendapatan primer, dan sekunder. Investasi dan pinjaman masuk transaksi modal dan finansial." },
+    { t: "intl", d: 2, q: "Pengenaan tarif impor pada suatu barang umumnya menyebabkan ...", o: ["Harga domestik turun", "Produsen domestik diuntungkan dan konsumen dirugikan", "Konsumen diuntungkan dan produsen dirugikan", "Volume impor meningkat"], a: 1, e: "Tarif menaikkan harga domestik: produsen dalam negeri terlindungi, konsumen membayar lebih mahal, dan impor berkurang." },
+    { t: "intl", d: 2, q: "Indeks harga ekspor 120 dan indeks harga impor 100 (tahun dasar 100). Nilai tukar perdagangan (terms of trade) adalah ...", o: ["20", "83", "100", "120"], a: 3, e: "TOT = 120 / 100 × 100 = 120, artinya membaik. Angka 83 muncul kalau pembaginya terbalik." },
+
+    /* tambahan: akuntansi & manajemen */
+    { t: "akun", d: 2, q: "Persediaan awal 100 unit @Rp10, pembelian 200 unit @Rp12, terjual 150 unit. HPP dengan metode FIFO adalah ...", o: ["Rp1.500", "Rp1.600", "Rp1.700", "Rp1.800"], a: 1, e: "FIFO: 100 unit × 10 + 50 unit × 12 = 1.000 + 600 = 1.600. Rp1.800 itu LIFO dan Rp1.700 rata-rata tertimbang." },
+    { t: "akun", d: 1, q: "Fungsi manajemen yang menetapkan tujuan dan cara mencapainya adalah ...", o: ["Planning", "Organizing", "Actuating", "Controlling"], a: 0, e: "Planning (perencanaan) menentukan tujuan dan langkah mencapainya. Organizing membagi tugas, actuating menggerakkan, controlling mengawasi." },
+    { t: "akun", d: 2, q: "Biaya tetap Rp6.000.000, harga jual Rp5.000 per unit, biaya variabel Rp2.000 per unit. Titik impas (BEP) dalam unit adalah ...", o: ["1.200", "2.000", "3.000", "6.000"], a: 1, e: "BEP = 6.000.000 / (5.000 − 2.000) = 2.000 unit." },
+    { t: "akun", d: 1, q: "Aset lancar Rp150 juta dan utang lancar Rp100 juta. Rasio lancar adalah ...", o: ["0,67", "1,5", "2", "50"], a: 1, e: "Rasio lancar = 150 / 100 = 1,5." },
+    { t: "akun", d: 1, q: "Piutang usaha Rp80.000.000 dengan estimasi 5% tidak tertagih (belum ada cadangan sebelumnya). Beban kerugian piutang adalah ...", o: ["Rp400.000", "Rp4.000.000", "Rp5.000.000", "Rp8.000.000"], a: 1, e: "80.000.000 × 5% = 4.000.000." },
+    { t: "akun", d: 1, q: "Pembelian mesin secara tunai dicatat dalam laporan arus kas sebagai aktivitas ...", o: ["Operasi", "Investasi", "Pendanaan", "Tidak dicatat"], a: 1, e: "Membeli aset tetap adalah aktivitas investasi." },
+
+    /* tambahan: statistika */
+    { t: "stat", d: 1, q: "Data: 4, 6, 6, 8, 11. Nilai rata-rata, median, dan modus berturut-turut adalah ...", o: ["7; 6; 6", "6; 7; 6", "7; 8; 6", "6; 6; 7"], a: 0, e: "Rata-rata = 35 / 5 = 7. Median (nilai tengah) = 6. Modus (paling sering) = 6." },
+    { t: "stat", d: 2, q: "Data populasi: 2, 4, 4, 4, 5, 5, 7, 9. Simpangan bakunya adalah ...", o: ["1", "2", "4", "5"], a: 1, e: "Rata-rata = 5. Σ(x − 5)² = 9 + 1 + 1 + 1 + 0 + 0 + 4 + 16 = 32. Ragam = 32 / 8 = 4, simpangan baku = 2." },
+    { t: "stat", d: 1, q: "Harga barang tahun dasar Rp5.000 dan tahun berjalan Rp6.500. Indeks harga relatif tahun berjalan adalah ...", o: ["77", "130", "150", "1,3"], a: 1, e: "6.500 / 5.000 × 100 = 130." },
+    { t: "stat", d: 3, q: "Barang A: P0 = 10, P1 = 12, Q0 = 5. Barang B: P0 = 20, P1 = 22, Q0 = 3. Indeks harga Laspeyres adalah ...", o: ["110,0", "114,5", "120,0", "126,0"], a: 1, e: "Σ P1·Q0 = 12 × 5 + 22 × 3 = 126. Σ P0·Q0 = 10 × 5 + 20 × 3 = 110. Indeks = 126 / 110 × 100 = 114,5." },
+    { t: "stat", d: 1, q: "Data: 12, 3, 9, 5, 14, 7. Mediannya adalah ...", o: ["7", "8", "9", "10"], a: 1, e: "Urutkan: 3, 5, 7, 9, 12, 14. Median = (7 + 9) / 2 = 8." },
+    { t: "stat", d: 2, q: "Tren penjualan Y = 50 + 4t, dengan t = 0 pada tahun 2020. Ramalan penjualan tahun 2026 adalah ...", o: ["66", "70", "74", "78"], a: 2, e: "Tahun 2026 berarti t = 6. Y = 50 + 4 × 6 = 74." }
+  ];
+  Q.forEach(function (x, i) { x.id = i; });
+
+  /* ---------- data: kamus ---------- */
+  var G = [
+    ["mikro", "Kelangkaan", "Kondisi sumber daya terbatas sementara kebutuhan manusia tidak terbatas."],
+    ["mikro", "Kurva kemungkinan produksi (PPF)", "Kurva yang menunjukkan kombinasi maksimum dua barang yang dapat diproduksi dengan sumber daya tetap."],
+    ["mikro", "Sistem ekonomi campuran", "Sistem yang memadukan mekanisme pasar dengan peran pemerintah."],
+    ["mikro", "Ceteris paribus", "Faktor lain dianggap tetap, hanya satu faktor yang berubah."],
+    ["mikro", "Biaya peluang (opportunity cost)", "Nilai pilihan terbaik yang dikorbankan saat mengambil suatu pilihan."],
+    ["mikro", "Barang normal", "Barang yang permintaannya naik ketika pendapatan naik."],
+    ["mikro", "Barang inferior", "Barang yang permintaannya turun ketika pendapatan naik."],
+    ["mikro", "Barang substitusi", "Barang pengganti: harga satu naik, permintaan lainnya naik."],
+    ["mikro", "Barang komplementer", "Barang pelengkap yang dipakai bersama: harga satu naik, permintaan lainnya turun."],
+    ["mikro", "Elastisitas", "Ukuran kepekaan perubahan jumlah terhadap perubahan harga atau faktor lain."],
+    ["mikro", "Surplus konsumen", "Selisih harga tertinggi yang mau dibayar konsumen dan harga yang benar-benar dibayar."],
+    ["mikro", "Surplus produsen", "Selisih harga yang diterima produsen dan harga terendah yang mau diterimanya."],
+    ["mikro", "Utilitas", "Tingkat kepuasan yang diperoleh dari mengonsumsi barang atau jasa."],
+    ["mikro", "Utilitas marginal (MU)", "Tambahan kepuasan dari mengonsumsi satu unit tambahan."],
+    ["mikro", "Garis anggaran", "Semua kombinasi dua barang yang habis tepat di anggaran konsumen."],
+    ["mikro", "Kurva indiferensi", "Kurva yang menghubungkan kombinasi barang dengan tingkat kepuasan yang sama."],
+    ["mikro", "Biaya tetap (FC)", "Biaya yang tidak berubah walau jumlah produksi berubah."],
+    ["mikro", "Biaya variabel (VC)", "Biaya yang berubah mengikuti jumlah produksi."],
+    ["mikro", "Biaya marginal (MC)", "Tambahan biaya untuk memproduksi satu unit tambahan."],
+    ["mikro", "Penerimaan marginal (MR)", "Tambahan penerimaan dari menjual satu unit tambahan."],
+    ["mikro", "Hukum hasil yang makin berkurang", "Tambahan input variabel akhirnya memberi tambahan output yang makin kecil."],
+    ["mikro", "Price taker", "Penjual yang tidak bisa memengaruhi harga, hanya mengikuti harga pasar."],
+    ["mikro", "Price maker", "Penjual yang bisa menentukan harga karena punya kekuatan pasar."],
+    ["mikro", "Hambatan masuk", "Penghalang bagi perusahaan baru untuk masuk ke pasar, misalnya modal besar, izin, atau paten."],
+    ["mikro", "Deadweight loss", "Hilangnya kesejahteraan karena jumlah yang diperdagangkan lebih kecil dari tingkat yang efisien."],
+    ["mikro", "Eksternalitas", "Dampak kegiatan ekonomi pada pihak ketiga yang tidak ikut bertransaksi."],
+    ["mikro", "Barang publik", "Barang yang pemakainya tidak bisa dibatasi dan pemakaian satu orang tidak mengurangi milik orang lain."],
+
+    ["makro", "PDB (GDP)", "Nilai barang dan jasa akhir yang dihasilkan di dalam wilayah negara dalam satu periode, siapa pun pemiliknya."],
+    ["makro", "PNB (GNP)", "Nilai barang dan jasa akhir yang dihasilkan warga negara itu, di dalam maupun luar negeri."],
+    ["makro", "PDB nominal", "PDB yang dihitung dengan harga berlaku."],
+    ["makro", "PDB riil", "PDB yang dihitung dengan harga tahun dasar (harga konstan)."],
+    ["makro", "Deflator PDB", "Indeks harga yang membandingkan PDB nominal dengan PDB riil."],
+    ["makro", "Inflasi", "Kenaikan harga barang dan jasa secara umum dan terus-menerus."],
+    ["makro", "Deflasi", "Penurunan harga barang dan jasa secara umum dan terus-menerus."],
+    ["makro", "Stagflasi", "Inflasi tinggi bersamaan dengan pertumbuhan lambat dan pengangguran tinggi."],
+    ["makro", "IHK", "Indeks yang mengukur perubahan harga sekeranjang barang dan jasa yang dibeli konsumen."],
+    ["makro", "Kurva Phillips", "Hubungan negatif jangka pendek antara tingkat pengangguran dan inflasi."],
+    ["makro", "Angkatan kerja", "Penduduk usia kerja yang bekerja atau sedang mencari kerja."],
+    ["makro", "Pengangguran friksional", "Pengangguran karena jeda berpindah atau mencari pekerjaan."],
+    ["makro", "Pengangguran struktural", "Pengangguran karena perubahan struktur ekonomi atau keterampilan tidak cocok."],
+    ["makro", "Pengangguran siklikal", "Pengangguran karena penurunan aktivitas ekonomi (resesi)."],
+    ["makro", "MPC", "Proporsi tambahan pendapatan yang digunakan untuk konsumsi."],
+    ["makro", "MPS", "Proporsi tambahan pendapatan yang ditabung, yaitu 1 − MPC."],
+    ["makro", "Pengganda (multiplier)", "Angka yang menunjukkan berapa kali perubahan pengeluaran melipat menjadi perubahan pendapatan nasional."],
+    ["makro", "Permintaan agregat (AD)", "Total pengeluaran semua sektor pada setiap tingkat harga umum."],
+    ["makro", "Penawaran agregat (AS)", "Total output yang ditawarkan perekonomian pada setiap tingkat harga umum."],
+    ["makro", "Persamaan Fisher", "M × V = P × T: uang beredar kali kecepatan perputaran sama dengan harga kali volume transaksi."],
+    ["makro", "Kebijakan fiskal", "Kebijakan pemerintah lewat belanja dan pajak."],
+    ["makro", "Kebijakan moneter", "Kebijakan bank sentral lewat pengaturan uang beredar dan suku bunga."],
+    ["makro", "GWM", "Giro wajib minimum: persentase dana pihak ketiga yang wajib disimpan bank di bank sentral."],
+    ["makro", "Operasi pasar terbuka", "Jual-beli surat berharga oleh bank sentral untuk mengatur uang beredar."],
+    ["makro", "Crowding out", "Belanja pemerintah yang dibiayai utang mendorong bunga naik dan menyingkirkan investasi swasta."],
+    ["makro", "Resesi", "Penurunan PDB riil yang berlangsung dalam jangka waktu tertentu."],
+
+    ["intl", "Keunggulan komparatif", "Kemampuan memproduksi barang dengan biaya peluang lebih rendah dari negara lain."],
+    ["intl", "Keunggulan absolut", "Kemampuan memproduksi barang dengan sumber daya lebih sedikit dibanding negara lain."],
+    ["intl", "Apresiasi", "Menguatnya nilai mata uang suatu negara terhadap mata uang asing."],
+    ["intl", "Depresiasi", "Melemahnya nilai mata uang suatu negara terhadap mata uang asing."],
+    ["intl", "Kurs", "Harga satu mata uang dalam mata uang lain."],
+    ["intl", "Terms of trade", "Rasio indeks harga ekspor terhadap indeks harga impor, dikali 100."],
+    ["intl", "Tarif (bea masuk)", "Pajak yang dikenakan pada barang impor."],
+    ["intl", "Kuota impor", "Batas jumlah barang yang boleh diimpor dalam periode tertentu."],
+    ["intl", "Neraca pembayaran", "Catatan seluruh transaksi ekonomi suatu negara dengan dunia dalam satu periode."],
+    ["intl", "Transaksi berjalan", "Bagian neraca pembayaran untuk barang, jasa, pendapatan primer, dan pendapatan sekunder."],
+
+    ["akun", "Aset (harta)", "Sumber daya milik perusahaan yang punya manfaat ekonomi di masa depan."],
+    ["akun", "Kewajiban (utang)", "Kewajiban perusahaan kepada pihak lain yang harus dilunasi."],
+    ["akun", "Modal (ekuitas)", "Hak pemilik atas aset setelah dikurangi kewajiban."],
+    ["akun", "Prive", "Pengambilan kas atau aset perusahaan oleh pemilik untuk keperluan pribadi."],
+    ["akun", "Pendapatan", "Penghasilan dari kegiatan usaha utama dalam satu periode."],
+    ["akun", "Beban", "Pengorbanan sumber daya untuk memperoleh pendapatan."],
+    ["akun", "Debit", "Sisi kiri akun."],
+    ["akun", "Kredit", "Sisi kanan akun."],
+    ["akun", "Jurnal", "Catatan pertama transaksi secara kronologis dalam bentuk debit dan kredit."],
+    ["akun", "Buku besar", "Kumpulan seluruh akun tempat jurnal dipindahkan (diposting)."],
+    ["akun", "Neraca saldo", "Daftar saldo semua akun buku besar untuk memastikan total debit sama dengan total kredit."],
+    ["akun", "Jurnal penyesuaian", "Jurnal akhir periode untuk mencocokkan akun dengan keadaan sebenarnya."],
+    ["akun", "Dasar akrual", "Pendapatan dan beban dicatat saat terjadi, bukan saat kas diterima atau dibayar."],
+    ["akun", "Beban dibayar di muka", "Pengeluaran untuk manfaat periode depan yang dicatat sebagai aset dulu."],
+    ["akun", "Pendapatan diterima di muka", "Penerimaan kas atas jasa yang belum diberikan, dicatat sebagai kewajiban."],
+    ["akun", "Akumulasi penyusutan", "Total penyusutan aset tetap sejak aset dipakai; pengurang nilai aset."],
+    ["akun", "Nilai buku", "Harga perolehan dikurangi akumulasi penyusutan."],
+    ["akun", "Nilai residu", "Taksiran nilai aset di akhir umur ekonomisnya."],
+    ["akun", "Piutang", "Hak menagih uang dari pelanggan atas penjualan kredit."],
+    ["akun", "Persediaan", "Barang dagang yang tersedia untuk dijual."],
+    ["akun", "Harga pokok penjualan (HPP)", "Biaya perolehan barang yang terjual dalam satu periode."],
+    ["akun", "Retur", "Pengembalian barang yang sudah dibeli atau dijual."],
+    ["akun", "Potongan", "Pengurangan harga, misalnya karena pelunasan lebih cepat."],
+    ["akun", "Akun riil", "Akun neraca (aset, kewajiban, modal) yang saldonya dibawa ke periode berikutnya."],
+    ["akun", "Akun nominal", "Akun laba rugi (pendapatan, beban) yang ditutup di akhir periode."],
+    ["akun", "Jurnal penutup", "Jurnal untuk menutup akun nominal dan prive ke modal di akhir periode."],
+    ["akun", "FIFO", "First in first out: barang yang masuk pertama dianggap keluar pertama."],
+    ["akun", "LIFO", "Last in first out: barang yang masuk terakhir dianggap keluar pertama."],
+    ["akun", "Titik impas (BEP)", "Volume penjualan saat total penerimaan sama dengan total biaya, laba nol."],
+    ["akun", "Rasio lancar", "Aset lancar dibagi utang lancar; ukuran kemampuan membayar utang jangka pendek."],
+    ["akun", "POAC", "Fungsi manajemen: planning, organizing, actuating, controlling."],
+
+    ["stat", "Rata-rata (mean)", "Jumlah seluruh data dibagi banyak data."],
+    ["stat", "Median", "Nilai tengah data setelah diurutkan."],
+    ["stat", "Modus", "Nilai yang paling sering muncul."],
+    ["stat", "Simpangan baku", "Akar dari rata-rata kuadrat selisih data terhadap rata-rata; ukuran sebaran data."],
+    ["stat", "Indeks harga relatif", "Harga tahun berjalan dibagi harga tahun dasar, dikali 100."],
+    ["stat", "Indeks Laspeyres", "Indeks harga berbobot kuantitas tahun dasar."],
+    ["stat", "Indeks Paasche", "Indeks harga berbobot kuantitas tahun berjalan."],
+    ["stat", "Analisis tren", "Metode melihat arah perubahan data dari waktu ke waktu, misalnya garis Y = a + bt."]
+  ].map(function (r) { return { t: r[0], term: r[1], def: r[2] }; });
+
+  /* ---------- statistik belajar ---------- */
+  function record(id, ok) {
+    var qs = DB.get("qs", {});
+    var s = qs[id] || { r: 0, w: 0, ok: null };
+    if (ok) s.r++; else s.w++;
+    s.ok = ok;
+    qs[id] = s;
+    DB.set("qs", qs);
+    var days = DB.get("days", {});
+    var t = today();
+    var d = days[t] || { n: 0, c: 0 };
+    d.n++; if (ok) d.c++;
+    days[t] = d;
+    DB.set("days", days);
+  }
+  function mistakes() {
+    var qs = DB.get("qs", {});
+    return Q.filter(function (q) { return qs[q.id] && qs[q.id].ok === false; }).map(function (q) { return q.id; });
+  }
+  function totals() {
+    var qs = DB.get("qs", {}), tot = 0, c = 0, xp = 0;
+    Object.keys(qs).forEach(function (k) { var s = qs[k]; tot += s.r + s.w; c += s.r; xp += s.r * 10 + s.w * 2; });
+    xp += DB.get("cr", 0) + lessonsDone() * 15;
+    return { tot: tot, c: c, xp: xp };
+  }
+  function streak() {
+    var days = DB.get("days", {});
+    var d = new Date();
+    function has(x) { var e = days[dkey(x)]; return e && e.n > 0; }
+    if (!has(d)) d.setDate(d.getDate() - 1);
+    var n = 0;
+    while (has(d)) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  var BELTS = [
+    { min: 0, name: "Sabuk putih", color: "#EDEFEF" },
+    { min: 100, name: "Sabuk kuning", color: "#E3B505" },
+    { min: 300, name: "Sabuk hijau", color: "#2E9E4F" },
+    { min: 600, name: "Sabuk biru", color: "#2F6FD1" },
+    { min: 1000, name: "Sabuk cokelat", color: "#8A5A33" },
+    { min: 1500, name: "Sabuk hitam", color: "#1A1A1A" }
+  ];
+  function beltFor(xp) {
+    var i = 0;
+    BELTS.forEach(function (b, k) { if (xp >= b.min) i = k; });
+    return { cur: BELTS[i], next: BELTS[i + 1] || null };
+  }
+  function topicStats() {
+    var qs = DB.get("qs", {});
+    return TOPICS.map(function (k) {
+      var ids = Q.filter(function (q) { return q.t === k; });
+      var r = 0, w = 0, mastered = 0;
+      ids.forEach(function (q) { var s = qs[q.id]; if (s) { r += s.r; w += s.w; if (s.ok === true) mastered++; } });
+      return { k: k, n: ids.length, r: r, w: w, mastered: mastered, acc: r + w ? r / (r + w) : null };
+    });
+  }
+
+  /* ---------- kartu: pengulangan berjarak (Leitner) ---------- */
+  var INTERVALS = [0, 1, 3, 7, 14, 30];
+  function cardState() { return DB.get("cards", {}); }
+  function dueCards(topic) {
+    var cs = cardState(), now = Date.now();
+    return G.filter(function (g) {
+      if (topic !== "all" && g.t !== topic) return false;
+      var c = cs[g.term];
+      return !c || c.d <= now;
+    });
+  }
+  function masteredCount() {
+    var cs = cardState(), n = 0;
+    G.forEach(function (g) { var c = cs[g.term]; if (c && c.b >= 3) n++; });
+    return n;
+  }
+
+  /* ---------- maskot, balon, teks kaya ---------- */
+  var INK = "#3B2A00";
+  function mascot(mood, size) {
+    var eyes = '<circle cx="38" cy="48" r="4.5" fill="' + INK + '"/><circle cx="62" cy="48" r="4.5" fill="' + INK + '"/>';
+    var mouth = '<path d="M38 60 Q50 72 62 60" fill="none" stroke="' + INK + '" stroke-width="3.5" stroke-linecap="round"/>';
+    var extra = "";
+    if (mood === "yay") {
+      eyes = '<path d="M31 48 Q37 40 43 48 M57 48 Q63 40 69 48" fill="none" stroke="' + INK + '" stroke-width="3.5" stroke-linecap="round"/>';
+      mouth = '<path d="M36 58 Q50 78 64 58 Z" fill="#7A2E1D" stroke="' + INK + '" stroke-width="3" stroke-linejoin="round"/>';
+    } else if (mood === "oops") {
+      mouth = '<path d="M38 68 Q50 60 62 68" fill="none" stroke="' + INK + '" stroke-width="3.5" stroke-linecap="round"/>';
+      extra = '<path d="M82 28 q7 9 0 14 q-7 -5 0 -14z" fill="#7CC4FF" stroke="#3B88C4" stroke-width="1.5"/>';
+    } else if (mood === "think") {
+      eyes = '<circle cx="40" cy="45" r="4.5" fill="' + INK + '"/><circle cx="64" cy="45" r="4.5" fill="' + INK + '"/>';
+      mouth = '<circle cx="52" cy="66" r="4" fill="none" stroke="' + INK + '" stroke-width="3"/>';
+    }
+    var s = h("span", { class: "mascot" });
+    s.innerHTML = '<svg viewBox="0 0 100 100" width="' + size + '" height="' + size + '" aria-hidden="true">'
+      + '<circle cx="50" cy="52" r="42" fill="var(--coin)" stroke="var(--coin-edge)" stroke-width="5"/>'
+      + '<circle cx="50" cy="52" r="33" fill="none" stroke="var(--coin-edge)" stroke-width="2.5" stroke-dasharray="3 5" opacity=".55"/>'
+      + eyes + mouth
+      + '<ellipse cx="27" cy="60" rx="6" ry="4" fill="var(--blush)" opacity=".8"/><ellipse cx="73" cy="60" rx="6" ry="4" fill="var(--blush)" opacity=".8"/>'
+      + '<path d="M22 30 Q29 18 43 15" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>' + extra + '</svg>';
+    return s;
+  }
+  function bubble(mood, content) {
+    return h("div", { class: "bubble" }, mascot(mood, 56), h("div", { class: "bubble-t" }, content));
+  }
+  function rich(s) {
+    return String(s).split("**").map(function (p, i) { return i % 2 ? h("b", null, p) : p; });
+  }
+
+  /* ---------- diagram ---------- */
+  var DG = (function () {
+    var AC = "var(--accent)", MK = "var(--t-makro)", FG = "var(--fg)", MU = "var(--muted)", GD = "var(--good)", WN = "var(--warn)", BD = "var(--bad)";
+    function svg(inner, label, hgt) { return '<svg viewBox="0 0 320 ' + (hgt || 200) + '" class="dgsvg" role="img" aria-label="' + label + '">' + inner + "</svg>"; }
+    function ax(xl, yl) {
+      return '<line x1="40" y1="170" x2="300" y2="170" stroke="' + FG + '" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="170" x2="40" y2="15" stroke="' + FG + '" stroke-width="2" stroke-linecap="round"/>'
+        + tx(300, 188, xl, MU, "end") + tx(46, 24, yl, MU);
+    }
+    function tx(x, y, s, c, a, z) { return '<text x="' + x + '" y="' + y + '" fill="' + (c || FG) + '" font-size="' + (z || 12) + '" text-anchor="' + (a || "start") + '" font-weight="700">' + s + "</text>"; }
+    function ln(x1, y1, x2, y2, c, w, dash) { return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + c + '" stroke-width="' + (w || 4) + '" stroke-linecap="round"' + (dash ? ' stroke-dasharray="5 5"' : "") + "/>"; }
+    function dot(x, y, c) { return '<circle cx="' + x + '" cy="' + y + '" r="6" fill="' + c + '" stroke="var(--surface)" stroke-width="2"/>'; }
+    function path(d, c, w, dash) { return '<path d="' + d + '" fill="none" stroke="' + c + '" stroke-width="' + (w || 4) + '" stroke-linecap="round"' + (dash ? ' stroke-dasharray="5 5"' : "") + "/>"; }
+    function box(x, y, w, hh, fill, stroke) { return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + hh + '" rx="14" fill="' + fill + '" stroke="' + stroke + '" stroke-width="3"/>'; }
+    var ARW = '<defs><marker id="ahA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/></marker><marker id="ahM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--t-makro)"/></marker></defs>';
+    return {
+      ppf: { cap: "Titik di kurva: efisien. Di dalam kurva: sumber daya menganggur. Di luar kurva: belum bisa dicapai.",
+        svg: svg(ax("Beras", "Baja") + path("M50 40 Q230 50 280 165", AC) + dot(197, 76, GD) + tx(212, 102, "Efisien", GD) + dot(140, 120, WN) + tx(148, 140, "Belum efisien", WN) + dot(250, 60, BD) + tx(250, 46, "Belum terjangkau", BD, "middle"), "Kurva kemungkinan produksi dengan tiga titik") },
+      sd: { cap: "Merah: permintaan (D) turun ke kanan. Hijau: penawaran (S) naik ke kanan. E = titik keseimbangan.",
+        svg: svg(ax("Jumlah (Q)", "Harga (P)") + ln(60, 30, 280, 160, MK) + ln(60, 160, 280, 30, AC) + ln(40, 95, 170, 95, MU, 2, 1) + ln(170, 95, 170, 170, MU, 2, 1) + dot(170, 95, FG) + tx(180, 88, "E") + tx(34, 99, "P*", MU, "end") + tx(170, 186, "Q*", MU, "middle") + tx(286, 164, "D", MK) + tx(286, 36, "S", AC), "Kurva permintaan dan penawaran bertemu di titik E") },
+      shift: { cap: "Permintaan naik: kurva D bergeser ke kanan, titik seimbang pindah dari E1 ke E2. Harga dan jumlah sama-sama naik.",
+        svg: svg(ax("Jumlah (Q)", "Harga (P)") + ln(50, 30, 240, 150, MK) + ln(90, 30, 280, 150, MK, 3, 1) + ln(50, 160, 240, 40, AC) + dot(145, 95, FG) + tx(128, 112, "E1") + dot(173, 82, FG) + tx(182, 76, "E2") + tx(222, 168, "D1", MK) + tx(284, 146, "D2", MK) + tx(244, 36, "S", AC), "Kurva permintaan bergeser ke kanan") },
+      elas: { cap: "Kurva landai berarti elastis (jumlah sangat peka). Kurva curam berarti inelastis (jumlah kurang peka).",
+        svg: svg(ln(20, 170, 150, 170, FG, 2) + ln(20, 170, 20, 25, FG, 2) + ln(180, 170, 310, 170, FG, 2) + ln(180, 170, 180, 25, FG, 2) + ln(30, 70, 140, 100, AC) + ln(225, 35, 258, 160, MK) + tx(85, 55, "Elastis", AC, "middle", 13) + tx(85, 188, "Landai", MU, "middle") + tx(245, 22, "Inelastis", MK, "middle", 13) + tx(245, 188, "Curam", MU, "middle"), "Perbandingan kurva elastis dan inelastis") },
+      cost: { cap: "MC memotong AC tepat di titik terendah AC. Sebelum titik itu MC di bawah AC (AC turun), sesudahnya MC di atas AC (AC naik).",
+        svg: svg(ax("Jumlah (Q)", "Biaya per unit") + path("M50 40 Q150 190 270 60", AC) + path("M70 160 Q150 140 250 40", MK) + dot(155, 120, FG) + tx(275, 62, "AC", AC) + tx(222, 36, "MC", MK), "Kurva biaya rata-rata AC berbentuk U dan kurva biaya marginal MC memotongnya di titik terendah") },
+      budget: { cap: "Konsumen seimbang di titik singgung garis anggaran dan kurva indiferensi (IC): kepuasan tertinggi yang masih terjangkau.",
+        svg: svg(ax("Barang X", "Barang Y") + ln(50, 72, 235, 169, MK) + path("M70 40 Q100 140 280 150", AC) + dot(137, 117, FG) + tx(146, 108, "Seimbang") + tx(52, 62, "Garis anggaran", MK) + tx(262, 140, "IC", AC), "Garis anggaran menyinggung kurva indiferensi") },
+      asad: { cap: "Permintaan agregat (AD) bergeser ke kanan: titik seimbang pindah dari E1 ke E2, harga dan output naik. Garis putus tegak = output potensial (AS jangka panjang).",
+        svg: svg(ax("Output (Y)", "Harga (P)") + ln(155, 30, 155, 170, MU, 2, 1) + ln(60, 35, 250, 155, MK) + ln(100, 35, 290, 155, MK, 3, 1) + ln(60, 150, 250, 40, AC) + dot(155, 95, FG) + tx(130, 114, "E1") + dot(176, 83, FG) + tx(184, 76, "E2") + tx(254, 160, "AD", MK) + tx(294, 160, "AD2", MK) + tx(254, 46, "AS", AC) + tx(160, 28, "output potensial", MU, "start", 11), "Model permintaan agregat dan penawaran agregat") },
+      circ: { cap: "Rumah tangga menjual faktor produksi dan membeli barang. Perusahaan membeli faktor produksi dan menjual barang. Uang dan barang berputar.",
+        svg: svg(ARW + box(15, 90, 90, 50, "var(--t-intl-soft)", "var(--t-intl)") + tx(60, 112, "Rumah", FG, "middle", 13) + tx(60, 128, "tangga", FG, "middle", 13) + box(215, 90, 90, 50, "var(--t-akun-soft)", "var(--t-akun)") + tx(260, 112, "Perusahaan", FG, "middle", 13)
+          + '<path d="M55 90 C90 20 230 20 265 90" fill="none" stroke="var(--t-makro)" stroke-width="3" marker-end="url(#ahM)"/>' + tx(160, 30, "uang belanja", MK, "middle")
+          + '<path d="M255 90 C230 55 90 55 65 90" fill="none" stroke="var(--accent)" stroke-width="3" marker-end="url(#ahA)"/>' + tx(160, 72, "barang dan jasa", AC, "middle")
+          + '<path d="M55 140 C90 205 230 205 265 140" fill="none" stroke="var(--accent)" stroke-width="3" marker-end="url(#ahA)"/>' + tx(160, 208, "tenaga kerja, lahan, modal", AC, "middle", 11)
+          + '<path d="M255 140 C230 175 90 175 65 140" fill="none" stroke="var(--t-makro)" stroke-width="3" marker-end="url(#ahM)"/>' + tx(160, 158, "gaji, sewa, bunga, laba", MK, "middle", 11), "Arus melingkar antara rumah tangga dan perusahaan", 220) },
+      balance: { cap: "Dua sisi selalu seimbang: yang dimiliki (aset) sama dengan dari mana dananya (utang + modal). Contoh angka dalam juta rupiah.",
+        svg: svg(box(15, 40, 110, 100, "var(--t-mikro-soft)", "var(--t-mikro)") + tx(70, 78, "ASET", FG, "middle", 14) + tx(70, 98, "yang dimiliki", MU, "middle", 11) + tx(70, 122, "75", FG, "middle", 20)
+          + tx(145, 98, "=", FG, "middle", 26) + box(165, 30, 140, 50, "var(--t-makro-soft)", "var(--t-makro)") + tx(235, 52, "KEWAJIBAN (utang)", FG, "middle", 12) + tx(235, 70, "5", FG, "middle", 14)
+          + tx(235, 96, "+", FG, "middle", 20) + box(165, 104, 140, 50, "var(--t-akun-soft)", "var(--t-akun)") + tx(235, 126, "MODAL (hak pemilik)", FG, "middle", 12) + tx(235, 144, "70", FG, "middle", 14), "Persamaan dasar akuntansi: aset sama dengan kewajiban ditambah modal", 190) }
+    };
+  })();
+  var CH = {
+    mikro: "Keputusan konsumen, produsen, dan pasar.",
+    makro: "Perekonomian secara keseluruhan: pendapatan, harga, dan kebijakan.",
+    intl: "Berdagang dan bertransaksi dengan negara lain.",
+    akun: "Mencatat, melaporkan, dan mengelola usaha.",
+    stat: "Membaca data ekonomi dengan angka."
+  };
+  var LESSONS = [];
+  LESSONS.push.apply(LESSONS, [
+    { id: "m1", c: "mikro", title: "Dasar ilmu ekonomi: kelangkaan dan biaya peluang", dg: "ppf",
+      gist: "Kebutuhan manusia tidak ada habisnya, tapi uang, waktu, dan bahan baku terbatas. Karena terbatas, kita harus memilih, dan setiap pilihan punya 'harga' berupa pilihan lain yang dikorbankan.",
+      story: "Uang jajanmu Rp20.000. Kalau dipakai beli boba, kamu tidak bisa beli buku. Bukunya itulah biaya peluang dari boba.",
+      pts: [
+        "**Kelangkaan** itu soal jumlah sumber daya dibanding kebutuhan. Air laut sangat banyak, tapi air bersih untuk minum tetap langka. Jadi 'langka' tidak sama dengan 'sedikit sekali'.",
+        "Karena langka, setiap pelaku ekonomi harus menjawab tiga pertanyaan pokok: **apa** yang diproduksi, **bagaimana** cara memproduksinya, dan **untuk siapa** hasilnya dibagikan.",
+        "**Biaya peluang** adalah nilai pilihan terbaik berikutnya yang kamu korbankan. Kata kuncinya 'terbaik berikutnya': bukan semua pilihan yang tidak diambil, hanya satu yang paling kamu inginkan setelah pilihanmu.",
+        "**Kurva kemungkinan produksi (PPF)** menunjukkan kombinasi maksimum dua barang yang bisa dibuat kalau semua sumber daya dipakai penuh. Titik di kurva berarti efisien. Titik di dalam kurva berarti ada sumber daya menganggur. Titik di luar kurva belum bisa dicapai dengan sumber daya sekarang.",
+        "PPF biasanya melengkung keluar. Alasannya, sumber daya tidak sama cocoknya untuk dua barang. Memindahkan lahan yang cocok untuk padi ke jagung awalnya murah, tapi makin lama terpaksa memindahkan lahan yang makin cocok untuk padi, sehingga biaya peluang jagung makin besar.",
+        "Kurva PPF bergeser keluar kalau sumber daya bertambah atau teknologi membaik (pertumbuhan ekonomi).",
+        "**Sistem ekonomi**: tradisional (adat dan kebiasaan), komando (pemerintah mengatur semuanya), pasar (harga yang mengatur), dan campuran (pasar dan pemerintah bersama-sama, dipakai banyak negara termasuk Indonesia)."
+      ],
+      f: [["Biaya peluang", "Biaya peluang X = Y yang dikorbankan / X yang diperoleh", "Bagi jumlah barang yang hilang dengan jumlah barang yang bertambah. Hasilnya: untuk mendapat 1 X, berapa Y yang harus dilepas."]],
+      ex: { q: "Petani memindahkan lahan dari jagung ke padi. Produksi padi naik 20 ton dan jagung turun 30 ton. Berapa biaya peluang 1 ton padi?",
+        steps: ["Yang dikorbankan: jagung, 30 ton.", "Yang diperoleh: padi, 20 ton.", "Biaya peluang = 30 / 20 = 1,5.", "Artinya setiap 1 ton padi 'harganya' 1,5 ton jagung."], ans: "1,5 ton jagung per 1 ton padi" },
+      trap: ["Biaya peluang bukan uang yang dikeluarkan, tapi manfaat terbaik yang hilang.", "Titik di dalam PPF bukan 'mustahil', tapi tidak efisien. Titik di luar PPF yang mustahil."],
+      chk: { q: "Titik di dalam kurva kemungkinan produksi menunjukkan ...", o: ["Produksi yang tidak mungkin dicapai", "Sumber daya belum dimanfaatkan penuh", "Produksi paling efisien", "Biaya peluang nol"], a: 1, e: "Di dalam PPF produksi masih bisa ditambah tanpa mengorbankan barang lain, artinya ada sumber daya menganggur." } },
+
+    { id: "m2", c: "mikro", title: "Permintaan dan penawaran", dg: "sd",
+      gist: "Harga naik membuat pembeli mundur dan penjual makin semangat. Dua kekuatan berlawanan ini bertemu di satu titik yang disebut keseimbangan pasar.",
+      story: "Harga tiket konser naik dua kali lipat. Banyak temanmu batal beli (jumlah diminta turun), tapi calo makin rajin menjual (jumlah ditawarkan naik).",
+      pts: [
+        "**Hukum permintaan**: kalau harga naik, jumlah yang diminta turun, dengan syarat faktor lain tetap (ceteris paribus). Sebabnya, barang jadi lebih mahal dan konsumen beralih ke barang lain atau membeli lebih sedikit.",
+        "**Hukum penawaran**: kalau harga naik, jumlah yang ditawarkan naik, karena menjual jadi lebih menguntungkan.",
+        "Bedakan dua hal. **Jumlah diminta berubah** karena harga barang itu sendiri berubah, jadi titiknya bergerak sepanjang kurva. **Permintaan berubah** karena faktor lain, jadi seluruh kurva bergeser.",
+        "Faktor yang menggeser permintaan: pendapatan, selera, harga barang lain (pengganti atau pelengkap), jumlah penduduk, dan perkiraan harga di masa depan.",
+        "Faktor yang menggeser penawaran: biaya produksi, teknologi, jumlah penjual, pajak atau subsidi, dan cuaca (untuk pertanian).",
+        "Dalam soal, fungsi permintaan ditulis Qd = a − bP (jumlah turun saat harga naik) dan fungsi penawaran Qs = −c + dP (jumlah naik saat harga naik). Tanda minus di b membuat kurva D miring ke bawah."
+      ],
+      f: [["Keseimbangan pasar", "Qd = Qs", "Samakan dua fungsi, selesaikan P. Setelah dapat P, masukkan ke salah satu fungsi untuk mencari Q."]],
+      ex: { q: "Qd = 100 − 2P dan Qs = −20 + 4P. Tentukan harga dan jumlah keseimbangan.",
+        steps: ["Syarat keseimbangan: Qd = Qs.", "100 − 2P = −20 + 4P", "Pindahkan: 100 + 20 = 4P + 2P, jadi 120 = 6P, maka P = 20.", "Masukkan ke Qd: Q = 100 − 2(20) = 60. Cek di Qs: −20 + 4(20) = 60, cocok."], ans: "P = 20 dan Q = 60" },
+      trap: ["Kalau soal menyebut 'harga barang lain berubah', itu menggeser kurva, bukan menggerakkan titik.", "Selalu cek hasil dengan memasukkan P ke kedua fungsi. Kalau Q-nya beda, ada hitungan yang salah."],
+      chk: { q: "Pendapatan konsumen naik sehingga permintaan barang normal ikut naik. Dampak pada grafik adalah ...", o: ["Gerak naik sepanjang kurva permintaan", "Kurva permintaan bergeser ke kanan", "Kurva penawaran bergeser ke kiri", "Kurva permintaan bergeser ke kiri"], a: 1, e: "Pendapatan adalah faktor selain harga barang itu sendiri, jadi seluruh kurva permintaan bergeser ke kanan." } },
+
+    { id: "m3", c: "mikro", title: "Pergeseran kurva, pajak, dan harga batas", dg: "shift",
+      gist: "Kalau satu kurva bergeser, titik keseimbangan pindah. Cukup baca arahnya: kurva ke kanan artinya jumlah naik, kurva ke kiri artinya jumlah turun.",
+      story: "Hujan deras membuat panen cabai gagal (penawaran turun). Cabai jadi langka, harganya melonjak, dan orang membeli lebih sedikit.",
+      pts: [
+        "**Permintaan naik** (D ke kanan): harga naik dan jumlah naik. **Permintaan turun** (D ke kiri): harga turun dan jumlah turun. Dua-duanya searah karena kurva S tetap dan miring ke atas.",
+        "**Penawaran naik** (S ke kanan): harga turun dan jumlah naik. **Penawaran turun** (S ke kiri): harga naik dan jumlah turun. Di sini harga dan jumlah berlawanan arah.",
+        "Kalau D dan S bergeser bersamaan: jika sama-sama naik, jumlah pasti naik tapi harga tidak pasti. Jika D naik dan S turun, harga pasti naik tapi jumlah tidak pasti. Harus dihitung kalau butuh kepastian.",
+        "**Pajak per unit (t)** menambah biaya penjual, jadi kurva penawaran bergeser ke atas sebesar t. Hasilnya harga yang dibayar konsumen naik, harga yang diterima penjual turun (setelah dikurangi pajak), dan jumlah turun.",
+        "Siapa yang menanggung pajak lebih besar? Pihak yang lebih **inelastis**, karena ia sulit mengubah perilaku. Kalau konsumen tetap harus membeli, ia yang menanggung lebih banyak.",
+        "**Subsidi** kebalikan pajak: penawaran bergeser ke bawah, harga turun, jumlah naik.",
+        "**Harga maksimum (ceiling)** hanya berpengaruh kalau ditetapkan di bawah harga keseimbangan, dan menimbulkan kekurangan barang. **Harga minimum (floor)** hanya berpengaruh kalau di atas harga keseimbangan, dan menimbulkan kelebihan barang."
+      ],
+      f: [["Penawaran setelah pajak t", "Qs baru = a + b(P − t)", "Penjual hanya menerima P − t dari harga P yang dibayar konsumen. Ganti semua P di fungsi penawaran dengan (P − t)."],
+        ["Surplus konsumen dan produsen", "SK = ½ × (harga tertinggi − harga pasar) × Q\nSP = ½ × (harga pasar − harga terendah) × Q", "Keduanya segitiga. Harga tertinggi dicari dengan mengisi Q = 0 pada fungsi permintaan."]],
+      ex: { q: "Qd = 100 − 2P, Qs = −20 + 4P. Pajak Rp3 per unit dikenakan ke penjual. Berapa harga yang dibayar konsumen?",
+        steps: ["Penjual hanya menerima P − 3, jadi Qs baru = −20 + 4(P − 3) = −32 + 4P.", "Samakan dengan Qd: 100 − 2P = −32 + 4P.", "132 = 6P, maka P = 22. Itu harga yang dibayar konsumen.", "Harga yang diterima penjual = 22 − 3 = 19."], ans: "Konsumen membayar Rp22, penjual menerima Rp19" },
+      trap: ["Harga maksimum di atas harga keseimbangan tidak berpengaruh sama sekali (tidak efektif).", "Beban pajak ditentukan oleh elastisitas, bukan oleh siapa yang menyetor pajak ke pemerintah."],
+      chk: { q: "Penawaran bergeser ke kiri (misalnya gagal panen) sementara permintaan tetap. Hasilnya ...", o: ["Harga turun, jumlah naik", "Harga naik, jumlah turun", "Harga dan jumlah naik", "Harga dan jumlah turun"], a: 1, e: "S ke kiri membuat barang makin langka: harga naik dan jumlah keseimbangan turun." } },
+
+    { id: "m4", c: "mikro", title: "Elastisitas", dg: "elas",
+      gist: "Elastisitas mengukur seberapa 'peka' pembeli terhadap perubahan harga. Barang kebutuhan pokok cenderung tidak peka, barang mewah sangat peka.",
+      story: "Bensin naik, kamu tetap harus berangkat sekolah (inelastis). Es krim naik, kamu bisa menunda beli (elastis).",
+      pts: [
+        "Elastisitas harga permintaan (Ed) membandingkan **persen perubahan jumlah** dengan **persen perubahan harga**. Karena ada hubungan terbalik, Ed bernilai negatif. Untuk menilai, pakai nilai mutlaknya.",
+        "**Elastis** (|Ed| > 1): jumlah berubah lebih besar dari harga. **Inelastis** (|Ed| < 1): jumlah berubah lebih kecil. **Uniter** (|Ed| = 1): sama besar.",
+        "Kasus ekstrem: elastis sempurna (kurva datar, harga naik sedikit saja jumlah jadi nol) dan inelastis sempurna (kurva tegak, jumlah tidak berubah berapapun harganya, Ed = 0).",
+        "Kaitan dengan **total penerimaan (TR = P × Q)**. Permintaan elastis: harga turun membuat TR naik. Inelastis: harga turun membuat TR turun. Uniter: TR tidak berubah. Itu sebabnya penjual barang pokok tidak untung dengan banting harga.",
+        "**Elastisitas pendapatan (Ey)**: positif untuk barang normal (Ey lebih dari 1 untuk barang mewah), negatif untuk barang inferior (permintaan turun saat pendapatan naik).",
+        "**Elastisitas silang (Exy)**: positif berarti barang substitusi (harga teh naik, permintaan kopi naik), negatif berarti komplementer (harga mobil naik, permintaan bensin turun).",
+        "Permintaan makin elastis kalau banyak barang pengganti, barangnya mewah, porsi pengeluarannya besar, dan jangka waktunya panjang."
+      ],
+      f: [["Elastisitas harga permintaan", "Ed = %ΔQ / %ΔP\n%Δ = (nilai baru − nilai awal) / nilai awal × 100%", "Hitung dua persen perubahan, lalu bagi. Selalu bagi dengan nilai AWAL."],
+        ["Elastisitas pendapatan", "Ey = %ΔQ / %Δpendapatan", "Tanda hasilnya menentukan jenis barang."],
+        ["Elastisitas silang", "Exy = %ΔQx / %ΔPy", "Jumlah barang X dibanding harga barang Y."]],
+      ex: { q: "Harga naik dari Rp10.000 menjadi Rp12.000 dan jumlah diminta turun dari 100 menjadi 80. Elastis atau tidak?",
+        steps: ["%ΔP = (12.000 − 10.000) / 10.000 = +20%.", "%ΔQ = (80 − 100) / 100 = −20%.", "Ed = −20% / 20% = −1.", "Nilai mutlak 1, jadi elastis uniter: persen perubahan jumlah sama besar dengan persen perubahan harga."], ans: "Elastis uniter" },
+      trap: ["Bagi dengan nilai awal, bukan nilai akhir (kecuali soal meminta metode titik tengah).", "Tanda negatif pada Ed itu wajar. Yang dibandingkan dengan 1 adalah nilai mutlaknya."],
+      chk: { q: "Permintaan elastis dan harga diturunkan. Total penerimaan penjual akan ...", o: ["Naik", "Turun", "Tetap", "Tidak bisa ditentukan"], a: 0, e: "Pada permintaan elastis, kenaikan jumlah lebih besar daripada penurunan harga, sehingga TR naik." } }
+  ]);
+  LESSONS.push.apply(LESSONS, [
+    { id: "m5", c: "mikro", title: "Teori konsumen", dg: "budget",
+      gist: "Konsumen ingin kepuasan setinggi mungkin, tapi dibatasi uang. Kepuasan maksimum tercapai saat tiap rupiah terakhir memberi kepuasan yang sama di semua barang.",
+      story: "Kamu punya Rp30.000 untuk jajan. Kalau satu rupiah di bakso terasa lebih memuaskan daripada di es teh, kamu tambah bakso dan kurangi es teh, sampai rasanya seimbang.",
+      pts: [
+        "**Utilitas** adalah tingkat kepuasan. **Utilitas total (TU)** adalah seluruh kepuasan dari semua unit yang dikonsumsi. **Utilitas marginal (MU)** adalah tambahan kepuasan dari satu unit tambahan.",
+        "**Hukum Gossen I**: makin banyak unit yang dikonsumsi, MU makin kecil (gelas es teh ke-5 tidak seenak gelas pertama). TU terus naik selama MU positif, dan maksimum saat MU = 0. Kalau MU negatif, TU turun.",
+        "**Garis anggaran** adalah semua kombinasi dua barang yang menghabiskan uang tepat. Titik di dalam garis berarti uang masih sisa, titik di luar garis tidak terjangkau. Kemiringannya ditentukan perbandingan harga kedua barang.",
+        "**Kurva indiferensi (IC)** adalah kombinasi barang yang memberi kepuasan sama. Makin jauh dari titik asal, kepuasan makin tinggi. Dua IC tidak boleh berpotongan.",
+        "Konsumen seimbang di **titik singgung** garis anggaran dan IC tertinggi yang masih terjangkau. Dalam angka, syaratnya MUx/Px = MUy/Py: kepuasan per rupiah di dua barang sama.",
+        "Kalau MUx/Px lebih besar dari MUy/Py, satu rupiah di X memberi kepuasan lebih banyak. Konsumen sebaiknya menambah X dan mengurangi Y, sampai MU X turun dan rasionya sama."
+      ],
+      f: [["Garis anggaran", "M = Px·X + Py·Y", "M = uang yang tersedia, Px dan Py = harga, X dan Y = jumlah. Cek sebuah kombinasi dengan menghitung total belanjanya."],
+        ["Utilitas marginal", "MU = ΔTU / ΔQ", "Selisih TU dibagi selisih jumlah (biasanya selisih jumlah = 1)."],
+        ["Keseimbangan konsumen", "MUx / Px = MUy / Py", "Bandingkan kepuasan per rupiah di tiap barang."]],
+      ex: { q: "MUx = 30, Px = 5, MUy = 36, Py = 9. Apa yang sebaiknya dilakukan konsumen?",
+        steps: ["Kepuasan per rupiah di X: 30 / 5 = 6.", "Kepuasan per rupiah di Y: 36 / 9 = 4.", "X memberi 6 per rupiah, Y hanya 4.", "Jadi tambah X dan kurangi Y sampai kedua rasio sama."], ans: "Tambah X, kurangi Y" },
+      trap: ["Yang dibandingkan adalah MU per rupiah (MU/P), bukan MU saja. Barang dengan MU besar belum tentu lebih baik kalau harganya jauh lebih mahal.", "Saat MU negatif, TU turun. Jangan tertukar dengan MU yang menurun tapi masih positif."],
+      chk: { q: "Utilitas total unit 1 sampai 3 berturut-turut 10, 18, 24. Utilitas marginal unit ketiga adalah ...", o: ["6", "8", "24", "42"], a: 0, e: "MU3 = TU3 − TU2 = 24 − 18 = 6." } },
+
+    { id: "m6", c: "mikro", title: "Produksi dan biaya", dg: "cost",
+      gist: "Biaya per unit awalnya turun karena mesin dan tenaga kerja dipakai makin efisien, lalu naik lagi karena makin padat. Itulah bentuk kurva biaya yang menyerupai huruf U.",
+      story: "Warung dengan 1 koki dan 1 kasir: menambah satu pelayan sangat membantu. Tapi menambah pelayan ke-10 di dapur yang sempit malah membuat semua saling tabrakan.",
+      pts: [
+        "**Hukum hasil yang makin berkurang**: kalau satu input variabel (tenaga kerja) terus ditambah pada input tetap (mesin, ruangan), tambahan output (produk marjinal, MP) akhirnya menurun. Inilah penyebab kurva biaya melengkung naik di ujung.",
+        "**Biaya tetap (FC)** tidak berubah saat produksi berubah, misalnya sewa gedung. Tetap harus dibayar walau produksi nol. **Biaya variabel (VC)** berubah mengikuti produksi, misalnya bahan baku.",
+        "**Biaya rata-rata (AC)** = biaya per unit. **Biaya marginal (MC)** = tambahan biaya untuk menghasilkan satu unit lagi. MC dan AC tidak sama, jangan tertukar.",
+        "**MC memotong AC dan AVC tepat di titik terendah keduanya.** Logikanya seperti nilai rata-rata: kalau nilai ulangan baru (MC) lebih rendah dari rata-rata, rata-rata turun. Kalau lebih tinggi, rata-rata naik. Saat sama, rata-rata ada di titik terendah.",
+        "Jangka pendek adalah masa ketika ada input tetap. Jangka panjang adalah masa ketika semua input bisa diubah.",
+        "Keputusan menutup usaha jangka pendek: kalau harga lebih kecil dari AVC minimum, lebih baik berhenti karena tidak menutup biaya variabel. Kalau harga di antara AVC dan AC, rugi tapi lanjut berproduksi karena masih ikut menutup sebagian biaya tetap."
+      ],
+      f: [["Biaya total dan rata-rata", "TC = FC + VC\nAC = TC / Q\nAVC = VC / Q\nAFC = FC / Q", "AC juga sama dengan AFC + AVC."],
+        ["Biaya marginal", "MC = ΔTC / ΔQ  (atau turunan TC terhadap Q)", "Untuk TC = 100 + 10Q + Q², MC = 10 + 2Q. Konstanta 100 hilang karena biaya tetap."],
+        ["Laba", "Laba = TR − TC = (P − AC) × Q\nTR = P × Q", "Laba maksimum dicari di titik MR = MC."]],
+      ex: { q: "TC = 100 + 10Q + Q². Hitung FC, VC, dan MC saat Q = 5.",
+        steps: ["FC adalah bagian TC yang tidak memuat Q: FC = 100.", "VC = 10Q + Q² = 50 + 25 = 75.", "MC = turunan TC = 10 + 2Q = 10 + 10 = 20.", "Sebagai cek: TC = 175, AC = 35. MC (20) lebih kecil dari AC (35), jadi AC masih turun."], ans: "FC = 100, VC = 75, MC = 20" },
+      trap: ["MC tidak sama dengan AC. Keduanya hanya sama di titik AC terendah.", "Saat produksi nol, biaya tetap tetap ada, jadi TC tidak nol."],
+      chk: { q: "Biaya marginal lebih kecil daripada biaya rata-rata. Maka biaya rata-rata ...", o: ["Naik", "Turun", "Tetap", "Berada di titik minimum"], a: 1, e: "Tambahan biaya yang lebih murah dari rata-rata menarik rata-rata turun." } },
+
+    { id: "m7", c: "mikro", title: "Struktur pasar",
+      gist: "Struktur pasar ditentukan oleh banyaknya penjual, jenis produk, dan mudah tidaknya masuk ke pasar. Makin sedikit pesaing, makin besar kuasa menentukan harga.",
+      story: "Penjual gorengan di pinggir jalan: banyak, produknya mirip, kalau satu menaikkan harga pembeli pindah (persaingan). Listrik PLN di satu daerah: tak ada pilihan lain (monopoli).",
+      pts: [
+        "**Persaingan sempurna**: sangat banyak penjual, produk sama persis (homogen), bebas keluar-masuk pasar, dan informasi lengkap. Penjual adalah **price taker**: hanya menerima harga pasar, jadi kurva permintaan yang dihadapinya datar.",
+        "**Monopoli**: satu penjual, produk unik tanpa pengganti dekat, dan ada hambatan masuk (izin, paten, modal sangat besar). Penjual adalah **price maker** dan bisa memilih harga, tapi tetap dibatasi kurva permintaan pasar.",
+        "**Oligopoli**: sedikit penjual besar yang saling memperhatikan. Harga satu pemain memengaruhi pemain lain, sehingga mereka bisa membentuk kartel atau terlibat perang harga.",
+        "**Persaingan monopolistik**: banyak penjual dengan produk yang dibedakan lewat merek, rasa, atau kemasan. Bebas masuk, tapi tiap penjual punya sedikit kuasa harga. Iklan sangat penting.",
+        "Semua struktur memaksimumkan laba di titik **MR = MC**. Beda strukturnya ada di harga: di persaingan sempurna P = MR = MC, di monopoli P lebih besar dari MR sehingga P lebih besar dari MC.",
+        "Pada permintaan linear P = a − bQ, penerimaan marjinalnya MR = a − 2bQ: kemiringannya dua kali kurva permintaan. Alasannya, untuk menjual lebih banyak monopolis harus menurunkan harga untuk SEMUA unit, bukan hanya unit tambahan.",
+        "Persaingan sempurna dalam jangka panjang: laba ekonomi nol, karena laba menarik pemain baru sampai harga turun ke biaya rata-rata minimum."
+      ],
+      f: [["Syarat laba maksimum", "MR = MC", "Cari Q dari MR = MC. Lalu cari harganya: di monopoli dari kurva permintaan, di persaingan sempurna dari harga pasar."],
+        ["MR monopoli (permintaan linear)", "P = a − bQ  →  MR = a − 2bQ", "Tulis ulang fungsi permintaan dalam bentuk P, lalu gandakan koefisien Q."]],
+      ex: { q: "Monopolis menghadapi permintaan P = 80 − 2Q dengan MC konstan 20. Tentukan Q dan P yang memaksimumkan laba.",
+        steps: ["MR = 80 − 4Q (koefisien Q digandakan).", "Syarat laba maksimum MR = MC: 80 − 4Q = 20, maka 4Q = 60 dan Q = 15.", "Harga dibaca dari kurva PERMINTAAN, bukan dari MR: P = 80 − 2(15) = 50.", "Perhatikan P (50) lebih besar dari MC (20): ciri monopoli."], ans: "Q = 15 dan P = 50" },
+      trap: ["Harga monopoli selalu dibaca dari kurva permintaan setelah Q ditemukan, bukan dari MR.", "Penjual di persaingan sempurna tidak bisa menaikkan harga sendiri. Kalau naik, pembelinya hilang semua."],
+      chk: { q: "Ciri yang paling sesuai dengan pasar monopoli adalah ...", o: ["Banyak penjual dengan produk homogen", "Satu penjual dengan hambatan masuk tinggi", "Sedikit penjual yang saling bergantung", "Penjual bebas keluar-masuk pasar"], a: 1, e: "Monopoli berarti satu penjual, produk unik, dan hambatan masuk yang tinggi." } },
+
+    { id: "m8", c: "mikro", title: "Deadweight loss dan surplus",
+      gist: "Pasar yang bersaing sempurna menghasilkan jumlah yang paling menguntungkan bagi masyarakat. Kalau jumlah transaksi lebih kecil dari itu, ada kesejahteraan yang hilang, namanya deadweight loss.",
+      story: "Bayangkan pesta bagi-bagi kue. Kalau panitia membatasi kue hanya 15 padahal ada 30 orang yang mau bayar lebih dari biaya pembuatannya, 15 transaksi yang sama-sama menguntungkan tidak pernah terjadi. Kerugian itulah DWL.",
+      pts: [
+        "**Surplus konsumen** = selisih antara harga tertinggi yang mau dibayar dan harga yang benar-benar dibayar. **Surplus produsen** = selisih antara harga yang diterima dan harga terendah yang mau diterima penjual.",
+        "**Surplus total** = surplus konsumen + surplus produsen. Nilainya paling besar di jumlah keseimbangan pasar bersaing.",
+        "**Deadweight loss (DWL)** adalah berkurangnya surplus total karena jumlah transaksi lebih kecil dari jumlah efisien. Bentuknya segitiga di antara kurva permintaan dan biaya marginal.",
+        "Penyebab DWL: **monopoli** (membatasi jumlah untuk menaikkan harga), **pajak** (jumlah turun), dan **harga batas** yang mencegah transaksi.",
+        "Cara menghitung DWL monopoli dengan MC konstan: tentukan Q monopoli (MR = MC) dan harganya, lalu Q kompetitif (P = MC). DWL adalah luas segitiga di antara keduanya.",
+        "Alasan segitiga: alasnya selisih jumlah (Q kompetitif − Q monopoli), tingginya selisih harga monopoli dan MC. Luas segitiga = ½ × alas × tinggi, jangan lupa faktor ½."
+      ],
+      f: [["Surplus konsumen", "SK = ½ × (harga tertinggi − harga pasar) × Q", "Harga tertinggi = harga saat Q = 0 pada fungsi permintaan."],
+        ["DWL monopoli (MC konstan)", "DWL = ½ × (P monopoli − MC) × (Q kompetitif − Q monopoli)", "Q kompetitif dicari dari P = MC."]],
+      ex: { q: "Permintaan P = 80 − 2Q dan MC = 20. Berapa DWL akibat monopoli?",
+        steps: ["Monopoli: MR = 80 − 4Q = 20, jadi Q = 15 dan P = 80 − 30 = 50.", "Kompetitif: P = MC, jadi 80 − 2Q = 20, maka Q = 30.", "Alas = 30 − 15 = 15. Tinggi = 50 − 20 = 30.", "DWL = ½ × 15 × 30 = 225."], ans: "225" },
+      trap: ["DWL berbentuk segitiga, jadi faktor ½ wajib dipakai.", "Q kompetitif dicari dengan P = MC, sedangkan Q monopoli dengan MR = MC. Jangan tertukar."],
+      chk: { q: "Dengan Qd = 100 − 2P dan harga pasar Rp20 (Q = 60), surplus konsumen adalah ...", o: ["600", "900", "1.200", "1.800"], a: 1, e: "Harga tertinggi (Q = 0): P = 50. SK = ½ × (50 − 20) × 60 = 900." } }
+  ]);
+  LESSONS.push.apply(LESSONS, [
+    { id: "k1", c: "makro", title: "PDB dan pendapatan nasional", dg: "circ",
+      gist: "PDB adalah total nilai barang dan jasa akhir yang dihasilkan di dalam wilayah negara dalam satu periode. Ini cara kita mengukur 'ukuran' perekonomian.",
+      story: "Roti dijual Rp10.000 dan dibuat dari tepung Rp4.000. Yang dihitung di PDB hanya roti akhirnya (Rp10.000), atau nilai tambah tiap tahap (4.000 + 6.000). Kalau tepung dan roti dihitung dua-duanya, tepungnya terhitung dua kali.",
+      pts: [
+        "**Barang akhir** dihitung, **barang antara** (bahan baku yang diolah lagi) tidak, supaya tidak ada penghitungan ganda.",
+        "Tiga pendekatan yang idealnya memberi hasil sama: **produksi** (jumlah nilai tambah semua sektor), **pendapatan** (upah + sewa + bunga + laba), dan **pengeluaran** (C + I + G + X − M).",
+        "**PDB** dihitung menurut wilayah: semua produksi di dalam negeri, siapapun pemiliknya. **PNB** dihitung menurut kewarganegaraan: produksi milik warga negara, di dalam maupun luar negeri. Bedanya adalah pendapatan faktor produksi neto dari luar negeri.",
+        "**PNN** = PNB dikurangi penyusutan, karena sebagian barang modal 'terpakai' saat berproduksi.",
+        "**PDB nominal** memakai harga yang berlaku saat itu, jadi bisa naik hanya karena harga naik. **PDB riil** memakai harga tahun dasar, sehingga hanya berubah kalau jumlah produksi berubah. Pertumbuhan ekonomi dihitung dari PDB riil.",
+        "Yang tidak dihitung: barang bekas, transaksi keuangan murni (jual beli saham), dan kegiatan tanpa transaksi seperti pekerjaan rumah tangga tanpa upah.",
+        "Diagram arus melingkar membantu mengingat bahwa pengeluaran seseorang adalah pendapatan orang lain, sehingga pendekatan pengeluaran dan pendapatan harus sama."
+      ],
+      f: [["PDB pengeluaran", "Y = C + I + G + (X − M)", "C konsumsi rumah tangga, I investasi, G belanja pemerintah, X ekspor, M impor. (X − M) disebut ekspor neto."],
+        ["PNB dan PNN", "PNB = PDB + pendapatan faktor dari LN − pendapatan faktor ke LN\nPNN = PNB − penyusutan", "Pendapatan faktor neto bisa negatif kalau yang dibayar ke luar negeri lebih besar."],
+        ["Deflator dan pertumbuhan", "Deflator = PDB nominal / PDB riil × 100\nPertumbuhan = (PDB riil t − PDB riil t−1) / PDB riil t−1 × 100%", "Deflator di atas 100 berarti harga naik dari tahun dasar."]],
+      ex: { q: "C = 500, I = 150, G = 200, X = 100, M = 120 (miliar rupiah). Hitung PDB.",
+        steps: ["Tulis rumus: Y = C + I + G + (X − M).", "Ekspor neto = 100 − 120 = −20 (impor lebih besar).", "Y = 500 + 150 + 200 + (−20).", "Y = 830."], ans: "Rp830 miliar" },
+      trap: ["Impor DIKURANGKAN, jangan ditambahkan.", "PNB berbeda dari PDB karena pendapatan faktor neto, bukan karena penyusutan (itu PNN)."],
+      chk: { q: "PDB Rp1.000 T, pendapatan faktor dari luar negeri Rp120 T, dan yang dibayarkan ke luar negeri Rp170 T. PNB adalah ...", o: ["Rp950 T", "Rp1.050 T", "Rp1.120 T", "Rp1.170 T"], a: 0, e: "PNB = 1.000 + 120 − 170 = 950." } },
+
+    { id: "k2", c: "makro", title: "Konsumsi, tabungan, dan angka pengganda",
+      gist: "Satu rupiah pengeluaran baru menjadi pendapatan orang lain, yang sebagian dibelanjakan lagi. Efek berantai inilah yang disebut pengganda.",
+      story: "Kamu bayar Rp100.000 ke tukang cukur. Ia belanja 80% di warung, pemilik warung belanja 80% dari itu, dan seterusnya. Total efeknya jauh lebih besar dari Rp100.000.",
+      pts: [
+        "**Fungsi konsumsi** C = a + bY. Nilai a adalah konsumsi otonom (tetap ada walau pendapatan nol, dibiayai tabungan lama). Nilai b adalah **MPC**, bagian dari tambahan pendapatan yang dikonsumsi.",
+        "Pendapatan hanya bisa dikonsumsi atau ditabung, jadi **tabungan** S = Y − C = −a + (1 − b)Y dan **MPS = 1 − MPC**.",
+        "**Titik impas** adalah pendapatan saat C = Y (tabungan nol). Di bawahnya tabungan negatif (orang menguras tabungan), di atasnya positif.",
+        "**Pengganda** muncul karena pengeluaran putaran pertama menjadi pendapatan putaran kedua, yang sebagian dikonsumsi lagi. Total seluruh putaran adalah deret geometri 1 + MPC + MPC² + ..., yang jumlahnya 1/(1 − MPC).",
+        "Pengganda **pajak** berbeda: bernilai **negatif** dan lebih kecil dari pengganda belanja, karena pajak baru mengurangi pendapatan yang dapat dibelanjakan, dan hanya MPC dari pengurangan itu yang menurunkan konsumsi.",
+        "Pada ekonomi tertutup keseimbangan pendapatan nasional tercapai saat Y = C + I + G (atau tabungan = investasi)."
+      ],
+      f: [["Pengganda", "k = 1 / (1 − MPC) = 1 / MPS", "Berlaku untuk perubahan investasi (ΔI) dan belanja pemerintah (ΔG). ΔY = k × ΔI."],
+        ["Pengganda pajak lump sum", "kT = −MPC / (1 − MPC)", "ΔY = kT × ΔT. Karena kT negatif, kenaikan pajak menurunkan Y."],
+        ["Keseimbangan dengan pajak", "Y = a + b(Y − T) + I + G", "Substitusikan angka, kumpulkan semua Y di satu sisi, lalu selesaikan."]],
+      ex: { q: "C = 100 + 0,8(Y − T), T = 50, I = 80, G = 70. Hitung Y keseimbangan.",
+        steps: ["Y = C + I + G = 100 + 0,8(Y − 50) + 80 + 70.", "Buka kurung: 0,8 × 50 = 40. Y = 100 + 0,8Y − 40 + 150.", "Y = 0,8Y + 210, jadi Y − 0,8Y = 210, maka 0,2Y = 210.", "Y = 1.050. Cek: C = 100 + 0,8(1.000) = 900, I + G = 150, total 1.050."], ans: "Y = 1.050" },
+      trap: ["Pengganda pajak pakai tanda minus dan pembilang MPC, bukan 1.", "Pengganda BUKAN 1/MPC. Penyebutnya 1 − MPC."],
+      chk: { q: "MPC = 0,8 dan investasi naik Rp50 miliar. Pendapatan nasional naik ...", o: ["Rp40 miliar", "Rp62,5 miliar", "Rp200 miliar", "Rp250 miliar"], a: 3, e: "k = 1/(1 − 0,8) = 5, jadi ΔY = 5 × 50 = 250." } },
+
+    { id: "k3", c: "makro", title: "Inflasi",
+      gist: "Inflasi adalah kenaikan harga secara umum dan terus-menerus. Uang yang sama jadi membeli lebih sedikit barang.",
+      story: "Tahun lalu Rp10.000 cukup untuk nasi goreng. Tahun ini harganya Rp12.000 dan hampir semua jajanan ikut naik. Itu inflasi, bukan hanya satu barang yang mahal.",
+      pts: [
+        "Tiga kata kunci: **umum** (banyak barang, bukan satu), **terus-menerus** (bukan lonjakan sesaat), **naik**. Kenaikan harga cabai saat musim hujan saja belum tentu inflasi.",
+        "Inflasi diukur dengan **IHK** (indeks harga konsumen), yaitu harga sekeranjang barang dan jasa yang dibeli rumah tangga dibanding tahun dasar.",
+        "Menurut penyebab: **demand-pull** (permintaan agregat terlalu besar dibanding kapasitas produksi, 'terlalu banyak uang mengejar terlalu sedikit barang'), **cost-push** (biaya produksi naik, misalnya upah atau bahan baku), dan inflasi impor.",
+        "Menurut tingkat keparahan: ringan (di bawah 10% setahun), sedang (10-30%), berat (30-100%), hiperinflasi (di atas 100%).",
+        "Dampak: nilai uang turun, **penerima pendapatan tetap dan penabung dirugikan**, sedangkan **debitur diuntungkan** karena utangnya terbayar dengan uang yang nilainya lebih kecil.",
+        "**Deflasi**: harga turun umum dan terus-menerus. **Disinflasi**: laju inflasi melambat, tetapi harga masih naik."
+      ],
+      f: [["Laju inflasi", "Inflasi = (IHK t − IHK t−1) / IHK t−1 × 100%", "Selisih IHK dibagi IHK tahun SEBELUMNYA."],
+        ["Pendapatan riil", "Pendapatan riil = pendapatan nominal / IHK × 100", "Membandingkan daya beli antar tahun."]],
+      ex: { q: "IHK 2025 = 120 dan IHK 2026 = 126. Berapa inflasi 2026?",
+        steps: ["Selisih IHK: 126 − 120 = 6.", "Bagi dengan IHK tahun sebelumnya: 6 / 120 = 0,05.", "Ubah ke persen: 0,05 × 100% = 5%."], ans: "5%" },
+      trap: ["Pembaginya IHK tahun sebelumnya (120), bukan IHK tahun ini.", "Disinflasi bukan deflasi: pada disinflasi harga masih naik, hanya lebih lambat."],
+      chk: { q: "Biaya bahan baku dan upah naik sehingga harga barang naik. Jenis inflasinya adalah ...", o: ["Demand-pull", "Cost-push", "Hiperinflasi", "Deflasi"], a: 1, e: "Kenaikan biaya produksi mendorong harga naik: cost-push." } },
+
+    { id: "k4", c: "makro", title: "Pengangguran dan kurva Phillips",
+      gist: "Tidak semua orang tanpa pekerjaan dihitung sebagai penganggur: harus sedang mencari kerja. Kurva Phillips menggambarkan tarik-menarik antara pengangguran dan inflasi.",
+      story: "Kamu masih SMA dan belum bekerja: bukan penganggur, karena bukan angkatan kerja. Kakakmu baru lulus dan sedang melamar ke mana-mana: itu penganggur terbuka.",
+      pts: [
+        "**Penduduk usia kerja** terbagi dua: **angkatan kerja** (bekerja atau sedang mencari kerja) dan **bukan angkatan kerja** (pelajar, ibu rumah tangga, pensiunan). Penganggur hanya ada di dalam angkatan kerja.",
+        "**Friksional**: menganggur sebentar karena berpindah atau mencari pekerjaan yang cocok. **Struktural**: keahlian tidak cocok dengan kebutuhan pasar (misalnya perubahan teknologi). **Siklikal**: karena resesi, permintaan tenaga kerja turun. **Musiman**: pekerjaan hanya pada musim tertentu.",
+        "**Pengangguran alamiah** = friksional + struktural. Pengangguran siklikal tidak termasuk, karena bisa dikurangi dengan menghidupkan permintaan.",
+        "**Kurva Phillips** (jangka pendek): pengangguran turun, inflasi naik, dan sebaliknya. Alasannya, saat pengangguran rendah tenaga kerja langka, upah naik, biaya naik, harga naik.",
+        "Pada jangka panjang, kurva Phillips tegak lurus di tingkat pengangguran alamiah: menekan pengangguran di bawah itu hanya menghasilkan inflasi yang lebih tinggi.",
+        "Pengalaman **stagflasi** (inflasi dan pengangguran tinggi bersamaan) menunjukkan hubungan Phillips tidak selalu berlaku."
+      ],
+      f: [["Tingkat pengangguran terbuka", "TPT = penganggur / angkatan kerja × 100%", "Penyebutnya angkatan kerja, bukan penduduk usia kerja."],
+        ["Angkatan kerja", "Angkatan kerja = bekerja + penganggur", "Jadi penganggur = angkatan kerja − yang bekerja."]],
+      ex: { q: "Penduduk usia kerja 200 juta, angkatan kerja 140 juta, dan yang bekerja 126 juta. Hitung TPT.",
+        steps: ["Penganggur = angkatan kerja − bekerja = 140 − 126 = 14 juta.", "TPT = 14 / 140 × 100% = 10%.", "Kalau salah dibagi 200 juta, hasilnya 7%. Itu keliru karena 200 juta bukan angkatan kerja."], ans: "10%" },
+      trap: ["TPT dibagi angkatan kerja.", "Pengangguran siklikal tidak termasuk pengangguran alamiah."],
+      chk: { q: "Seseorang berhenti bekerja untuk mencari pekerjaan yang lebih cocok dan sedang melamar. Ia termasuk pengangguran ...", o: ["Siklikal", "Friksional", "Struktural", "Bukan angkatan kerja"], a: 1, e: "Jeda sementara saat berpindah atau mencari kerja adalah pengangguran friksional." } },
+
+    { id: "k5", c: "makro", title: "Permintaan dan penawaran agregat (AS-AD)", dg: "asad",
+      gist: "AD (permintaan agregat) dan AS (penawaran agregat) bertemu di tingkat harga umum dan output nasional tertentu. Kalau salah satu bergeser, harga dan output ikut berubah.",
+      story: "Sama seperti pasar bakso, tapi untuk seluruh barang dan jasa suatu negara: sumbu tegak adalah harga umum, sumbu datar adalah output total.",
+      pts: [
+        "**AD** miring ke bawah. Ia bergeser jika komponennya berubah: konsumsi, investasi, belanja pemerintah, atau ekspor neto. Perubahan harga umum hanya menggerakkan titik sepanjang AD.",
+        "**AS jangka pendek** miring ke atas, karena biaya (upah, bahan baku) cenderung kaku sehingga harga naik membuat produksi lebih menguntungkan. AS bergeser karena perubahan biaya produksi atau teknologi.",
+        "**AS jangka panjang** tegak lurus di **output potensial**, yaitu output saat semua sumber daya terpakai wajar. Di jangka panjang output ditentukan faktor produksi, bukan harga.",
+        "AD ke kanan: harga naik dan output naik (jangka pendek). AD ke kiri: harga turun dan output turun (resesi).",
+        "AS ke kiri (misalnya harga minyak naik): harga naik tetapi output turun. Kondisi ini disebut **stagflasi**. AS ke kanan: harga turun dan output naik.",
+        "Kalau output aktual di bawah output potensial, ada resesi dan pengangguran siklikal. Kalau di atasnya, ada tekanan inflasi."
+      ],
+      f: [],
+      ex: { q: "Harga minyak dunia naik tajam. Apa dampaknya pada harga umum dan output?",
+        steps: ["Minyak adalah biaya produksi bagi banyak barang, jadi AS jangka pendek bergeser ke kiri.", "Titik keseimbangan berpindah ke kiri-atas pada kurva AD yang sama.", "Harga umum naik dan output turun.", "Inflasi sambil output turun disebut stagflasi."], ans: "Harga naik, output turun (stagflasi)" },
+      trap: ["Perubahan harga umum menggerakkan titik, bukan menggeser AD. Yang menggeser AD adalah C, I, G, atau (X − M).", "Stagflasi hanya terjadi saat AS bergeser ke kiri."],
+      chk: { q: "Pemerintah menaikkan belanja secara besar-besaran. Dalam jangka pendek, AD ...", o: ["Bergeser ke kiri, harga turun", "Bergeser ke kanan, harga dan output naik", "Bergeser ke kanan, harga turun", "Tidak berubah"], a: 1, e: "G naik menggeser AD ke kanan, sehingga harga dan output naik dalam jangka pendek." } },
+
+    { id: "k6", c: "makro", title: "Uang, bank, dan teori kuantitas",
+      gist: "Uang beredar dikendalikan bank sentral, tetapi sebagian besar tercipta oleh bank umum yang memberi kredit. Makin kecil cadangan wajib, makin besar uang yang tercipta.",
+      story: "Kamu setor Rp10 juta. Bank menyimpan sebagian dan meminjamkan sisanya. Peminjam membayar ke toko, toko menyimpan di bank, bank meminjamkan lagi. Uangnya 'berkembang' tanpa dicetak.",
+      pts: [
+        "**Fungsi uang**: alat tukar, satuan hitung, penyimpan nilai, dan standar pembayaran tunda.",
+        "**M1** = uang kartal (kertas dan logam) + uang giral (simpanan yang bisa ditarik kapan saja). **M2** = M1 + uang kuasi (tabungan, deposito).",
+        "**GWM (giro wajib minimum)** adalah persentase dana nasabah yang wajib disimpan bank di bank sentral dan tidak boleh dipinjamkan. Sisanya boleh dikreditkan.",
+        "**Pengganda uang** = 1 / r, dengan r adalah rasio cadangan wajib. Kalau r = 20%, setiap Rp1 setoran dapat berkembang menjadi Rp5 uang giral.",
+        "**Teori kuantitas (Fisher)**: M × V = P × T. Jumlah uang kali kecepatan perputarannya sama dengan nilai transaksi. Jika V dan T tetap, perubahan M diikuti perubahan P yang sebanding.",
+        "Itu sebabnya mencetak uang berlebihan menyebabkan inflasi: barang yang tersedia tetap, tetapi uangnya melimpah."
+      ],
+      f: [["Pengganda uang", "m = 1 / r", "r dalam desimal (20% = 0,2). Total uang giral maksimum = setoran awal × m."],
+        ["Persamaan Fisher", "M × V = P × T", "M uang beredar, V kecepatan perputaran, P tingkat harga, T volume transaksi."]],
+      ex: { q: "Bank menerima setoran Rp10 juta dan GWM 20%. Berapa total uang giral maksimum yang tercipta?",
+        steps: ["Pengganda = 1 / 0,2 = 5.", "Total = 5 × Rp10 juta = Rp50 juta.", "Itu sudah termasuk setoran awal. Tambahan kredit baru = 50 − 10 = Rp40 juta."], ans: "Rp50 juta" },
+      trap: ["Total yang tercipta (50 juta) sudah termasuk setoran awal. Tambahan kredit barunya 40 juta.", "Masukkan rasio sebagai desimal. 20% jadi 0,2, bukan 20."],
+      chk: { q: "M = 200, V = 5, T = 500. Tingkat harga menurut persamaan Fisher adalah ...", o: ["0,5", "2", "5", "8"], a: 1, e: "P = MV / T = 200 × 5 / 500 = 2." } },
+
+    { id: "k7", c: "makro", title: "Kebijakan fiskal dan moneter",
+      gist: "Pemerintah mengatur lewat belanja dan pajak (fiskal). Bank sentral mengatur lewat bunga dan uang beredar (moneter). Tujuannya sama: menstabilkan ekonomi.",
+      story: "Ekonomi seperti kolam. Kalau terlalu surut (resesi), tambah air: belanja naik, bunga turun. Kalau meluap (inflasi), kurangi air.",
+      pts: [
+        "**Fiskal ekspansif** (untuk resesi): belanja pemerintah naik atau pajak turun, sehingga AD bergeser ke kanan. **Fiskal kontraktif** (untuk inflasi): belanja turun atau pajak naik.",
+        "**Moneter ekspansif**: suku bunga acuan turun, GWM turun, atau bank sentral membeli surat berharga (menyuntik uang). Kredit jadi murah, konsumsi dan investasi naik. **Moneter kontraktif**: kebalikannya, untuk menahan inflasi.",
+        "Cara mengingat operasi pasar terbuka: bank sentral **menjual** surat berharga untuk **menyerap** uang (kontraktif), **membeli** untuk menambah uang (ekspansif).",
+        "Anggaran **defisit** (belanja lebih besar dari penerimaan), **surplus** (sebaliknya), atau **berimbang**.",
+        "**Crowding out**: jika pemerintah berutang banyak, bunga naik dan investasi swasta tersingkir sehingga efek ekspansinya berkurang.",
+        "Pajak progresif dan tunjangan pengangguran bekerja sebagai **stabilisator otomatis** karena langsung meredam gejolak tanpa perlu keputusan baru."
+      ],
+      f: [],
+      ex: { q: "Inflasi tarikan permintaan sedang tinggi. Pilih kebijakan moneter yang tepat.",
+        steps: ["Masalahnya permintaan terlalu besar, jadi harus diredam.", "Kurangi uang beredar dan permintaan agregat (moneter kontraktif).", "Alatnya: naikkan suku bunga acuan, naikkan GWM, atau jual surat berharga.", "Hasil: kredit mahal, konsumsi dan investasi turun, inflasi mereda."], ans: "Moneter kontraktif: bunga naik" },
+      trap: ["Bank sentral menjual surat berharga untuk menyerap uang. Membeli justru menambah uang beredar.", "Pajak naik adalah kebijakan kontraktif, bukan ekspansif."],
+      chk: { q: "Untuk mengatasi resesi, kebijakan fiskal yang tepat adalah ...", o: ["Menaikkan pajak", "Menurunkan belanja pemerintah", "Menaikkan belanja pemerintah", "Menaikkan GWM"], a: 2, e: "Belanja naik meningkatkan AD. GWM adalah alat moneter, bukan fiskal." } }
+  ]);
+  LESSONS.push.apply(LESSONS, [
+    { id: "i1", c: "intl", title: "Keunggulan absolut dan komparatif",
+      gist: "Dua negara tetap untung berdagang walau satu negara lebih jago di semua barang, asalkan masing-masing fokus pada barang yang biaya peluangnya paling rendah.",
+      story: "Dokter bisa mengetik lebih cepat dari sekretarisnya. Tapi waktu dokter lebih berharga untuk mengobati pasien. Jadi sekretaris sebaiknya mengetik, dokter mengobati. Sekretaris unggul komparatif di mengetik.",
+      pts: [
+        "**Keunggulan absolut**: mampu menghasilkan lebih banyak barang dengan sumber daya yang sama (atau memakai sumber daya lebih sedikit untuk jumlah yang sama).",
+        "**Keunggulan komparatif**: mampu menghasilkan barang dengan **biaya peluang lebih rendah**. Inilah dasar perdagangan yang saling menguntungkan.",
+        "Satu negara bisa unggul absolut di semua barang, tetapi keunggulan komparatif tidak mungkin ada di semua barang: kalau biaya peluang kain rendah, biaya peluang beras pasti tinggi, dan sebaliknya.",
+        "Karena itu tiap negara sebaiknya **berspesialisasi** pada barang dengan keunggulan komparatif, lalu menukar sebagian hasilnya lewat perdagangan.",
+        "Perdagangan menguntungkan kedua pihak bila harga tukarnya berada di antara dua biaya peluang. Total produksi dunia naik, dan masing-masing negara bisa mengonsumsi di luar kurva kemungkinan produksinya sendiri.",
+        "Teori ini mengasumsikan biaya angkut diabaikan dan tidak ada hambatan perdagangan."
+      ],
+      f: [["Biaya peluang", "BP barang X = jumlah Y yang dikorbankan / jumlah X yang dihasilkan", "Hitung untuk kedua negara. Negara dengan BP lebih kecil unggul komparatif di barang X."]],
+      ex: { q: "Per jam kerja: Negara A menghasilkan 6 kain atau 3 beras. Negara B menghasilkan 4 kain atau 1 beras. Siapa unggul komparatif di kain?",
+        steps: ["BP 1 kain di A = 3 beras / 6 kain = 0,5 beras.", "BP 1 kain di B = 1 beras / 4 kain = 0,25 beras.", "B memiliki biaya peluang lebih kecil, jadi B unggul komparatif di kain.", "Otomatis A unggul komparatif di beras (BP beras A = 2 kain, di B = 4 kain)."], ans: "Negara B" },
+      trap: ["Unggul absolut tidak sama dengan unggul komparatif. Di contoh, A unggul absolut di kedua barang, tapi komparatif hanya di beras.", "Yang dibandingkan adalah biaya peluang, bukan jumlah output."],
+      chk: { q: "Negara X mengorbankan 2 ton gandum untuk 1 ton kopi, negara Y mengorbankan 5 ton gandum untuk 1 ton kopi. Keunggulan komparatif kopi dimiliki ...", o: ["Negara X", "Negara Y", "Keduanya", "Tidak ada"], a: 0, e: "Biaya peluang kopi di X (2) lebih kecil daripada di Y (5)." } },
+
+    { id: "i2", c: "intl", title: "Kurs dan nilai tukar",
+      gist: "Kurs adalah harga mata uang asing dalam rupiah. Kurs naik berarti rupiah melemah (depresiasi), kurs turun berarti rupiah menguat (apresiasi).",
+      story: "Dulu US$1 = Rp15.000, sekarang Rp16.000. Sepatu US$100 jadi lebih mahal bagimu (Rp1.600.000), tapi turis asing merasa Indonesia lebih murah.",
+      pts: [
+        "Kurs biasanya ditulis **rupiah per satu dolar**. Kalau angkanya naik, kamu butuh lebih banyak rupiah untuk satu dolar, jadi rupiah **melemah (depresiasi)**.",
+        "Dampak depresiasi: ekspor Indonesia lebih murah bagi pembeli asing sehingga cenderung naik, impor lebih mahal sehingga cenderung turun. **Apresiasi** berdampak sebaliknya.",
+        "Penyebab kurs berubah: perbedaan inflasi dan suku bunga antarnegara, arus modal masuk atau keluar, neraca perdagangan, dan ekspektasi pelaku pasar.",
+        "Pada kurs **mengambang bebas**, kurs ditentukan pasar. Pada kurs **tetap**, pemerintah menetapkan kurs resmi dan bank sentral menjaganya dengan cadangan devisa.",
+        "Pada sistem kurs tetap, perubahan kurs resmi disebut **devaluasi** (mata uang dilemahkan) atau **revaluasi** (dikuatkan)."
+      ],
+      f: [["Konversi harga", "Harga rupiah = harga valas × kurs", "Contoh: US$200 × Rp16.000 = Rp3.200.000."],
+        ["Persen perubahan kurs", "Δkurs% = (kurs baru − kurs lama) / kurs lama × 100%", "Pada kurs rupiah per dolar, hasil positif berarti rupiah melemah."]],
+      ex: { q: "Barang impor seharga US$200, kurs Rp16.000 per dolar, dan bea masuk 10%. Berapa harga yang dibayar importir?",
+        steps: ["Harga dalam rupiah = 200 × 16.000 = Rp3.200.000.", "Bea masuk 10% dari harga = 0,10 × 3.200.000 = Rp320.000.", "Total = 3.200.000 + 320.000 = Rp3.520.000."], ans: "Rp3.520.000" },
+      trap: ["Rupiah 'menguat' berarti kurs per dolar TURUN. Jangan terbalik.", "Kata 'depresiasi' dipakai untuk kurs mengambang, 'devaluasi' untuk kurs tetap yang diubah pemerintah."],
+      chk: { q: "Kurs berubah dari Rp15.000 menjadi Rp16.000 per dolar AS. Rupiah mengalami ...", o: ["Apresiasi", "Depresiasi", "Tidak berubah", "Revaluasi"], a: 1, e: "Perlu lebih banyak rupiah untuk satu dolar, jadi rupiah melemah (depresiasi)." } },
+
+    { id: "i3", c: "intl", title: "Proteksi perdagangan",
+      gist: "Proteksi melindungi produsen dalam negeri dari impor murah, tapi konsumen membayar lebih mahal. Siapa untung dan siapa rugi selalu berpasangan.",
+      story: "Pemerintah memasang bea masuk pada sepatu impor. Pabrik sepatu lokal senang karena saingannya jadi mahal, tapi toko dan pembeli sepatu harus membayar lebih.",
+      pts: [
+        "**Tarif (bea masuk)** adalah pajak atas barang impor. Dampaknya: harga di dalam negeri naik, impor turun, produsen dalam negeri diuntungkan, konsumen dirugikan, dan pemerintah mendapat penerimaan.",
+        "**Kuota** membatasi jumlah impor. Efeknya mirip tarif (harga naik, impor turun), tetapi pemerintah tidak otomatis mendapat penerimaan.",
+        "**Subsidi ekspor** adalah bantuan kepada eksportir agar harga jualnya di luar negeri lebih murah. Pembayar pajak yang menanggung.",
+        "Alasan yang sering dipakai untuk proteksi: melindungi industri yang baru tumbuh, menjaga lapangan kerja, keamanan nasional, dan melawan dumping.",
+        "**Dumping** adalah menjual barang di luar negeri dengan harga lebih murah dari harga di dalam negeri atau di bawah biaya produksi."
+      ],
+      f: [["Harga setelah tarif", "Harga domestik = harga dunia × (1 + tarif)", "Tarif dalam desimal: 20% = 0,2."]],
+      ex: { q: "Harga dunia sepatu Rp200.000. Pemerintah mengenakan tarif 20%. Berapa harga sepatu impor di pasar domestik?",
+        steps: ["Besar tarif = 20% × 200.000 = Rp40.000.", "Harga domestik = 200.000 + 40.000 = Rp240.000.", "Produsen lokal kini bisa menjual hingga mendekati Rp240.000 tanpa kalah bersaing."], ans: "Rp240.000" },
+      trap: ["Dalam proteksi, produsen dan konsumen punya kepentingan berlawanan.", "Kuota tidak menghasilkan penerimaan negara kecuali izin impornya dilelang."],
+      chk: { q: "Tarif impor pada suatu barang umumnya menyebabkan ...", o: ["Harga domestik turun", "Produsen domestik diuntungkan dan konsumen dirugikan", "Konsumen diuntungkan dan produsen dirugikan", "Volume impor bertambah"], a: 1, e: "Tarif menaikkan harga domestik: produsen lokal terlindungi, konsumen membayar lebih mahal, dan impor berkurang." } },
+
+    { id: "i4", c: "intl", title: "Neraca pembayaran dan terms of trade",
+      gist: "Neraca pembayaran adalah 'buku kas' negara dengan dunia: uang masuk dan keluar dari perdagangan, jasa, investasi, dan pinjaman.",
+      story: "Eksportir kopi menerima dolar (uang masuk), importir mesin membayar dolar (uang keluar). Semuanya tercatat di neraca pembayaran.",
+      pts: [
+        "**Transaksi berjalan**: ekspor-impor barang (neraca perdagangan) dan jasa, pendapatan primer (gaji, bunga, dividen lintas negara), dan pendapatan sekunder (transfer, kiriman uang pekerja).",
+        "**Transaksi modal dan finansial**: investasi langsung (mendirikan pabrik), investasi portofolio (membeli saham dan obligasi), dan investasi lainnya (pinjaman).",
+        "Pencatatan: uang yang MASUK ke negara dicatat sebagai penerimaan (kredit), uang yang KELUAR dicatat sebagai pembayaran (debit).",
+        "Neraca perdagangan **surplus** jika ekspor lebih besar dari impor, **defisit** jika sebaliknya.",
+        "**Terms of trade (ToT)** membandingkan harga ekspor dengan harga impor. ToT di atas 100 berarti harga ekspor naik lebih cepat dari impor: satu unit ekspor bisa menukar lebih banyak impor, jadi **membaik**."
+      ],
+      f: [["Neraca perdagangan", "NP = ekspor − impor", "Positif berarti surplus."],
+        ["Terms of trade", "ToT = indeks harga ekspor / indeks harga impor × 100", "Di atas 100 berarti membaik, di bawah 100 memburuk."]],
+      ex: { q: "Indeks harga ekspor 120 dan indeks harga impor 100. Hitung ToT dan artinya.",
+        steps: ["ToT = 120 / 100 × 100 = 120.", "Nilai 120 lebih dari 100, jadi ToT membaik.", "Artinya satu unit ekspor sekarang dapat menukar lebih banyak barang impor."], ans: "ToT = 120 (membaik)" },
+      trap: ["Pembagi adalah indeks harga IMPOR. Kalau terbalik, hasilnya 83 dan kesimpulannya keliru.", "Investasi portofolio masuk transaksi finansial, bukan transaksi berjalan."],
+      chk: { q: "Yang termasuk transaksi berjalan dalam neraca pembayaran adalah ...", o: ["Investasi portofolio", "Ekspor barang", "Penanaman modal asing langsung", "Pinjaman luar negeri"], a: 1, e: "Barang dan jasa masuk transaksi berjalan. Investasi dan pinjaman masuk transaksi modal dan finansial." } }
+  ]);
+  LESSONS.push.apply(LESSONS, [
+    { id: "a1", c: "akun", title: "Persamaan dasar akuntansi", dg: "balance",
+      gist: "Semua yang dimiliki usaha (aset) pasti dibiayai oleh utang atau modal pemilik. Karena itu kedua sisi persamaan selalu seimbang.",
+      story: "Kamu beli sepeda Rp1.000.000: Rp700.000 uang sendiri (modal), Rp300.000 pinjam kakak (utang). Sepeda (aset) = utang + modal.",
+      pts: [
+        "**Aset (harta)**: sumber daya milik usaha yang bermanfaat di masa depan, misalnya kas, piutang, perlengkapan, peralatan, gedung.",
+        "**Kewajiban (utang)**: yang harus dibayar usaha kepada pihak lain, misalnya utang usaha dan utang bank.",
+        "**Modal (ekuitas)**: hak pemilik atas aset setelah dikurangi kewajiban. Modal bertambah karena setoran pemilik dan laba, berkurang karena prive dan rugi.",
+        "Setiap transaksi memengaruhi minimal dua akun, tetapi persamaan **selalu tetap seimbang**. Beli perlengkapan tunai hanya memindahkan aset (kas turun, perlengkapan naik). Beli perlengkapan kredit menaikkan aset dan utang sekaligus.",
+        "**Prive** adalah pengambilan kas atau barang oleh pemilik untuk kepentingan pribadi. Prive mengurangi modal, bukan dianggap beban usaha."
+      ],
+      f: [["Persamaan dasar", "Aset = Kewajiban + Modal", "Kalau dua unsur diketahui, unsur ketiga bisa dicari."],
+        ["Modal akhir", "Modal akhir = modal awal + laba bersih − prive", "Tambahan setoran modal juga ditambahkan, dan rugi dikurangkan."]],
+      ex: { q: "Dito menyetor kas Rp50 juta dan peralatan Rp20 juta, lalu membeli perlengkapan secara kredit Rp5 juta. Berapa aset, kewajiban, dan modalnya?",
+        steps: ["Setelah setoran: aset = 50 + 20 = 70 juta, modal = 70 juta.", "Beli perlengkapan kredit: aset bertambah 5 juta dan utang bertambah 5 juta.", "Aset = 70 + 5 = 75 juta. Kewajiban = 5 juta.", "Modal tetap 70 juta. Cek: 75 = 5 + 70."], ans: "Aset 75, kewajiban 5, modal 70 (juta rupiah)" },
+      trap: ["Pembelian kredit menambah aset dan utang, bukan modal.", "Prive mengurangi modal, bukan beban."],
+      chk: { q: "Aset Rp90 juta dan kewajiban Rp30 juta. Modal pemilik adalah ...", o: ["Rp30 juta", "Rp60 juta", "Rp90 juta", "Rp120 juta"], a: 1, e: "Modal = aset − kewajiban = 90 − 30 = 60 juta." } },
+
+    { id: "a2", c: "akun", title: "Debit, kredit, dan jurnal",
+      gist: "Debit dan kredit hanyalah sisi kiri dan sisi kanan. Tiap jenis akun punya sisi 'normal' tempat saldonya bertambah.",
+      story: "Bayangkan tombol + dan − yang posisinya tidak sama untuk tiap akun. Kas bertambah di kiri (debit), utang bertambah di kanan (kredit).",
+      pts: [
+        "**Aset, beban, dan prive**: bertambah di **debit**, berkurang di kredit.",
+        "**Kewajiban, modal, dan pendapatan**: bertambah di **kredit**, berkurang di debit.",
+        "Mengapa begitu? Persamaan Aset = Kewajiban + Modal punya aset di kiri, jadi aset bertambah di kiri. Kewajiban dan modal di kanan, jadi bertambah di kanan. Beban dan prive mengurangi modal sehingga berperilaku sebaliknya dari modal (bertambah di debit).",
+        "**Jurnal** adalah catatan pertama transaksi secara berurutan. Aturan emas: **total debit selalu sama dengan total kredit**.",
+        "Cara menulis: tanggal, akun yang di-debit (di kiri), akun yang di-kredit (agak menjorok), jumlah, dan keterangan singkat.",
+        "Langkah menyusun jurnal: tentukan akun apa saja yang terpengaruh, tentukan bertambah atau berkurang, lalu pakai aturan debit-kredit di atas."
+      ],
+      f: [["Aturan saldo normal", "Aset, Beban, Prive: bertambah di DEBIT\nKewajiban, Modal, Pendapatan: bertambah di KREDIT", "Hafalkan dengan 'ABP di kiri' (Aset, Beban, Prive)."]],
+      ex: { q: "Perusahaan membeli peralatan secara tunai Rp8.000.000. Buat jurnalnya.",
+        steps: ["Akun terpengaruh: Peralatan dan Kas, keduanya aset.", "Peralatan bertambah, jadi di-debit.", "Kas berkurang, jadi di-kredit.", "Debit Peralatan 8.000.000, Kredit Kas 8.000.000."], ans: "D Peralatan 8.000.000; K Kas 8.000.000" },
+      trap: ["Debit tidak selalu berarti 'bertambah' dan kredit tidak selalu 'berkurang'. Tergantung jenis akunnya.", "Pembelian kredit memakai Utang usaha di sisi kredit."],
+      chk: { q: "Pendapatan jasa diterima tunai. Jurnalnya adalah ...", o: ["D Kas; K Pendapatan jasa", "D Pendapatan jasa; K Kas", "D Kas; K Modal", "D Beban; K Kas"], a: 0, e: "Kas (aset) bertambah di debit. Pendapatan bertambah di kredit." } },
+
+    { id: "a3", c: "akun", title: "Buku besar, neraca saldo, dan siklus akuntansi",
+      gist: "Jurnal mencatat berurutan menurut tanggal, buku besar mengelompokkan per akun, dan neraca saldo mengecek apakah catatan seimbang.",
+      story: "Jurnal seperti buku harian, buku besar seperti folder per topik, neraca saldo seperti absen: jumlah yang hadir harus cocok.",
+      pts: [
+        "**Posting** adalah memindahkan angka dari jurnal ke akun yang sesuai di **buku besar**. Hasilnya, kita bisa melihat saldo tiap akun, misalnya berapa total kas sekarang.",
+        "**Neraca saldo** adalah daftar saldo semua akun di buku besar. Total debit harus sama dengan total kredit.",
+        "Neraca saldo yang seimbang BELUM menjamin semua benar. Kesalahan seperti salah memilih akun atau transaksi yang terlewat tidak terdeteksi.",
+        "Urutan siklus: bukti transaksi, jurnal, posting ke buku besar, neraca saldo, jurnal penyesuaian, neraca saldo setelah penyesuaian (atau kertas kerja), laporan keuangan, jurnal penutup, neraca saldo setelah penutupan, jurnal pembalik (bila perlu).",
+        "Tujuan siklus ini: memastikan setiap transaksi tercatat sekali, rapi, dan bisa dilacak sampai ke laporan keuangan."
+      ],
+      f: [],
+      ex: { q: "Neraca saldo menunjukkan total debit Rp120 juta dan total kredit Rp110 juta. Apa artinya?",
+        steps: ["Aturan: total debit harus sama dengan total kredit.", "Selisih Rp10 juta menandakan ada kesalahan pencatatan atau posting.", "Periksa ulang jurnal, angka yang diposting, dan penjumlahan saldo akun."], ans: "Ada kesalahan, periksa pencatatan" },
+      trap: ["Neraca saldo seimbang tidak membuktikan semua benar.", "Posting dilakukan SETELAH jurnal, bukan sebelumnya."],
+      chk: { q: "Urutan pencatatan yang benar adalah ...", o: ["Buku besar, jurnal, neraca saldo", "Jurnal, buku besar, neraca saldo", "Neraca saldo, jurnal, buku besar", "Jurnal, neraca saldo, buku besar"], a: 1, e: "Catat di jurnal, posting ke buku besar, lalu susun neraca saldo." } },
+
+    { id: "a4", c: "akun", title: "Jurnal penyesuaian",
+      gist: "Di akhir periode, beberapa akun belum menunjukkan angka sebenarnya. Jurnal penyesuaian memperbaikinya supaya laporan jujur.",
+      story: "Kamu bayar sewa kos setahun di muka. Setelah 3 bulan, baru 3/12 dari sewa itu yang 'terpakai' dan menjadi beban.",
+      pts: [
+        "**Dasar akrual**: pendapatan dicatat saat diperoleh dan beban dicatat saat terjadi, bukan saat kas diterima atau dibayar. Jurnal penyesuaian menerapkan prinsip ini.",
+        "**Beban dibayar di muka** (sudah bayar, manfaat belum habis): awalnya aset, sebagian dipindahkan menjadi beban seiring waktu.",
+        "**Pendapatan diterima di muka** (sudah terima uang, jasa belum selesai): awalnya kewajiban, dipindahkan menjadi pendapatan seiring jasa diberikan.",
+        "**Beban yang masih harus dibayar** (sudah terjadi, belum dibayar): beban naik dan muncul utang. **Pendapatan yang masih harus diterima**: pendapatan naik dan muncul piutang.",
+        "Penyesuaian lain: penyusutan aset tetap, kerugian piutang, dan perlengkapan terpakai.",
+        "Ciri jurnal penyesuaian: selalu melibatkan satu akun neraca dan satu akun laba rugi, dan **tidak pernah melibatkan kas**."
+      ],
+      f: [["Perlengkapan terpakai", "Beban perlengkapan = perlengkapan awal − sisa akhir", "Debit Beban perlengkapan, kredit Perlengkapan."],
+        ["Beban dibayar di muka terpakai", "Beban = jumlah dibayar × (bulan terpakai / total bulan)", "Debit Beban, kredit akun dibayar di muka."]],
+      ex: { q: "Perlengkapan awal Rp4.000.000 dan sisa di akhir periode Rp1.500.000. Buat jurnal penyesuaiannya.",
+        steps: ["Perlengkapan terpakai = 4.000.000 − 1.500.000 = 2.500.000.", "Beban perlengkapan bertambah, jadi di-debit.", "Perlengkapan (aset) berkurang, jadi di-kredit.", "Debit Beban perlengkapan 2.500.000, Kredit Perlengkapan 2.500.000."], ans: "D Beban perlengkapan 2,5 juta; K Perlengkapan 2,5 juta" },
+      trap: ["Yang dibebankan adalah yang TERPAKAI (2,5 juta), bukan sisanya (1,5 juta).", "Kas tidak muncul di jurnal penyesuaian."],
+      chk: { q: "Gaji karyawan Desember Rp3 juta belum dibayar sampai akhir tahun. Jurnal penyesuaiannya ...", o: ["D Beban gaji; K Utang gaji", "D Utang gaji; K Beban gaji", "D Beban gaji; K Kas", "D Kas; K Utang gaji"], a: 0, e: "Beban sudah terjadi tetapi belum dibayar: beban naik dan muncul utang gaji." } },
+
+    { id: "a5", c: "akun", title: "Laporan keuangan dan jurnal penutup",
+      gist: "Empat laporan menjawab empat pertanyaan: untung atau rugi (laba rugi), modal berubah berapa (perubahan modal), punya apa dan berutang berapa (neraca), dan kas dari mana (arus kas).",
+      story: "Seperti rapor: nilai ulangan (laba rugi), perkembangan nilai (perubahan modal), kondisi saat ini (neraca).",
+      pts: [
+        "**Laporan laba rugi**: pendapatan dikurangi beban sama dengan laba bersih (atau rugi bila negatif) untuk satu periode.",
+        "**Laporan perubahan modal**: modal awal ditambah laba bersih dikurangi prive sama dengan modal akhir.",
+        "**Neraca**: menampilkan aset, kewajiban, dan modal pada satu tanggal tertentu, dan selalu seimbang. Modal akhir diambil dari laporan perubahan modal.",
+        "**Laporan arus kas**: pergerakan kas dari aktivitas operasi, investasi, dan pendanaan.",
+        "**Jurnal penutup** menutup akun nominal (pendapatan, beban, prive) supaya saldonya kembali nol untuk periode baru, dan memindahkan hasilnya ke modal. Akun riil (aset, kewajiban, modal) TIDAK ditutup karena saldonya berlanjut."
+      ],
+      f: [["Laba bersih", "Laba bersih = total pendapatan − total beban", "Kalau hasilnya negatif, usaha rugi."]],
+      ex: { q: "Pendapatan jasa Rp80 juta, beban gaji Rp30 juta, beban sewa Rp12 juta, beban penyusutan Rp8 juta. Hitung laba bersih.",
+        steps: ["Total beban = 30 + 12 + 8 = 50 juta.", "Laba bersih = 80 − 50 = 30 juta."], ans: "Rp30 juta" },
+      trap: ["Prive bukan beban, jadi tidak masuk laporan laba rugi.", "Utang usaha adalah akun riil sehingga tidak ditutup."],
+      chk: { q: "Akun yang TIDAK ditutup pada jurnal penutup adalah ...", o: ["Pendapatan jasa", "Beban gaji", "Prive", "Utang usaha"], a: 3, e: "Akun riil (neraca) dibawa ke periode berikutnya, sedangkan akun nominal dan prive ditutup." } }
+  ]);
+  LESSONS.push.apply(LESSONS, [
+    { id: "a6", c: "akun", title: "Perusahaan dagang dan persediaan",
+      gist: "Perusahaan dagang menjual barang tanpa mengolahnya, jadi muncul akun baru: persediaan dan harga pokok penjualan (HPP).",
+      story: "Toko kelontong membeli dari grosir lalu menjual lebih mahal. Selisih setelah dikurangi modal barang yang terjual itulah laba kotor.",
+      pts: [
+        "**Penjualan bersih** = penjualan dikurangi retur penjualan dan potongan penjualan, karena keduanya mengurangi uang yang benar-benar menjadi hak usaha.",
+        "**Pembelian bersih** = pembelian ditambah beban angkut pembelian, dikurangi retur dan potongan pembelian. Beban angkut ditambahkan karena itu bagian dari biaya mendapatkan barang.",
+        "**HPP** (harga pokok penjualan) = persediaan awal + pembelian bersih − persediaan akhir. Artinya: barang yang tersedia dijual dikurangi yang masih ada di gudang.",
+        "**Laba kotor** = penjualan bersih − HPP. **Laba bersih** = laba kotor − beban operasional.",
+        "Syarat kredit **2/10, n/30**: diskon 2% jika dilunasi dalam 10 hari, jatuh tempo penuh dalam 30 hari.",
+        "**Metode persediaan** menentukan barang mana yang dianggap terjual dulu. **FIFO**: yang masuk pertama keluar pertama. **LIFO**: yang masuk terakhir keluar pertama. **Rata-rata tertimbang**: pakai harga rata-rata.",
+        "Saat harga naik, FIFO memberi HPP paling rendah (laba tertinggi), LIFO sebaliknya."
+      ],
+      f: [["HPP dan laba", "HPP = persediaan awal + pembelian bersih − persediaan akhir\nLaba kotor = penjualan bersih − HPP\nLaba bersih = laba kotor − beban operasional", "Hitung berurutan dari atas ke bawah."],
+        ["Rata-rata tertimbang", "HPP = (total biaya tersedia / total unit tersedia) × unit terjual", "Dipakai pada metode rata-rata."]],
+      ex: { q: "Persediaan awal 100 unit @Rp10, pembelian 200 unit @Rp12, terjual 150 unit. Hitung HPP dengan FIFO, LIFO, dan rata-rata.",
+        steps: ["FIFO: 100 unit pertama @10 = 1.000, lalu 50 unit @12 = 600. HPP = 1.600.", "LIFO: 150 unit dari pembelian terakhir @12 = 1.800.", "Rata-rata: total biaya = 1.000 + 2.400 = 3.400 untuk 300 unit, jadi 11,33 per unit. HPP = 11,33 × 150 = 1.700."], ans: "FIFO 1.600; LIFO 1.800; rata-rata 1.700" },
+      trap: ["Beban angkut pembelian menambah pembelian. Beban angkut penjualan adalah beban operasional.", "Persediaan akhir DIKURANGKAN dalam rumus HPP, bukan ditambahkan."],
+      chk: { q: "Persediaan awal 100 unit @Rp10, beli 200 unit @Rp12, terjual 150 unit. HPP FIFO adalah ...", o: ["Rp1.500", "Rp1.600", "Rp1.700", "Rp1.800"], a: 1, e: "FIFO: 100 × 10 + 50 × 12 = 1.600." } },
+
+    { id: "a7", c: "akun", title: "Penyusutan dan piutang tak tertagih",
+      gist: "Aset tetap kehilangan manfaat seiring waktu, dan sebagian piutang tidak tertagih. Keduanya dibebankan bertahap supaya laba tidak terlalu besar.",
+      story: "Motor baru Rp20 juta, dipakai 5 tahun, lalu bernilai Rp5 juta. Selisih Rp15 juta 'dipakai' sedikit demi sedikit setiap tahun.",
+      pts: [
+        "**Penyusutan** membagi biaya aset tetap ke seluruh tahun pemakaiannya, karena aset memberi manfaat lebih dari satu tahun. Tanah umumnya tidak disusutkan.",
+        "**Garis lurus**: beban sama setiap tahun. Rumusnya (harga perolehan − nilai residu) / umur ekonomis. **Nilai residu** adalah taksiran nilai jual di akhir umur dan tidak disusutkan.",
+        "**Saldo menurun**: beban = persentase tetap × nilai buku awal tahun, sehingga beban tahun-tahun awal lebih besar.",
+        "**Nilai buku** = harga perolehan − akumulasi penyusutan. **Akumulasi penyusutan** adalah pengurang aset, bukan beban.",
+        "Penyusutan tahun pertama dihitung proporsional. Aset dibeli 1 Oktober berarti 3 bulan sampai 31 Desember.",
+        "**Piutang tak tertagih**: pada metode penyisihan, usaha mengestimasi persentase piutang yang gagal ditagih lalu mencatat beban kerugian piutang dan cadangan kerugian piutang."
+      ],
+      f: [["Garis lurus", "Penyusutan per tahun = (harga perolehan − residu) / umur\nSampai akhir tahun = per tahun × bulan / 12", "Ingat mengurangi residu dan mengalikan bulan/12."],
+        ["Penyisihan piutang", "Beban = piutang × persen tidak tertagih", "Debit Beban kerugian piutang, kredit Cadangan kerugian piutang."]],
+      ex: { q: "Mesin dibeli 1 Oktober seharga Rp60.000.000, residu Rp6.000.000, umur 9 tahun, garis lurus. Hitung beban penyusutan sampai 31 Desember.",
+        steps: ["Penyusutan setahun = (60 juta − 6 juta) / 9 = 6 juta.", "Terpakai Oktober, November, Desember = 3 bulan.", "Beban = 3/12 × 6 juta = 1,5 juta."], ans: "Rp1.500.000" },
+      trap: ["Jangan lupa mengurangi nilai residu dan mengalikan dengan bulan/12.", "Akumulasi penyusutan bukan beban. Bebannya adalah beban penyusutan."],
+      chk: { q: "Harga perolehan Rp100 juta, residu Rp10 juta, umur 5 tahun. Penyusutan per tahun (garis lurus) adalah ...", o: ["Rp18 juta", "Rp20 juta", "Rp22 juta", "Rp90 juta"], a: 0, e: "(100 − 10) / 5 = 18 juta." } },
+
+    { id: "a8", c: "akun", title: "Titik impas, rasio, dan arus kas",
+      gist: "Tiga alat membaca usaha: berapa penjualan minimum agar tidak rugi (BEP), seberapa sehat keuangannya (rasio), dan dari mana uang kas datang (arus kas).",
+      story: "Jualan es teh: berapa gelas harus terjual supaya uang sewa dan gelas kembali sebelum mulai untung? Itu titik impas.",
+      pts: [
+        "**Titik impas (BEP)** adalah volume saat total penerimaan sama dengan total biaya. Di bawah BEP usaha rugi, di atasnya laba.",
+        "**Margin kontribusi per unit** = harga − biaya variabel per unit. Tiap unit terjual menyumbang sebesar itu untuk menutup biaya tetap. Jadi BEP = biaya tetap / margin kontribusi.",
+        "**Rasio lancar** = aset lancar / utang lancar. Nilai di atas 1 berarti aset lancar cukup untuk membayar utang jangka pendek.",
+        "**Arus kas operasi**: penerimaan dari pelanggan dan pembayaran beban. **Investasi**: beli atau jual aset tetap. **Pendanaan**: utang, setoran modal, prive.",
+        "Laba tidak sama dengan kas. Penjualan kredit menambah laba, tetapi kasnya belum masuk."
+      ],
+      f: [["Titik impas", "BEP unit = biaya tetap / (harga − biaya variabel per unit)\nBEP rupiah = BEP unit × harga", "Pembagi (harga − biaya variabel) disebut margin kontribusi."],
+        ["Rasio lancar", "Rasio lancar = aset lancar / utang lancar", "Nilai 1,5 berarti tiap Rp1 utang lancar dijamin Rp1,5 aset lancar."]],
+      ex: { q: "Biaya tetap Rp6.000.000, harga Rp5.000, dan biaya variabel Rp2.000 per unit. Hitung BEP.",
+        steps: ["Margin kontribusi = 5.000 − 2.000 = 3.000 per unit.", "BEP unit = 6.000.000 / 3.000 = 2.000 unit.", "BEP rupiah = 2.000 × 5.000 = Rp10.000.000."], ans: "2.000 unit (Rp10.000.000)" },
+      trap: ["Yang dibagi ke biaya tetap adalah margin kontribusi, bukan harga.", "Membeli mesin tunai masuk aktivitas investasi, bukan operasi."],
+      chk: { q: "Aset lancar Rp150 juta dan utang lancar Rp100 juta. Rasio lancar adalah ...", o: ["0,67", "1,5", "2", "50"], a: 1, e: "150 / 100 = 1,5." } },
+
+    { id: "a9", c: "akun", title: "Fungsi manajemen (POAC)",
+      gist: "Manajemen adalah mengatur orang dan sumber daya agar tujuan tercapai. Empat fungsi klasik: rencanakan, atur, gerakkan, awasi.",
+      story: "Panitia pensi sekolah: membuat target dan jadwal (planning), membagi seksi (organizing), memotivasi tim saat acara (actuating), lalu mengecek hasil dan evaluasi (controlling).",
+      pts: [
+        "**Planning**: menentukan tujuan dan langkah mencapainya. Terjadi sebelum kegiatan.",
+        "**Organizing**: membagi tugas, wewenang, dan tanggung jawab supaya orang tahu siapa mengerjakan apa.",
+        "**Actuating**: menggerakkan, memimpin, dan memotivasi orang agar melaksanakan rencana.",
+        "**Controlling**: membandingkan hasil dengan rencana, lalu mengambil tindakan perbaikan bila ada penyimpangan.",
+        "Keempatnya berputar: hasil controlling dipakai untuk planning berikutnya."
+      ],
+      f: [],
+      ex: { q: "Manajer membandingkan penjualan bulan ini dengan target lalu memperbaiki strategi promosi. Fungsi manajemen apa itu?",
+        steps: ["Membandingkan hasil dengan target adalah kegiatan mengawasi.", "Memperbaiki saat ada penyimpangan adalah tindakan korektif.", "Keduanya adalah ciri controlling."], ans: "Controlling" },
+      trap: ["Planning terjadi sebelum kegiatan, controlling sesudahnya.", "Organizing bukan sekadar membuat struktur, tetapi juga membagi wewenang."],
+      chk: { q: "Fungsi manajemen yang menetapkan tujuan dan cara mencapainya adalah ...", o: ["Planning", "Organizing", "Actuating", "Controlling"], a: 0, e: "Planning berarti perencanaan." } }
+  ]);
+  LESSONS.push.apply(LESSONS, [
+    { id: "s1", c: "stat", title: "Ukuran pemusatan: mean, median, modus",
+      gist: "Mean, median, dan modus adalah tiga cara menjawab 'berapa nilai tipikal data ini?'.",
+      story: "Gaji lima orang: 5, 5, 6, 6, 78 juta. Mean tertarik naik ke 20 juta oleh satu orang bergaji sangat besar, sedangkan median 6 juta lebih mewakili.",
+      pts: [
+        "**Mean (rata-rata)** = jumlah semua data dibagi banyak data. Menggunakan semua nilai, tapi **peka terhadap nilai ekstrem**.",
+        "**Median** = nilai tengah setelah data diurutkan. Kalau banyak data genap, ambil rata-rata dua nilai tengah. Tidak peka terhadap nilai ekstrem.",
+        "**Modus** = nilai yang paling sering muncul. Boleh ada lebih dari satu modus, atau tidak ada sama sekali kalau semua nilai muncul sekali.",
+        "Untuk data bertabel frekuensi, mean dihitung dengan mengalikan tiap nilai dengan frekuensinya lalu membagi dengan total frekuensi.",
+        "Kalau ada nilai yang sangat besar, mean cenderung lebih besar dari median. Median biasanya lebih cocok untuk data seperti gaji."
+      ],
+      f: [["Mean data bertabel", "mean = Σ(f × x) / Σf", "f = frekuensi, x = nilai. Kalikan dulu, jumlahkan, lalu bagi."],
+        ["Median", "Ganjil: nilai ke-(n+1)/2\nGenap: rata-rata nilai ke-n/2 dan ke-(n/2 + 1)", "Data HARUS diurutkan dulu."]],
+      ex: { q: "Data: 12, 3, 9, 5, 14, 7. Hitung median.",
+        steps: ["Urutkan: 3, 5, 7, 9, 12, 14.", "Banyak data 6 (genap), jadi ambil nilai ke-3 dan ke-4: 7 dan 9.", "Median = (7 + 9) / 2 = 8."], ans: "8" },
+      trap: ["Urutkan data sebelum mencari median.", "Mean dan median bisa sangat berbeda kalau ada data ekstrem."],
+      chk: { q: "Data 4, 6, 6, 8, 11. Rata-rata, median, dan modus berturut-turut adalah ...", o: ["7; 6; 6", "6; 7; 6", "7; 8; 6", "6; 6; 7"], a: 0, e: "Mean = 35/5 = 7, median = 6 (nilai tengah), modus = 6 (paling sering)." } },
+
+    { id: "s2", c: "stat", title: "Ukuran penyebaran: simpangan baku",
+      gist: "Dua kelas bisa punya rata-rata sama, tetapi satu seragam dan satu berantakan. Simpangan baku menunjukkan seberapa 'melebar' data dari rata-ratanya.",
+      story: "Kelas A semua nilainya sekitar 70. Kelas B ada yang 30 dan ada yang 100. Rata-rata sama, tetapi B jauh lebih menyebar.",
+      pts: [
+        "Ide dasarnya: lihat seberapa jauh tiap data dari mean. Tapi kalau selisih positif dan negatif dijumlahkan, hasilnya nol. Karena itu selisih **dikuadratkan** dulu.",
+        "**Ragam (varians)** = rata-rata dari kuadrat selisih data terhadap mean. **Simpangan baku** = akar dari ragam, sehingga satuannya sama dengan data.",
+        "Simpangan baku kecil berarti data berkumpul dekat mean. Besar berarti data menyebar jauh.",
+        "Untuk populasi, jumlah kuadrat dibagi n. Untuk sampel, dibagi (n − 1). Soal biasanya memakai populasi kecuali disebut 'sampel'.",
+        "**Jangkauan (range)** = nilai terbesar − nilai terkecil. Cara paling sederhana, tetapi hanya memakai dua data."
+      ],
+      f: [["Ragam dan simpangan baku populasi", "σ² = Σ(x − mean)² / n\nσ = √σ²", "Langkah: hitung mean, kurangkan tiap data, kuadratkan, jumlahkan, bagi n, lalu akarkan."]],
+      ex: { q: "Data populasi: 2, 4, 4, 4, 5, 5, 7, 9. Hitung simpangan baku.",
+        steps: ["Mean = 40 / 8 = 5.", "Kuadrat selisih: 9, 1, 1, 1, 0, 0, 4, 16. Jumlahnya 32.", "Ragam = 32 / 8 = 4.", "Simpangan baku = √4 = 2."], ans: "2" },
+      trap: ["Jangan lupa menarik akar dari ragam.", "Sampel memakai n − 1, populasi memakai n."],
+      chk: { q: "Dua kumpulan data punya mean sama. Data dengan simpangan baku lebih kecil ...", o: ["Lebih menyebar", "Lebih seragam", "Median lebih besar", "Modus lebih besar"], a: 1, e: "Simpangan baku kecil berarti nilai-nilai berkumpul dekat mean." } },
+
+    { id: "s3", c: "stat", title: "Angka indeks",
+      gist: "Angka indeks membandingkan nilai sekarang dengan tahun dasar (yang diberi nilai 100). Mudah dibaca: 130 berarti naik 30% dari dasar.",
+      story: "Harga beras tahun dasar Rp10.000 dan sekarang Rp13.000. Indeksnya 130, artinya tiga puluh persen lebih mahal dari tahun dasar.",
+      pts: [
+        "**Indeks harga relatif** untuk satu barang: harga tahun berjalan dibagi harga tahun dasar, dikali 100.",
+        "Untuk banyak barang, tiap barang punya porsi (bobot) berbeda, jadi dipakai indeks berbobot kuantitas.",
+        "**Laspeyres** memakai kuantitas tahun dasar (Q0) sebagai bobot. **Paasche** memakai kuantitas tahun berjalan (Q1).",
+        "IHK pada dasarnya memakai pendekatan Laspeyres, dan dipakai untuk menghitung inflasi.",
+        "Tahun dasar selalu bernilai 100. Hasil di atas 100 berarti naik dari tahun dasar, di bawah 100 berarti turun."
+      ],
+      f: [["Indeks relatif", "I = (P1 / P0) × 100", "P0 harga tahun dasar, P1 harga tahun berjalan."],
+        ["Laspeyres", "IL = Σ(P1 × Q0) / Σ(P0 × Q0) × 100", "Q0 = kuantitas tahun dasar."],
+        ["Paasche", "IP = Σ(P1 × Q1) / Σ(P0 × Q1) × 100", "Q1 = kuantitas tahun berjalan."]],
+      ex: { q: "Barang A: P0 = 10, P1 = 12, Q0 = 5. Barang B: P0 = 20, P1 = 22, Q0 = 3. Hitung indeks Laspeyres.",
+        steps: ["Σ P1·Q0 = 12 × 5 + 22 × 3 = 60 + 66 = 126.", "Σ P0·Q0 = 10 × 5 + 20 × 3 = 50 + 60 = 110.", "IL = 126 / 110 × 100 ≈ 114,5."], ans: "Sekitar 114,5" },
+      trap: ["Laspeyres memakai Q0, Paasche memakai Q1. Jangan tertukar.", "Kalau hasilnya 114,5, artinya naik 14,5% dari tahun dasar."],
+      chk: { q: "Harga tahun dasar Rp5.000 dan tahun berjalan Rp6.500. Indeks harga relatif tahun berjalan adalah ...", o: ["77", "130", "150", "1,3"], a: 1, e: "6.500 / 5.000 × 100 = 130." } },
+
+    { id: "s4", c: "stat", title: "Analisis tren",
+      gist: "Tren adalah arah umum data dari waktu ke waktu. Dengan garis lurus Y = a + bt, kita bisa meramalkan nilai periode berikutnya.",
+      story: "Penjualan kantin naik rata-rata 4 porsi tiap bulan. Tinggal teruskan garisnya untuk memperkirakan bulan depan.",
+      pts: [
+        "Tren linear ditulis **Y = a + bt**. Nilai a adalah nilai pada t = 0, dan b adalah perubahan rata-rata per periode (positif naik, negatif turun).",
+        "Titik **t = 0** ditetapkan oleh soal, misalnya tahun 2020. Maka 2026 berarti t = 6. Selalu cek dulu tahun dasarnya.",
+        "Untuk meramal, masukkan nilai t periode yang dituju ke persamaan.",
+        "Ramalan jauh dari data rawan meleset karena pola bisa berubah (misalnya karena krisis atau perubahan kebijakan)."
+      ],
+      f: [["Ramalan tren", "Y = a + b × t", "Masukkan t periode yang ingin diramal."]],
+      ex: { q: "Tren penjualan Y = 50 + 4t dengan t = 0 pada tahun 2020. Ramalkan penjualan tahun 2026.",
+        steps: ["Jarak 2026 dari 2020 adalah 6, jadi t = 6.", "Y = 50 + 4 × 6 = 50 + 24 = 74."], ans: "74" },
+      trap: ["Cek tahun berapa t = 0 sebelum memasukkan t.", "Kalau soal bilang t = 1 pada tahun tertentu, hitung selisihnya dengan hati-hati."],
+      chk: { q: "Tren Y = 50 + 4t dengan t = 0 pada tahun 2020. Pada tahun berapa Y diperkirakan 66?", o: ["2023", "2024", "2025", "2026"], a: 1, e: "66 = 50 + 4t, maka t = 4, yaitu tahun 2024." } }
+  ]);
+  /* ---------- materi: tampilan pelajaran ---------- */
+  var mat = { c: null, l: null, step: 0, chk: null };
+  function lessonById(id) { return LESSONS.filter(function (l) { return l.id === id; })[0]; }
+  function lessonsDone() {
+    var d = DB.get("les", {});
+    return LESSONS.filter(function (l) { return d[l.id]; }).length;
+  }
+  function nextLesson() {
+    var d = DB.get("les", {});
+    return LESSONS.filter(function (l) { return !d[l.id]; })[0] || null;
+  }
+  function openLesson(id) {
+    var l = lessonById(id);
+    mat.c = l.c; mat.l = id; mat.step = 0; mat.chk = null;
+    renderMateri(); window.scrollTo(0, 0);
+  }
+  function nextLessonBtn() {
+    var nl = nextLesson();
+    if (!nl) return null;
+    return h("button", { class: "btn", onclick: function () { mat.c = nl.c; mat.l = nl.id; mat.step = 0; mat.chk = null; go("materi"); } }, "Lanjut belajar: " + nl.title);
+  }
+  function dojoGreeting(t, st, due, mist) {
+    var acc = t.tot ? t.c / t.tot : 1;
+    if (!t.tot && !lessonsDone()) return ["hello", "Halo, aku Pak Koin! Mulai dari satu pelajaran kecil di tab Materi, nanti aku temani latihan soalnya."];
+    if (st >= 3) return ["yay", "Wah, " + st + " hari berturut-turut berlatih! Pertahankan ya."];
+    if (mist > 0) return ["think", "Ada " + mist + " soal di buku kesalahan. Coba ulangi, biasanya cepat nyantol."];
+    if (acc >= 0.8 && t.tot >= 10) return ["yay", "Akurasimu " + Math.round(acc * 100) + "%. Keren! Coba simulasi 60 menit."];
+    if (due) return ["hello", "Ada " + due + " kartu istilah yang siap diulang hari ini."];
+    return ["hello", "Lanjut satu pelajaran lagi, yuk. Sedikit-sedikit tapi tiap hari."];
+  }
+  function sec(txt) { return h("h3", { class: "sec" }, txt); }
+
+  function renderMateri() {
+    var root = $("#materi");
+    root.replaceChildren();
+    var done = DB.get("les", {});
+    if (mat.l) return renderLesson(root, done);
+    if (mat.c) return renderChapter(root, done);
+    var n = lessonsDone();
+    root.append(h("div", { style: "display:grid;gap:16px" },
+      bubble("hello", [h("b", null, "Mau belajar apa hari ini? "), "Pilih satu bab. Tiap pelajaran dimulai dari intinya, lalu penjelasan, rumus, contoh langkah demi langkah, dan cek paham."]),
+      h("div", { class: "card", style: "display:grid;gap:8px" },
+        h("div", { class: "row", style: "justify-content:space-between" }, h("b", null, "Progres belajar"), h("span", { class: "muted" }, n + " dari " + LESSONS.length + " pelajaran")),
+        h("div", { class: "bar" }, h("i", { style: "width:" + (n / LESSONS.length * 100) + "%" }))),
+      h("div", { class: "chgrid" }, TOPICS.map(function (k) {
+        var ls = LESSONS.filter(function (l) { return l.c === k; });
+        var d = ls.filter(function (l) { return done[l.id]; }).length;
+        return h("button", { class: "chcard t-" + k, onclick: function () { mat.c = k; renderMateri(); window.scrollTo(0, 0); } },
+          h("h3", null, TOPIC[k]), h("p", null, CH[k]),
+          h("div", { class: "bar" }, h("i", { style: "width:" + (d / ls.length * 100) + "%" })),
+          h("span", { class: "muted", style: "font-size:13px" }, d + " dari " + ls.length + " pelajaran selesai"));
+      }))));
+  }
+
+  function renderChapter(root, done) {
+    var ls = LESSONS.filter(function (l) { return l.c === mat.c; });
+    var wrap = h("div", { class: "t-" + mat.c, style: "display:grid;gap:14px" },
+      h("div", { class: "row" }, h("button", { class: "btn ghost small", onclick: function () { mat.c = null; renderMateri(); } }, "Semua bab"), h("span", { class: "pill " + mat.c }, TOPIC[mat.c])),
+      h("h2", { style: "font-size:28px" }, TOPIC[mat.c]),
+      h("p", { class: "muted", style: "margin:0" }, CH[mat.c]));
+    ls.forEach(function (l, i) {
+      wrap.append(h("button", { class: "lrow" + (done[l.id] ? " done" : ""), onclick: function () { openLesson(l.id); } },
+        h("span", { class: "ck" }, done[l.id] ? "✓" : String(i + 1)),
+        h("span", { style: "min-width:0" }, h("b", null, l.title), h("span", { class: "muted", style: "display:block;font-size:14px" }, l.gist))));
+    });
+    root.append(wrap);
+  }
+
+  function renderLesson(root, done) {
+    var l = lessonById(mat.l);
+    var ls = LESSONS.filter(function (x) { return x.c === l.c; });
+    var idx = ls.indexOf(l);
+    var wrap = h("div", { class: "t-" + l.c, style: "display:grid;gap:16px" });
+    wrap.append(h("div", { class: "row" },
+      h("button", { class: "btn ghost small", onclick: function () { mat.l = null; renderMateri(); window.scrollTo(0, 0); } }, "Daftar pelajaran"),
+      h("span", { class: "pill " + l.c }, TOPIC[l.c]), h("span", { class: "muted", style: "font-size:14px" }, "Pelajaran " + (idx + 1) + " dari " + ls.length)));
+    wrap.append(h("h2", { style: "font-size:28px" }, l.title));
+    wrap.append(bubble("hello", [h("b", null, "Intinya: "), l.gist]));
+    wrap.append(sec("Bayangin gini"), h("div", { class: "story" }, rich(l.story)));
+    if (l.dg && DG[l.dg]) {
+      var fig = h("figure", { class: "dg" });
+      var holder = h("div");
+      holder.innerHTML = DG[l.dg].svg;
+      fig.append(holder, h("figcaption", null, DG[l.dg].cap));
+      wrap.append(fig);
+    }
+    wrap.append(sec("Penjelasan"), h("ul", { class: "pts" }, l.pts.map(function (p) { return h("li", null, rich(p)); })));
+    if (l.f.length) {
+      wrap.append(sec("Rumus dan cara memakainya"));
+      l.f.forEach(function (f) {
+        wrap.append(h("div", { class: "fcard" }, h("div", { class: "fname" }, f[0]), h("pre", { class: "formula" }, f[1]), h("p", { class: "how" }, f[2])));
+      });
+    }
+    wrap.append(sec("Contoh soal, langkah demi langkah"));
+    var steps = l.ex.steps, shown = mat.step;
+    var exbox = h("div", { class: "card", style: "display:grid;gap:6px" }, h("p", { style: "font-weight:800;margin:0" }, l.ex.q));
+    if (shown === 0) exbox.append(h("p", { class: "muted", style: "margin:0;font-size:14px" }, "Coba kerjakan sendiri dulu di kertas, lalu buka langkahnya satu per satu."));
+    steps.slice(0, shown).forEach(function (s, i) { exbox.append(h("div", { class: "step" }, h("span", { class: "sn" }, String(i + 1)), h("span", null, rich(s)))); });
+    if (shown < steps.length) {
+      exbox.append(h("div", null, h("button", { class: "btn small", onclick: function () { mat.step++; renderMateri(); } }, shown === 0 ? "Tunjukkan langkah pertama" : "Langkah berikutnya")));
+    } else {
+      exbox.append(h("div", { class: "ansbox" }, "Jawaban: " + l.ex.ans),
+        h("div", null, h("button", { class: "btn ghost small", onclick: function () { mat.step = 0; renderMateri(); } }, "Ulangi dari awal")));
+    }
+    wrap.append(exbox);
+    wrap.append(h("div", { class: "trapbox" }, h("b", null, "Awas jebakan"), h("ul", null, l.trap.map(function (t) { return h("li", null, rich(t)); }))));
+
+    wrap.append(sec("Cek paham"));
+    var c = l.chk, ans = mat.chk, answered = ans !== null;
+    var chkbox = h("div", { class: "card" }, h("div", { class: "qtext", style: "margin-top:0" }, c.q),
+      h("div", { class: "opts" }, c.o.map(function (txt, k) {
+        var cls = "opt" + (answered && k === c.a ? " right" : answered && k === ans ? " wrong" : "");
+        return h("button", { class: cls, disabled: answered, onclick: function () { mat.chk = k; renderMateri(); } }, h("b", null, L[k]), h("span", null, txt));
+      })));
+    if (answered) {
+      var ok = ans === c.a;
+      chkbox.append(h("div", { class: "fb " + (ok ? "ok" : "no"), role: "status" }, mascot(ok ? "yay" : "oops", 48),
+        h("div", null, h("strong", null, ok ? "Benar, mantap!" : "Belum tepat. Jawaban yang benar: " + L[c.a]), h("span", null, c.e))));
+      chkbox.append(h("div", null, h("button", { class: "btn ghost small", style: "margin-top:12px", onclick: function () { mat.chk = null; renderMateri(); } }, "Coba lagi")));
+    }
+    wrap.append(chkbox);
+
+    var isDone = !!done[l.id];
+    var nxt = ls[idx + 1];
+    wrap.append(h("div", { class: "row", style: "margin-top:8px" },
+      h("button", { class: isDone ? "btn ghost" : "btn", onclick: function () {
+        var d = DB.get("les", {}); if (d[l.id]) delete d[l.id]; else d[l.id] = true; DB.set("les", d); renderMateri();
+      } }, isDone ? "Sudah selesai (batalkan)" : "Tandai selesai (+15 XP)"),
+      nxt ? h("button", { class: "btn ghost", onclick: function () { openLesson(nxt.id); } }, "Pelajaran berikutnya") : h("button", { class: "btn ghost", onclick: function () { mat.l = null; renderMateri(); window.scrollTo(0, 0); } }, "Kembali ke daftar"),
+      h("button", { class: "btn ghost", onclick: function () { qz.topic = l.c; qz.diff = "all"; qz.count = 10; qz.started = false; go("latihan"); } }, "Latih soal topik ini")));
+    root.append(wrap);
+  }
+
+  /* ---------- tab / routing ---------- */
+  var VIEWS = ["dojo", "materi", "latihan", "simulasi", "kamus", "kalkulator", "sumber"];
+  function showView(name) {
+    if (VIEWS.indexOf(name) < 0) name = "dojo";
+    VIEWS.forEach(function (v) { $("#view-" + v).hidden = v !== name; });
+    document.querySelectorAll(".tab").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.view === name ? "true" : "false"); });
+    if (name === "dojo") renderDojo();
+    if (name === "materi") renderMateri();
+    if (name === "latihan") renderQuiz();
+    if (name === "simulasi") renderMock();
+    if (name === "kamus") renderTerms();
+    window.scrollTo(0, 0);
+  }
+  function go(name) { location.hash = name; showView(name); }
+  document.querySelectorAll(".tab").forEach(function (b) { b.addEventListener("click", function () { go(b.dataset.view); }); });
+  document.querySelectorAll("[data-go]").forEach(function (b) { b.addEventListener("click", function () { go(b.dataset.go); }); });
+  window.addEventListener("hashchange", function () { showView(location.hash.slice(1)); });
+
+  /* ---------- dojo ---------- */
+  var PLAN = [
+    { id: "w1", title: "Minggu 1", range: "17-23 Nov", from: "2026-11-17", to: "2026-11-23", tasks: ["Pelajari 8 pelajaran Mikroekonomi di tab Materi", "Latihan 10 soal Mikroekonomi", "Hafal kartu istilah Mikroekonomi", "Tulis ulang rumus mikro dari ingatan"] },
+    { id: "w2", title: "Minggu 2", range: "24-30 Nov", from: "2026-11-24", to: "2026-11-30", tasks: ["Pelajari 7 pelajaran Makroekonomi di tab Materi", "Latihan 10 soal Makroekonomi", "Hafal kartu istilah Makroekonomi", "Buat lembar rumus makro satu halaman"] },
+    { id: "w3", title: "Minggu 3", range: "1-7 Des", from: "2026-12-01", to: "2026-12-07", tasks: ["Pelajari Ekonomi Internasional serta Akuntansi dan Manajemen", "Latihan soal Ekonomi Internasional dan Akuntansi", "Kerjakan buku kesalahan", "Simulasi pertama (60 menit)"] },
+    { id: "w4", title: "Minggu 4", range: "8-17 Des", from: "2026-12-08", to: "2026-12-17", tasks: ["Pelajari Statistika Ekonomi dan latihan soalnya", "Dua simulasi lagi, bahas semua yang salah", "Ulangi kartu jatuh tempo setiap hari", "Tiga hari terakhir: baca lembar rumus saja, tidur cukup"] }
+  ];
+  var dojoUI = { resetAsk: false };
+
+  function currentWeek() {
+    var t = today();
+    for (var i = 0; i < PLAN.length; i++) if (t >= PLAN[i].from && t <= PLAN[i].to) return PLAN[i].id;
+    return t < PLAN[0].from ? PLAN[0].id : null;
+  }
+
+  function activityChart() {
+    var days = DB.get("days", {});
+    var items = [], i;
+    for (i = 13; i >= 0; i--) { var d = new Date(); d.setDate(d.getDate() - i); var e = days[dkey(d)]; items.push({ n: e ? e.n : 0, label: d.getDate() }); }
+    var max = Math.max.apply(null, items.map(function (x) { return x.n; }).concat([5]));
+    var ns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 420 130");
+    svg.setAttribute("class", "chart");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Jumlah soal yang dijawab per hari dalam 14 hari terakhir");
+    function el(tag, attrs, text) {
+      var x = document.createElementNS(ns, tag);
+      Object.keys(attrs).forEach(function (k) { x.setAttribute(k, attrs[k]); });
+      if (text != null) x.textContent = text;
+      svg.appendChild(x);
+    }
+    el("line", { x1: 8, y1: 100, x2: 412, y2: 100, stroke: "var(--line)" });
+    items.forEach(function (it, k) {
+      var x = 12 + k * 29, hgt = it.n ? Math.max(3, it.n / max * 76) : 0;
+      if (hgt) el("rect", { x: x, y: 100 - hgt, width: 20, height: hgt, rx: 3, fill: "var(--accent)" });
+      if (it.n) el("text", { x: x + 10, y: 96 - hgt, "text-anchor": "middle", "font-size": 11, fill: "var(--fg)" }, it.n);
+      el("text", { x: x + 10, y: 116, "text-anchor": "middle", "font-size": 11, fill: "var(--muted)" }, it.label);
+    });
+    return svg;
+  }
+
+  function renderDojo() {
+    var root = $("#dojo");
+    root.replaceChildren();
+    var t = totals(), bf = beltFor(t.xp), st = streak();
+    var accPct = t.tot ? Math.round(t.c / t.tot * 100) : null;
+    var mocks = DB.get("mocks", []);
+    var bestMock = mocks.length ? Math.max.apply(null, mocks.map(function (m) { return Math.round(m.s / m.n * 100); })) : null;
+    var mist = mistakes().length, due = dueCards("all").length;
+    var tstats = topicStats();
+    var gr = dojoGreeting(t, st, due, mist);
+    root.append(bubble(gr[0], gr[1]));
+
+    var examVal = DB.get("exam", "");
+    var cd = "";
+    if (examVal) {
+      var base = new Date(); base.setHours(0, 0, 0, 0);
+      var diff = Math.round((new Date(examVal + "T00:00:00") - base) / 86400000);
+      cd = diff > 0 ? "H-" + diff : diff === 0 ? "Hari ini" : "Sudah lewat";
+    }
+
+    /* header + sabuk */
+    var pct = bf.next ? (t.xp - bf.cur.min) / (bf.next.min - bf.cur.min) * 100 : 100;
+    root.append(h("div", { class: "card", style: "display:grid;gap:14px" },
+      h("div", { class: "row", style: "justify-content:space-between;align-items:flex-start" },
+        h("div", null, h("div", { class: "eyebrow" }, "Dojo belajarmu"),
+          h("div", { class: "belt" }, h("i", { style: "background:" + bf.cur.color }), bf.cur.name)),
+        h("div", { style: "text-align:right" }, h("div", { class: "score", style: "font-size:36px" }, cd || "—"),
+          h("label", { class: "muted", for: "exam-date", style: "font-size:13px" }, "Tanggal seleksi"),
+          h("input", { type: "date", id: "exam-date", value: examVal, style: "max-width:170px;display:block;margin-left:auto", onchange: function (e) { DB.set("exam", e.target.value); renderDojo(); } }))),
+      h("div", null,
+        h("div", { class: "bar" }, h("i", { style: "width:" + pct + "%" })),
+        h("p", { class: "muted", style: "margin:6px 0 0;font-size:14px" }, t.xp + " XP" + (bf.next ? " · " + (bf.next.min - t.xp) + " XP lagi menuju " + bf.next.name.toLowerCase() : " · tingkat tertinggi")))));
+
+    /* tiles */
+    root.append(h("div", { class: "tiles" },
+      h("div", { class: "tile" }, h("div", { class: "n" }, st), h("div", { class: "l" }, "Hari beruntun berlatih")),
+      h("div", { class: "tile" }, h("div", { class: "n" }, t.tot), h("div", { class: "l" }, "Soal dijawab")),
+      h("div", { class: "tile" }, h("div", { class: "n" }, accPct == null ? "—" : accPct + "%"), h("div", { class: "l" }, "Akurasi")),
+      h("div", { class: "tile" }, h("div", { class: "n" }, masteredCount()), h("div", { class: "l" }, "Kartu dikuasai dari " + G.length)),
+      h("div", { class: "tile" }, h("div", { class: "n" }, lessonsDone() + "/" + LESSONS.length), h("div", { class: "l" }, "Pelajaran selesai")),
+      h("div", { class: "tile" }, h("div", { class: "n" }, bestMock == null ? "—" : bestMock + "%"), h("div", { class: "l" }, "Skor simulasi terbaik"))));
+
+    /* hari ini */
+    var weak = tstats.filter(function (x) { return x.acc != null; }).sort(function (a, b) { return a.acc - b.acc; })[0];
+    var wk = PLAN.filter(function (p) { return p.id === currentWeek(); })[0];
+    root.append(h("div", { class: "card", style: "display:grid;gap:12px" },
+      h("div", null, h("div", { class: "eyebrow" }, "Latihan hari ini"),
+        wk ? h("p", { class: "muted", style: "margin:0" }, wk.title + " (" + wk.range + "): " + wk.tasks[0].toLowerCase() + ".") : h("p", { class: "muted", style: "margin:0" }, "Jadwal 4 minggu sudah selesai. Fokus ke simulasi dan buku kesalahan.")),
+      h("div", { class: "row" },
+        nextLessonBtn(),
+        h("button", { class: "btn ghost", onclick: function () { kt.mode = "flash"; kt.deckMode = "due"; fc.deck = []; go("kamus"); } }, "Kartu jatuh tempo (" + due + ")"),
+        h("button", { class: "btn ghost", disabled: !mist, onclick: function () { qz.started = false; go("latihan"); beginQuiz(mistakes()); } }, "Buku kesalahan (" + mist + ")"),
+        weak ? h("button", { class: "btn ghost", onclick: function () { qz.topic = weak.k; qz.diff = "all"; qz.count = 10; qz.started = false; go("latihan"); beginQuiz(); } }, "Latih topik terlemah: " + TOPIC[weak.k]) : null,
+        h("button", { class: "btn ghost", onclick: function () { go("simulasi"); } }, "Simulasi 60 menit"))));
+
+    /* penguasaan per topik */
+    root.append(h("div", { class: "card", style: "display:grid;gap:12px" },
+      h("div", { class: "eyebrow" }, "Penguasaan per topik"),
+      tstats.map(function (x) {
+        return h("div", { class: "mb" },
+          h("span", null, TOPIC[x.k]),
+          h("div", { class: "bar", role: "img", "aria-label": x.mastered + " dari " + x.n + " soal dikuasai" }, h("i", { style: "width:" + (x.mastered / x.n * 100) + "%" })),
+          h("span", { class: "muted", style: "text-align:right" }, x.mastered + "/" + x.n + (x.acc == null ? "" : " · " + Math.round(x.acc * 100) + "%")));
+      }),
+      h("p", { class: "muted", style: "margin:0;font-size:13px" }, "Dikuasai = jawaban terakhir benar. Persen di kanan adalah akurasi semua percobaan.")));
+
+    /* aktivitas */
+    root.append(h("div", { class: "card" }, h("div", { class: "eyebrow" }, "Soal dijawab, 14 hari terakhir"), activityChart()));
+
+    /* rencana */
+    var plan = DB.get("plan", {});
+    var cur = currentWeek();
+    root.append(h("div", { class: "card" },
+      h("div", { class: "eyebrow" }, "Rencana 4 minggu"),
+      PLAN.map(function (p) {
+        var doneN = p.tasks.filter(function (_, i) { return plan[p.id + i]; }).length;
+        var d = h("details", { class: "plan" + (p.id === cur ? " now" : "") },
+          h("summary", null, p.title + " · " + p.range, h("span", { class: "pill" }, doneN + "/" + p.tasks.length), p.id === cur ? h("span", { class: "pill makro" }, "minggu ini") : null),
+          p.tasks.map(function (tk, i) {
+            var key = p.id + i;
+            var cb = h("input", { type: "checkbox", id: "t-" + key, onchange: function (e) {
+              var pl = DB.get("plan", {}); if (e.target.checked) pl[key] = true; else delete pl[key]; DB.set("plan", pl); renderDojo();
+            } });
+            cb.checked = !!plan[key];
+            return h("label", { class: "task" + (plan[key] ? " done" : ""), for: "t-" + key }, cb, h("span", null, tk));
+          }));
+        if (p.id === cur) d.open = true;
+        return d;
+      })));
+
+    /* reset */
+    root.append(h("div", { class: "row", style: "justify-content:flex-end" },
+      dojoUI.resetAsk
+        ? [h("span", { class: "muted", style: "font-size:14px" }, "Semua progres di perangkat ini akan dihapus."),
+           h("button", { class: "btn small", onclick: function () { wipe(); dojoUI.resetAsk = false; fc.deck = []; qz.started = false; renderDojo(); } }, "Ya, hapus"),
+           h("button", { class: "btn ghost small", onclick: function () { dojoUI.resetAsk = false; renderDojo(); } }, "Batal")]
+        : h("button", { class: "btn ghost small", onclick: function () { dojoUI.resetAsk = true; renderDojo(); } }, "Hapus progres")));
+    root.append(h("p", { class: "muted", style: "margin:0;font-size:13px" }, "Progres tersimpan di browser perangkat ini saja, tidak ikut ke perangkat lain."));
+  }
+
+  /* ---------- latihan ---------- */
+  var qz = { topic: "all", diff: "all", count: "all", rand: true, order: [], i: 0, ans: {}, done: false, started: false, label: "" };
+  var qroot = $("#quiz");
+
+  function pool() {
+    return Q.filter(function (x) { return (qz.topic === "all" || x.t === qz.topic) && (qz.diff === "all" || x.d === qz.diff); });
+  }
+  function beginQuiz(ids) {
+    var list = ids || pool().map(function (x) { return x.id; });
+    qz.label = ids ? "Buku kesalahan" : "";
+    var ord = qz.rand && !ids ? shuffle(list) : list.slice();
+    if (!ids && qz.count !== "all") ord = ord.slice(0, qz.count);
+    qz.order = ord; qz.i = 0; qz.ans = {}; qz.done = false; qz.started = true;
+    renderQuiz();
+  }
+
+  function renderQuiz() {
+    qroot.replaceChildren();
+    if (!qz.started) return renderQuizStart();
+    if (qz.done) return renderQuizResult();
+    var q = Q[qz.order[qz.i]];
+    var chosen = qz.ans[q.id];
+    var answered = chosen !== undefined;
+    var total = qz.order.length;
+    var right = qz.order.filter(function (id) { return qz.ans[id] === Q[id].a; }).length;
+
+    var opts = q.o.map(function (txt, k) {
+      var cls = "opt";
+      if (answered && k === q.a) cls += " right";
+      else if (answered && k === chosen) cls += " wrong";
+      return h("button", { class: cls, disabled: answered, onclick: function () { qz.ans[q.id] = k; record(q.id, k === q.a); renderQuiz(); } },
+        h("b", null, L[k]), h("span", null, txt));
+    });
+
+    var card = h("div", { class: "card" },
+      h("div", { class: "row", style: "justify-content:space-between" },
+        h("span", { class: "row", style: "gap:6px" }, h("span", { class: "pill " + q.t }, TOPIC[q.t]), h("span", { class: "pill d" }, DIFF[q.d])),
+        h("span", { class: "muted", style: "font-size:14px" }, "Soal " + (qz.i + 1) + " dari " + total + " · benar " + right)),
+      h("div", { class: "bar", style: "margin-top:12px" }, h("i", { style: "width:" + ((qz.i + (answered ? 1 : 0)) / total * 100) + "%" })),
+      h("div", { class: "qtext" }, q.q),
+      h("div", { class: "opts" }, opts));
+
+    if (answered) {
+      var ok = chosen === q.a;
+      card.append(h("div", { class: "fb " + (ok ? "ok" : "no"), role: "status" }, mascot(ok ? "yay" : "oops", 48),
+        h("div", null, h("strong", null, ok ? "Benar, mantap!" : "Belum tepat. Jawaban yang benar: " + L[q.a]), h("span", null, q.e))));
+      var last = qz.i === total - 1;
+      card.append(h("div", { class: "row", style: "margin-top:14px" },
+        h("button", { class: "btn", id: "q-next", onclick: function () { if (last) qz.done = true; else qz.i++; renderQuiz(); } }, last ? "Lihat hasil" : "Soal berikutnya")));
+    }
+    qroot.append(card);
+    if (answered) { var nb = $("#q-next"); if (nb) nb.focus({ preventScroll: true }); }
+  }
+
+  function renderQuizStart() {
+    var mist = mistakes().length;
+    function chipRow(label, key, options) {
+      return h("div", { style: "display:grid;gap:6px" }, h("span", { class: "muted", style: "font-size:13px;font-weight:500" }, label),
+        h("div", { class: "row", role: "group", "aria-label": label }, options.map(function (o) {
+          return h("button", { class: "chip", "aria-pressed": String(qz[key] === o[0]), onclick: function () { qz[key] = o[0]; renderQuiz(); } }, o[1]);
+        })));
+    }
+    var topicOpts = [["all", "Semua (" + Q.length + ")"]].concat(TOPICS.map(function (k) { return [k, TOPIC[k] + " (" + Q.filter(function (q) { return q.t === k; }).length + ")"]; }));
+    var shuf = h("input", { type: "checkbox", id: "shuf", onchange: function (e) { qz.rand = e.target.checked; } });
+    shuf.checked = qz.rand;
+    var n = pool().length;
+    qroot.append(h("div", { class: "card", style: "display:grid;gap:16px" },
+      h("div", null, h("div", { class: "eyebrow" }, "Bank soal ala OSN"), h("h2", { style: "font-size:24px" }, "Pilih topik, kerjakan, lihat pembahasannya")),
+      h("p", { class: "muted", style: "margin:0" }, "Setiap jawaban menambah XP dan tercatat di dojo. Soal yang salah masuk ke buku kesalahan sampai kamu menjawabnya benar."),
+      chipRow("Topik", "topic", topicOpts),
+      chipRow("Tingkat", "diff", [["all", "Semua"], [1, "Mudah"], [2, "Sedang"], [3, "Sulit"]]),
+      chipRow("Jumlah soal", "count", [[10, "10"], [20, "20"], ["all", "Semua"]]),
+      h("label", { class: "row", for: "shuf", style: "gap:8px" }, shuf, "Acak urutan soal"),
+      h("div", { class: "row" },
+        h("button", { class: "btn", disabled: !n, onclick: function () { beginQuiz(); } }, n ? "Mulai (" + (qz.count === "all" ? n : Math.min(n, qz.count)) + " soal)" : "Tidak ada soal"),
+        h("button", { class: "btn ghost", disabled: !mist, onclick: function () { beginQuiz(mistakes()); } }, "Buku kesalahan (" + mist + ")"))));
+  }
+
+  function topicBars(ids, ansFn) {
+    return TOPICS.map(function (k) {
+      var list = ids.filter(function (id) { return Q[id].t === k; });
+      if (!list.length) return null;
+      var r = list.filter(function (id) { return ansFn(id) === Q[id].a; }).length;
+      return h("div", { class: "tb" }, h("span", null, TOPIC[k]), h("div", { class: "bar" }, h("i", { style: "width:" + (r / list.length * 100) + "%" })), h("span", { class: "muted" }, r + "/" + list.length));
+    });
+  }
+  function reviewList(ids, ansFn) {
+    return ids.map(function (id) {
+      var q = Q[id], a = ansFn(id);
+      return h("details", { class: "review" },
+        h("summary", null, q.q),
+        h("p", { style: "margin:8px 0 4px" }, "Jawabanmu: ", h("b", null, a == null ? "tidak dijawab" : L[a] + ". " + q.o[a])),
+        h("p", { style: "margin:0 0 4px" }, "Yang benar: ", h("b", null, L[q.a] + ". " + q.o[q.a])),
+        h("p", { class: "muted", style: "margin:0" }, q.e));
+    });
+  }
+
+  function renderQuizResult() {
+    var total = qz.order.length;
+    var ansFn = function (id) { return qz.ans[id]; };
+    var right = qz.order.filter(function (id) { return qz.ans[id] === Q[id].a; });
+    var wrong = qz.order.filter(function (id) { return qz.ans[id] !== Q[id].a; });
+    var pct = Math.round(right.length / total * 100);
+    var verdict = pct >= 83 ? "Sangat siap. Pertahankan dengan latihan rutin." : pct >= 60 ? "Cukup baik. Ulangi bab dengan salah terbanyak." : "Masih perlu penguatan. Baca ulang materinya lalu coba lagi.";
+    qroot.append(h("div", { class: "card", style: "display:grid;gap:16px" },
+      h("div", { class: "row", style: "flex-wrap:nowrap;gap:14px" }, mascot(pct >= 60 ? "yay" : "think", 72), h("div", null, h("div", { class: "eyebrow" }, "Hasil" + (qz.label ? " · " + qz.label : "")), h("div", { class: "score" }, right.length + " / " + total), h("p", { style: "margin:8px 0 0" }, verdict))),
+      h("div", { style: "display:grid;gap:8px" }, topicBars(qz.order, ansFn)),
+      wrong.length ? h("div", null, h("h3", { style: "font-size:17px;margin-bottom:4px" }, "Soal yang salah (" + wrong.length + ")"), reviewList(wrong, ansFn)) : h("p", { style: "margin:0" }, "Semua jawaban benar."),
+      h("div", { class: "row" },
+        wrong.length ? h("button", { class: "btn", onclick: function () { beginQuiz(wrong); } }, "Ulangi yang salah") : null,
+        h("button", { class: "btn ghost", onclick: function () { qz.started = false; renderQuiz(); } }, "Pilih topik lain"),
+        h("button", { class: "btn ghost", onclick: function () { go("dojo"); } }, "Ke dojo"))));
+  }
+
+  /* ---------- simulasi ujian ---------- */
+  var QUOTA = { mikro: 8, makro: 8, akun: 8, intl: 3, stat: 3 };
+  var MOCK_MIN = 60;
+  var mk = { active: false, done: false, ids: [], ans: {}, flag: {}, i: 0, end: 0, confirm: false, used: 0 };
+  var mkTimer = null;
+  var mroot = $("#mock");
+
+  function fmtTime(sec) { return pad(Math.floor(sec / 60)) + ":" + pad(sec % 60); }
+
+  function startMock() {
+    var ids = [];
+    TOPICS.forEach(function (k) {
+      ids = ids.concat(shuffle(Q.filter(function (q) { return q.t === k; })).slice(0, QUOTA[k]).map(function (q) { return q.id; }));
+    });
+    mk = { active: true, done: false, ids: shuffle(ids), ans: {}, flag: {}, i: 0, end: Date.now() + MOCK_MIN * 60000, confirm: false, used: 0 };
+    if (mkTimer) clearInterval(mkTimer);
+    mkTimer = setInterval(tick, 1000);
+    renderMock();
+  }
+  function tick() {
+    if (!mk.active) { clearInterval(mkTimer); mkTimer = null; return; }
+    var left = Math.max(0, Math.round((mk.end - Date.now()) / 1000));
+    var t = $("#mock-timer");
+    if (t) { t.textContent = fmtTime(left); t.classList.toggle("low", left <= 300); }
+    if (left <= 0) submitMock();
+  }
+  function submitMock() {
+    if (!mk.active) return;
+    mk.active = false; mk.done = true;
+    mk.used = Math.min(MOCK_MIN * 60, Math.round((Date.now() - (mk.end - MOCK_MIN * 60000)) / 1000));
+    if (mkTimer) { clearInterval(mkTimer); mkTimer = null; }
+    var score = 0;
+    mk.ids.forEach(function (id) {
+      var a = mk.ans[id];
+      if (a !== undefined) { record(id, a === Q[id].a); if (a === Q[id].a) score++; }
+    });
+    mk.score = score;
+    var hist = DB.get("mocks", []);
+    hist.push({ date: today(), s: score, n: mk.ids.length, secs: mk.used });
+    DB.set("mocks", hist.slice(-10));
+    renderMock();
+    window.scrollTo(0, 0);
+  }
+
+  function renderMock() {
+    mroot.replaceChildren();
+    if (mk.active) return renderMockRun();
+    if (mk.done) return renderMockResult();
+    var hist = DB.get("mocks", []).slice().reverse().slice(0, 5);
+    mroot.append(h("div", { class: "card", style: "display:grid;gap:14px" },
+      h("div", null, h("div", { class: "eyebrow" }, "Ujian simulasi"), h("h2", { style: "font-size:24px" }, "30 soal, 60 menit, tanpa pembahasan di tengah")),
+      h("p", { class: "muted", style: "margin:0" }, "Komposisi: 8 Mikroekonomi, 8 Makroekonomi, 8 Akuntansi dan Manajemen, 3 Ekonomi Internasional, 3 Statistika. Kamu bisa menandai soal, pindah-pindah nomor, dan mengubah jawaban sebelum dikumpulkan. Waktu habis mengumpulkan otomatis."),
+      h("div", null, h("button", { class: "btn", onclick: startMock }, "Mulai simulasi")),
+      hist.length ? h("div", null, h("h3", { style: "font-size:17px;margin-bottom:6px" }, "Riwayat terakhir"),
+        h("div", { class: "scroll" }, h("table", null,
+          h("tr", null, h("th", null, "Tanggal"), h("th", null, "Skor"), h("th", null, "Waktu")),
+          hist.map(function (m) { return h("tr", null, h("td", null, m.date), h("td", null, m.s + " / " + m.n + " (" + Math.round(m.s / m.n * 100) + "%)"), h("td", null, fmtTime(m.secs))); })))) : null));
+  }
+
+  function renderMockRun() {
+    var id = mk.ids[mk.i], q = Q[id];
+    var answered = mk.ids.filter(function (x) { return mk.ans[x] !== undefined; }).length;
+    var left = Math.max(0, Math.round((mk.end - Date.now()) / 1000));
+    var unanswered = mk.ids.length - answered;
+
+    var opts = q.o.map(function (txt, k) {
+      return h("button", { class: "opt" + (mk.ans[id] === k ? " sel" : ""), "aria-pressed": String(mk.ans[id] === k), onclick: function () { mk.ans[id] = k; mk.confirm = false; renderMock(); } },
+        h("b", null, L[k]), h("span", null, txt));
+    });
+    var nav = mk.ids.map(function (x, n) {
+      var cls = "nv" + (mk.ans[x] !== undefined ? " ans" : "") + (mk.flag[x] ? " flag" : "") + (n === mk.i ? " cur" : "");
+      return h("button", { class: cls, "aria-label": "Soal " + (n + 1) + (mk.flag[x] ? ", ditandai" : "") + (mk.ans[x] !== undefined ? ", terjawab" : ""), onclick: function () { mk.i = n; renderMock(); } }, n + 1);
+    });
+
+    mroot.append(h("div", { class: "card", style: "display:grid;gap:14px" },
+      h("div", { class: "row", style: "justify-content:space-between" },
+        h("span", { class: "timer" + (left <= 300 ? " low" : ""), id: "mock-timer", role: "timer" }, fmtTime(left)),
+        h("span", { class: "muted", style: "font-size:14px" }, "Terjawab " + answered + " dari " + mk.ids.length)),
+      h("div", { class: "bar" }, h("i", { style: "width:" + (answered / mk.ids.length * 100) + "%" })),
+      h("div", { class: "navgrid" }, nav)));
+
+    mroot.append(h("div", { class: "card" },
+      h("div", { class: "row", style: "justify-content:space-between" },
+        h("span", { class: "row", style: "gap:6px" }, h("span", { class: "pill" }, "Soal " + (mk.i + 1)), h("span", { class: "pill " + q.t }, TOPIC[q.t])),
+        h("button", { class: "chip", "aria-pressed": String(!!mk.flag[id]), onclick: function () { mk.flag[id] = !mk.flag[id]; renderMock(); } }, mk.flag[id] ? "Ditandai" : "Tandai")),
+      h("div", { class: "qtext" }, q.q),
+      h("div", { class: "opts" }, opts),
+      h("div", { class: "row", style: "margin-top:16px;justify-content:space-between" },
+        h("button", { class: "btn ghost", disabled: mk.i === 0, onclick: function () { mk.i--; renderMock(); } }, "Sebelumnya"),
+        h("button", { class: "btn ghost", disabled: mk.i === mk.ids.length - 1, onclick: function () { mk.i++; renderMock(); } }, "Berikutnya"))));
+
+    mroot.append(h("div", { class: "row", style: "justify-content:flex-end" },
+      mk.confirm
+        ? [h("span", { class: "muted", style: "font-size:14px" }, unanswered ? unanswered + " soal belum dijawab. Kumpulkan sekarang?" : "Semua soal terjawab. Kumpulkan sekarang?"),
+           h("button", { class: "btn", onclick: submitMock }, "Ya, kumpulkan"),
+           h("button", { class: "btn ghost", onclick: function () { mk.confirm = false; renderMock(); } }, "Lanjut mengerjakan")]
+        : h("button", { class: "btn", onclick: function () { mk.confirm = true; renderMock(); } }, "Kumpulkan")));
+  }
+
+  function renderMockResult() {
+    var total = mk.ids.length;
+    var ansFn = function (id) { return mk.ans[id]; };
+    var wrong = mk.ids.filter(function (id) { return mk.ans[id] !== Q[id].a; });
+    var pct = Math.round(mk.score / total * 100);
+    var skipped = mk.ids.filter(function (id) { return mk.ans[id] === undefined; }).length;
+    mroot.append(h("div", { class: "card", style: "display:grid;gap:16px" },
+      h("div", null, h("div", { class: "eyebrow" }, "Hasil simulasi"), h("div", { class: "score" }, mk.score + " / " + total),
+        h("p", { style: "margin:8px 0 0" }, pct + "% benar, waktu terpakai " + fmtTime(mk.used) + (skipped ? ", " + skipped + " soal tidak dijawab." : "."))),
+      h("div", { style: "display:grid;gap:8px" }, topicBars(mk.ids, ansFn)),
+      wrong.length ? h("div", null, h("h3", { style: "font-size:17px;margin-bottom:4px" }, "Pembahasan soal yang salah atau kosong (" + wrong.length + ")"), reviewList(wrong, ansFn)) : h("p", { style: "margin:0" }, "Semua jawaban benar."),
+      h("div", { class: "row" },
+        h("button", { class: "btn", onclick: function () { mk.done = false; startMock(); } }, "Simulasi baru"),
+        h("button", { class: "btn ghost", onclick: function () { mk.done = false; renderMock(); } }, "Selesai"),
+        h("button", { class: "btn ghost", onclick: function () { mk.done = false; go("dojo"); } }, "Ke dojo"))));
+  }
+
+  /* ---------- kartu dan kamus ---------- */
+  var kt = { topic: "all", text: "", mode: "list", deckMode: "due" };
+  var fc = { deck: [], i: 0, show: false, know: 0, not: 0, missed: [], done: false, requeued: {} };
+
+  function filteredTerms() {
+    var s = kt.text.trim().toLowerCase();
+    return G.filter(function (g) {
+      return (kt.topic === "all" || g.t === kt.topic) && (!s || g.term.toLowerCase().indexOf(s) >= 0 || g.def.toLowerCase().indexOf(s) >= 0);
+    });
+  }
+  function renderTopicChips() {
+    var box = $("#term-topics");
+    box.replaceChildren();
+    ["all"].concat(TOPICS).forEach(function (k) {
+      box.append(h("button", { class: "chip", "aria-pressed": String(kt.topic === k), onclick: function () { kt.topic = k; fc.deck = []; renderTopicChips(); renderTerms(); } }, k === "all" ? "Semua" : TOPIC[k]));
+    });
+  }
+  function renderTerms() {
+    renderTopicChips();
+    var box = $("#terms");
+    box.replaceChildren();
+    document.querySelectorAll("#term-modes [data-mode]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.mode === kt.mode)); });
+    var list = filteredTerms();
+    $("#q-term").hidden = kt.mode === "flash";
+    $("#term-count").textContent = kt.mode === "flash" ? masteredCount() + " dari " + G.length + " dikuasai" : list.length + " istilah";
+    if (kt.mode === "flash") return renderFlash(box);
+    if (!list.length) { box.append(h("div", { class: "card muted" }, "Tidak ada istilah yang cocok. Coba kata kunci lain.")); return; }
+    box.append(h("dl", { class: "card terms" }, list.map(function (g) {
+      return h("div", { class: "term" }, h("dt", null, g.term, h("span", { class: "pill " + g.t }, TOPIC[g.t])), h("dd", null, g.def));
+    })));
+  }
+
+  function startDeck() {
+    var src = kt.deckMode === "due" ? dueCards(kt.topic) : G.filter(function (g) { return kt.topic === "all" || g.t === kt.topic; });
+    fc.deck = shuffle(src).slice(0, 20);
+    fc.i = 0; fc.show = false; fc.know = 0; fc.not = 0; fc.missed = []; fc.done = false; fc.requeued = {};
+    fc.started = true;
+  }
+
+  function renderFlash(box) {
+    var dueN = dueCards(kt.topic).length;
+    var modeRow = h("div", { class: "row" },
+      h("button", { class: "chip", "aria-pressed": String(kt.deckMode === "due"), onclick: function () { kt.deckMode = "due"; fc.deck = []; renderTerms(); } }, "Jatuh tempo (" + dueN + ")"),
+      h("button", { class: "chip", "aria-pressed": String(kt.deckMode === "all"), onclick: function () { kt.deckMode = "all"; fc.deck = []; renderTerms(); } }, "Semua kartu"),
+      h("span", { class: "muted", style: "font-size:13px" }, "Kartu yang kamu hafal muncul lagi 1, 3, 7, 14, lalu 30 hari kemudian."));
+    box.append(modeRow);
+
+    if (!fc.deck.length) startDeck();
+    if (!fc.deck.length) {
+      box.append(h("div", { class: "card", style: "display:grid;gap:10px" },
+        h("p", { style: "margin:0" }, kt.deckMode === "due" ? "Tidak ada kartu yang jatuh tempo untuk topik ini. Kembali lagi besok, atau latih semua kartu." : "Tidak ada kartu untuk topik ini."),
+        kt.deckMode === "due" ? h("div", null, h("button", { class: "btn", onclick: function () { kt.deckMode = "all"; fc.deck = []; renderTerms(); } }, "Latih semua kartu")) : null));
+      return;
+    }
+    if (fc.done) {
+      box.append(h("div", { class: "card", style: "display:grid;gap:12px" },
+        h("div", { class: "eyebrow" }, "Sesi selesai"),
+        h("div", { class: "score" }, fc.know + " / " + fc.deck.length),
+        h("p", { style: "margin:0" }, fc.missed.length ? fc.missed.length + " kartu belum hafal dan akan muncul lagi besok." : "Semua kartu di sesi ini sudah kamu hafal."),
+        h("div", { class: "row" },
+          h("button", { class: "btn", onclick: function () { fc.deck = []; fc.done = false; renderTerms(); } }, "Sesi baru"),
+          h("button", { class: "btn ghost", onclick: function () { go("dojo"); } }, "Ke dojo"))));
+      return;
+    }
+    var g = fc.deck[fc.i];
+    var card = h("button", { class: "flash", "aria-label": fc.show ? "Sembunyikan arti" : "Tampilkan arti", onclick: function () { fc.show = !fc.show; renderTerms(); } },
+      h("span", { class: "pill " + g.t }, TOPIC[g.t]),
+      h("div", { class: "t" }, g.term),
+      fc.show ? h("div", { class: "m" }, g.def) : h("div", { class: "muted", style: "font-size:14px" }, "Ketuk kartu untuk melihat arti"));
+    function next(knew) {
+      var cs = cardState(), c = cs[g.term] || { b: 0, d: 0 };
+      if (knew) { c.b = Math.min(5, c.b + 1); c.d = Date.now() + INTERVALS[c.b] * 86400000; fc.know++; }
+      else { c.b = 0; c.d = Date.now() + 86400000; fc.not++; fc.missed.push(g); if (!fc.requeued[g.term]) { fc.requeued[g.term] = true; fc.deck.push(g); } }
+      cs[g.term] = c; DB.set("cards", cs);
+      DB.set("cr", DB.get("cr", 0) + 1);
+      if (fc.i === fc.deck.length - 1) fc.done = true; else { fc.i++; fc.show = false; }
+      renderTerms();
+    }
+    box.append(h("div", { style: "display:grid;gap:14px;margin-top:4px" },
+      h("div", { class: "row", style: "justify-content:space-between;font-size:14px" },
+        h("span", { class: "muted" }, "Kartu " + (fc.i + 1) + " dari " + fc.deck.length),
+        h("span", { class: "muted" }, "Hafal " + fc.know + " · Belum " + fc.not)),
+      h("div", { class: "bar" }, h("i", { style: "width:" + (fc.i / fc.deck.length * 100) + "%" })),
+      card,
+      h("div", { class: "row" },
+        h("button", { class: "btn", disabled: !fc.show, onclick: function () { next(true); } }, "Sudah hafal"),
+        h("button", { class: "btn ghost", disabled: !fc.show, onclick: function () { next(false); } }, "Belum hafal"))));
+  }
+
+  $("#q-term").addEventListener("input", function (e) { kt.text = e.target.value; renderTerms(); });
+  document.querySelectorAll("#term-modes [data-mode]").forEach(function (b) {
+    b.addEventListener("click", function () { kt.mode = b.dataset.mode; fc.deck = []; fc.done = false; renderTerms(); });
+  });
+
+  /* ---------- kalkulator ---------- */
+  function num(id) { var v = parseFloat($("#" + id).value); return isFinite(v) ? v : NaN; }
+  function fmt(x, suffix) { return isFinite(x) ? nf.format(x) + (suffix || "") : "tidak bisa dihitung"; }
+  function line(label, val) { return h("div", null, label + ": ", h("b", null, val)); }
+
+  function calcE() {
+    var p1 = num("e-p1"), p2 = num("e-p2"), q1 = num("e-q1"), q2 = num("e-q2");
+    var dq = (q2 - q1) / q1 * 100, dp = (p2 - p1) / p1 * 100, e = dq / dp;
+    var tag = !isFinite(e) ? "isi semua kolom" : Math.abs(Math.abs(e) - 1) < 1e-9 ? "elastis uniter" : Math.abs(e) > 1 ? "elastis" : "inelastis";
+    $("#e-out").replaceChildren(line("%ΔQ", fmt(dq, "%")), line("%ΔP", fmt(dp, "%")), line("Ed", fmt(e)), line("Sifat permintaan", tag));
+  }
+  function calcM() {
+    var mpc = num("m-mpc"), di = num("m-di"), dt = num("m-dt");
+    var k = 1 / (1 - mpc), kt_ = -mpc / (1 - mpc);
+    $("#m-out").replaceChildren(line("Pengganda belanja / investasi", fmt(k)), line("Perubahan Y dari belanja / investasi", fmt(k * di)),
+      line("Pengganda pajak", fmt(kt_)), line("Perubahan Y dari kenaikan pajak", fmt(kt_ * dt)));
+  }
+  function calcI() {
+    var a = num("i-a"), b = num("i-b"), ak = num("i-ak"), bk = num("i-bk");
+    $("#i-out").replaceChildren(line("Inflasi", fmt((b - a) / a * 100, "%")), line("Penganggur", fmt(ak - bk)), line("Tingkat pengangguran terbuka", fmt((ak - bk) / ak * 100, "%")));
+  }
+  function calcD() {
+    var hh = num("d-h"), r = num("d-r"), u = num("d-u"), bl = num("d-b");
+    var y = (hh - r) / u;
+    $("#d-out").replaceChildren(line("Penyusutan per tahun", "Rp" + fmt(y)), line("Penyusutan " + (isFinite(bl) ? bl : 0) + " bulan", "Rp" + fmt(y * bl / 12)), line("Nilai buku setelah periode itu", "Rp" + fmt(hh - y * bl / 12)));
+  }
+  function calcB() {
+    var f = num("b-f"), p = num("b-p"), v = num("b-v");
+    var cm = p - v;
+    $("#b-out").replaceChildren(line("Margin kontribusi per unit", "Rp" + fmt(cm)), line("BEP (unit)", cm > 0 ? fmt(f / cm) : "tidak bisa dihitung"), line("BEP (rupiah)", cm > 0 ? "Rp" + fmt(f / cm * p) : "tidak bisa dihitung"));
+  }
+  function calcS() {
+    var raw = $("#s-d").value.split(/[,;\s]+/).map(parseFloat).filter(isFinite);
+    if (!raw.length) { $("#s-out").replaceChildren(line("Data", "isi angka dipisah koma")); return; }
+    var n = raw.length, sum = raw.reduce(function (a, b) { return a + b; }, 0), mean = sum / n;
+    var sorted = raw.slice().sort(function (a, b) { return a - b; });
+    var med = n % 2 ? sorted[(n - 1) / 2] : (sorted[n / 2 - 1] + sorted[n / 2]) / 2;
+    var cnt = {}, best = 0;
+    raw.forEach(function (x) { cnt[x] = (cnt[x] || 0) + 1; if (cnt[x] > best) best = cnt[x]; });
+    var modes = Object.keys(cnt).filter(function (k) { return cnt[k] === best; });
+    var varPop = raw.reduce(function (a, x) { return a + (x - mean) * (x - mean); }, 0) / n;
+    $("#s-out").replaceChildren(line("Banyak data", n), line("Rata-rata", fmt(mean)), line("Median", fmt(med)),
+      line("Modus", best > 1 ? modes.join(", ") : "tidak ada"), line("Simpangan baku populasi", fmt(Math.sqrt(varPop))), line("Urutan data", sorted.join(", ")));
+  }
+  var calcs = { e: calcE, m: calcM, i: calcI, d: calcD, b: calcB };
+  Object.keys(calcs).forEach(function (k) {
+    document.querySelectorAll('input[id^="' + k + '-"]').forEach(function (inp) { inp.addEventListener("input", calcs[k]); });
+    calcs[k]();
+  });
+  $("#s-d").addEventListener("input", calcS);
+  calcS();
+
+  /* ---------- init ---------- */
+  $("#brand-m").append(mascot("hello", 34));
+  renderTerms();
+  showView(location.hash.slice(1));
+})();
+</script>
+
+</body></html>
